@@ -12,6 +12,7 @@
     imports = [
         # Include the results of the hardware scan.
         ./hardware-configuration.nix
+        ./steam.nix
     ];
 
     # Bootloader.
@@ -112,6 +113,8 @@
     };
 
 
+    services.flatpak.enable = true;
+
     services.pipewire = {
         enable = true;
         alsa.enable = true;
@@ -125,4 +128,6 @@
     programs.gnupg.agent = {
         enable = true;
     };
+
+    xdg.portal.enable = true;
 }
