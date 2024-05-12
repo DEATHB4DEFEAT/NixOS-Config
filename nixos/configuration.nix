@@ -109,7 +109,10 @@
   services.xserver.desktopManager.plasma5.enable = true;
 
   programs.hyprland.enable = true;
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
+
 
   services.pipewire = {
     enable = true;
