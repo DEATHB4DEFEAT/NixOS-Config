@@ -6,6 +6,7 @@
                     "SUPER, F, exec, firefox"
                     "SUPER, RETURN, exec, foot"
                     "SUPER, Q, killactive"
+                    "SUPER, L, exec, hyprctl dispatch exit"
                 ]
                 ++ (
                     # workspaces
