@@ -55,5 +55,9 @@
         #enable if you have issues and need beta
         # package = config.boot.kernelPackages.nvidiaPackages.beta;
     };
-    hardware.opengl.driSupport32Bit = true;
+    hardware.opengl = {
+        enable = true;
+        driSupport = true;
+        driSupport32Bit = true;
+    };
 }
