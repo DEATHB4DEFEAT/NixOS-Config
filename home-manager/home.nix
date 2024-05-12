@@ -8,6 +8,7 @@
     vscode
     nh
     nixd
+    vesktop
   ];
   home.sessionVariables = {
     FLAKE = "/home/death/setup";
