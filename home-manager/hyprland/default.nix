@@ -8,12 +8,17 @@
                 "GBM_BACKEND,nvidia-drm"
                 "__GLX_VENDOR_LIBRARY_NAME,nvidia"
                 "WLR_NO_HARDWARE_CURSORS,1"
+                "ELECTRON_OZONE_PLATFORM_HINT,auto"
             ];
 
             monitor = [
                 "HDMI-A-1,1920x1080@60,0x0,1"
-                "DP-3,3840x2160@60,1920x0,2" #TODO - XWayland force zero scaling
+                "DP-3,3840x2160@60,1920x0,2"
             ];
+
+            xwayland = {
+                force_zero_scaling = true;
+            };
         };
     };
 }

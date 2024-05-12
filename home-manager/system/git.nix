@@ -1,15 +1,16 @@
 {
     programs = {
         git = {
-        enable = true;
-        userEmail = "zachcaffee@outlook.com";
-        userName = "DEATHB4DEFEAT";
-        signing = {
-            key = "62B0D3993D872EBB";
-            signByDefault = true;
+            enable = true;
+            userEmail = "zachcaffee@outlook.com";
+            userName = "DEATHB4DEFEAT";
+            signing = {
+                key = "62B0D3993D872EBB";
+                signByDefault = true;
+            };
+            extraConfig.init.defaultBranch = "master";
         };
-        extraConfig.init.defaultBranch = "master";
-        };
+
         gh = {
             enable = true;
             gitCredentialHelper = {
