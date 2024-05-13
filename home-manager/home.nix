@@ -31,13 +31,4 @@
         ./system/git.nix
         ./system/gpg.nix
     ];
-
-
-    programs = {
-        direnv = {
-            enable = true;
-            enableBashIntegration = true;
-            nix-direnv.enable = true;
-        };
-    };
 }
