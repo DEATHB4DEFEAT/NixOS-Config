@@ -13,6 +13,7 @@
         nixd
         vesktop
         termius
+        youtube-music
     ];
     home.sessionVariables = {
         FLAKE = "/home/death/setup";
