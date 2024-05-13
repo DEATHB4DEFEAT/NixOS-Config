@@ -12,6 +12,7 @@
         nh
         nixd
         vesktop
+        termius
     ];
     home.sessionVariables = {
         FLAKE = "/home/death/setup";
