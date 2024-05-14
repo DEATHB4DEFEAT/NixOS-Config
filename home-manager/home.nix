@@ -15,6 +15,7 @@
         termius
         youtube-music
         obsidian
+        obs-studio
     ];
     home.sessionVariables = {
         FLAKE = "/home/death/setup";
