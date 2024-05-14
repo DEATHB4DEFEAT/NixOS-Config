@@ -14,6 +14,7 @@
         vesktop
         termius
         youtube-music
+        obsidian
     ];
     home.sessionVariables = {
         FLAKE = "/home/death/setup";
