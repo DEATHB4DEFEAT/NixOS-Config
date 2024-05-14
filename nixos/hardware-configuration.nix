@@ -49,8 +49,8 @@
     hardware.nvidia = {
         modesetting.enable = true;
         open = true;
-        #enable if you have issues and need beta
-        # package = config.boot.kernelPackages.nvidiaPackages.beta;
+        # Enable if you have issues and need beta
+        package = config.boot.kernelPackages.nvidiaPackages.beta;
     };
     hardware.opengl = {
         enable = true;
