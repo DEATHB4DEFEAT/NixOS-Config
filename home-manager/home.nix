@@ -16,6 +16,7 @@
         youtube-music
         obsidian
         obs-studio
+        mpv
     ];
     home.sessionVariables = {
         FLAKE = "/home/death/setup";
