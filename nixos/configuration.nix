@@ -73,6 +73,13 @@
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [ firefox ];
+    fonts.packages = with pkgs; [
+        noto-fonts
+        noto-fonts-cjk
+        noto-fonts-emoji
+        noto-fonts-extra
+        jetbrains-mono
+    ];
 
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
