@@ -154,7 +154,7 @@
         script = ''
             ln -s /home/death /home/keath || true # Make sure keath's home directory is a symlink to death's, ignore failure since it's probably already a symlink
             chown -R death:deaths /home/death # Give death and his group ownership of his home directory
-            chmod -R g+rwx /home/death # Give the group read, write, and execute permissions
+            chmod -R g=u /home/death # Give the group whatever permissions death has
         '';
     };
 }
