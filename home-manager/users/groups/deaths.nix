@@ -4,8 +4,6 @@
 }:
 
 {
-    home.username = "death";
-    home.homeDirectory = "/home/death";
     home.stateVersion = "23.11";
     home.packages = with pkgs; [
         vscode
@@ -25,14 +23,14 @@
 
 
     imports = [
-        ./apps/foot.nix
-        ./apps/shell.nix
+        ../../apps/foot.nix
+        ../../apps/shell.nix
 
-        ./hyprland/.
-        ./hyprland/keybinds.nix
-        ./hyprland/mousebinds.nix
+        ../../hyprland/.
+        ../../hyprland/keybinds.nix
+        ../../hyprland/mousebinds.nix
 
-        ./system/git.nix
-        ./system/gpg.nix
+        ../../system/git.nix
+        ../../system/gpg.nix
     ];
 }
