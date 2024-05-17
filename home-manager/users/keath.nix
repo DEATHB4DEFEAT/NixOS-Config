@@ -3,6 +3,6 @@
     home.homeDirectory = "/home/keath";
 
     imports = [
-        ./groups/deaths.nix
+        ../groups/deaths.nix
     ];
 }

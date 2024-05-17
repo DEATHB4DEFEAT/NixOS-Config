@@ -23,14 +23,14 @@
 
 
     imports = [
-        ../../apps/foot.nix
-        ../../apps/shell.nix
+        ../config/apps/foot.nix
+        ../config/apps/shell.nix
 
-        ../../hyprland/.
-        ../../hyprland/keybinds.nix
-        ../../hyprland/mousebinds.nix
+        ../config/hyprland/.
+        ../config/hyprland/keybinds.nix
+        ../config/hyprland/mousebinds.nix
 
-        ../../system/git.nix
-        ../../system/gpg.nix
+        ../config/system/git.nix
+        ../config/system/gpg.nix
     ];
 }
