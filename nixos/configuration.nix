@@ -56,16 +56,33 @@
         xkb.variant = "";
     };
 
+
     # Define a user account. Don't forget to set a password with ‘passwd’.
-    users.users.death = {
+    # Extra account, used for logging into KDE at the same time as death is in Hyprland
+    users.users.keath = {
         isNormalUser = true;
-        description = "DEATHB4DEFEAT";
+        description = "Keath";
         extraGroups = [
             "networkmanager"
             "wheel"
         ];
-        packages = [ ];
+        home = "/home/keath"; # This is a symlink to /home/death :)
     };
+
+    # Normal user account
+    users.users.death = {
+        isNormalUser = true;
+        description = "Death";
+        extraGroups = [
+            "networkmanager"
+            "wheel"
+        ];
+        home = "/home/death";
+    };
+
+
+    users.groups.deaths.members = [ "death" "keath" ];
+
 
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
@@ -142,4 +159,15 @@
     };
 
     xdg.portal.enable = true;
+
+
+    # Run a script to fix permissions on the home directory
+    systemd.services.fix-permissions = {
+        description = "Fix permissions on home directory";
+        wantedBy = [ "multi-user.target" ];
+        script = ''
+            chown -R death:deaths /home/death
+            chmod -R g+rwx /home/death
+        '';
+    };
 }
