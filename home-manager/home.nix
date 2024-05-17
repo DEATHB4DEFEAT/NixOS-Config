@@ -17,6 +17,7 @@
         obsidian
         obs-studio
         mpv
+        krita
     ];
     home.sessionVariables = {
         FLAKE = "/home/death/setup";
