@@ -58,17 +58,6 @@
 
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
-    # Extra account, used for logging into KDE at the same time as death is in Hyprland
-    users.users.keath = {
-        isNormalUser = true;
-        description = "Keath";
-        extraGroups = [
-            "networkmanager"
-            "wheel"
-        ];
-        home = "/home/keath"; # This is a symlink to /home/death :)
-    };
-
     # Normal user account
     users.users.death = {
         isNormalUser = true;
@@ -78,6 +67,18 @@
             "wheel"
         ];
         home = "/home/death";
+    };
+
+    # Extra account, used for logging into KDE at the same time as death is in Hyprland
+    users.users.keath = {
+        isNormalUser = true;
+        description = "Keath";
+        extraGroups = [
+            "networkmanager"
+            "wheel"
+        ];
+        home = "/home/keath"; # This is a symlink to /home/death :)
+        createHome = false; # This is handled by the systemd service below
     };
 
 
@@ -164,10 +165,11 @@
     # Run a script to fix permissions on the home directory
     systemd.services.fix-permissions = {
         description = "Fix permissions on home directory";
-        wantedBy = [ "multi-user.target" ];
+        wantedBy = [ "default.target" ];
         script = ''
-            chown -R death:deaths /home/death
-            chmod -R g+rwx /home/death
+            ln -s /home/death /home/keath || true # Make sure keath's home directory is a symlink to death's, ignore failure since it's probably already a symlink
+            chown -R death:deaths /home/death # Give death and his group ownership of his home directory
+            chmod -R g+rwx /home/death # Give the group read, write, and execute permissions
         '';
     };
 }
