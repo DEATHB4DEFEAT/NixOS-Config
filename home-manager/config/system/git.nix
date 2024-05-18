@@ -8,7 +8,10 @@
                 key = "62B0D3993D872EBB";
                 signByDefault = true;
             };
-            extraConfig.init.defaultBranch = "master";
+            extraConfig = {
+                init.defaultBranch = "master";
+                pull.rebase = false;
+            };
         };
 
         gh = {
