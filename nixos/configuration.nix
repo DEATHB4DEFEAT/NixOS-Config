@@ -155,6 +155,7 @@
             ln -s /home/death /home/keath || true # Make sure keath's home directory is a symlink to death's, ignore failure since it's probably already a symlink
             chown -R death:deaths /home/death # Give death and his group ownership of his home directory
             chmod -R g=u /home/death # Give the group whatever permissions death has
+            systemctl start home-manager-keath # Fails during reconfigure after changing home-manager things, but works fine when started manually
         '';
     };
 }
