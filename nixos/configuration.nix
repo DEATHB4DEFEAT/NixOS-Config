@@ -101,6 +101,7 @@
         ntfs3g
         ntfsprogs
         ckb-next
+        kdePackages.filelight
     ];
 
     fonts.packages = with pkgs; [

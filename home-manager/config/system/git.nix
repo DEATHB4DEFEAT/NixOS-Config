@@ -11,6 +11,7 @@
             extraConfig = {
                 init.defaultBranch = "master";
                 pull.rebase = false;
+                http.postBuffer = 524288000;
             };
         };
 
