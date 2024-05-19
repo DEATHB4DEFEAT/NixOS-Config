@@ -17,6 +17,7 @@
 
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
+    systemd.enableEmergencyMode = false; # Causes issues when fstab fails to mount anything, annoying
     boot.loader.efi.canTouchEfiVariables = true;
     boot.kernel.sysctl = {
         "vm.max_map_count" = 2147483642;
