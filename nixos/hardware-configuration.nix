@@ -16,20 +16,42 @@
         "usbhid"
         "sd_mod"
     ];
-    boot.initrd.kernelModules = [ ];
     boot.kernelModules = [ "kvm-intel" ];
-    boot.extraModulePackages = [ ];
+    boot.supportedFilesystems = [
+        "btrfs"
+        "vfat"
+        "ntfs3"
+    ];
 
-    fileSystems."/" = {
-        device = "/dev/disk/by-uuid/2c55fee3-4f2b-4cd4-8c25-294f7a580f32";
-        fsType = "btrfs";
-        options = [ "subvol=@" ];
+    fileSystems = {
+        "/" = {
+            device = "/dev/disk/by-uuid/2c55fee3-4f2b-4cd4-8c25-294f7a580f32";
+            fsType = "btrfs";
+            options = [ "subvol=@" ];
+        };
+        "/boot" = {
+            device = "/dev/disk/by-uuid/A425-1CF5";
+            fsType = "vfat";
+        };
+        "/drives/LES" = {
+            device = "/dev/disk/by-uuid/12a7a1a2-0bd4-42ee-8fd2-6b2209b33d55";
+            fsType = "btrfs";
+        };
+
+        "/drives/C" = {
+            device = "/dev/disk/by-uuid/2CC2BC65C2BC3544";
+            fsType = "ntfs3";
+        };
+        "/drives/D" = {
+            device = "/dev/disk/by-uuid/06AEE5082B74F336";
+            fsType = "ntfs";
+        };
+        "/drives/E" = {
+            device = "/dev/disk/by-uuid/5644295C6F90F411";
+            fsType = "ntfs";
+        };
     };
 
-    fileSystems."/boot" = {
-        device = "/dev/disk/by-uuid/A425-1CF5";
-        fsType = "vfat";
-    };
 
     swapDevices = [ ];
 
