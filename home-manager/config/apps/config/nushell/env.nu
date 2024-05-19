@@ -81,4 +81,4 @@ $env.PATH = ($env.PATH | split row (char esep) | prepend ($env.HOME | append '/.
 
 $env.HOSTNAME = (sys | get host.hostname)
 
-$env.FLAKE = ("/setup" | prepend $env.HOME | str join)
+$env.FLAKE = ("/.setup" | prepend $env.HOME | str join)

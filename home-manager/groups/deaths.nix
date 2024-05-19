@@ -18,7 +18,7 @@
         krita
     ];
     home.sessionVariables = {
-        FLAKE = "/home/death/setup";
+        FLAKE = "/home/death/.setup";
     };
 
 

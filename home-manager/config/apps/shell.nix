@@ -6,7 +6,7 @@
 {
     programs =
         let shellAliases = {
-            reconf = "git add .; nh os switch";
+            reconf = "git add .; nh os switch .";
         };
     in {
         bash = {
