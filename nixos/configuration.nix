@@ -77,6 +77,9 @@
     # $ nix search wget
     environment.systemPackages = with pkgs; [
         firefox
+        wl-clipboard
+        xsel
+        gparted
     ];
     fonts.packages = with pkgs; [
         noto-fonts
@@ -147,15 +150,40 @@
     xdg.portal.enable = true;
 
 
-    # Run a script to fix permissions on the home directory
-    systemd.services.fix-permissions = {
-        description = "Fix permissions on home directory";
-        wantedBy = [ "default.target" ];
-        script = ''
-            ln -s /home/death /home/keath || true # Make sure keath's home directory is a symlink to death's, ignore failure since it's probably already a symlink
-            chown -R death:deaths /home/death # Give death and his group ownership of his home directory
-            chmod -R g=u /home/death # Give the group whatever permissions death has
-            systemctl start home-manager-keath # Fails during reconfigure after changing home-manager things, but works fine when started manually
-        '';
+    systemd.services = {
+        # Run a script to fix permissions on the home directory
+        fix-permissions = {
+            description = "Fix permissions on home directory";
+            wantedBy = [ "default.target" ];
+
+            script = ''
+                ln -s /home/death /home/keath || true  # Make sure keath's home directory is a symlink to death's, ignore failure since it's probably already a symlink
+                chown -R death:deaths /home/death  # Give death and his group ownership of his home directory
+                chmod -R g=u /home/death  # Give the group whatever permissions death has
+                systemctl start home-manager-keath  # Fails during reconfigure after changing home-manager things, but works fine when started manually
+            '';
+        };
+
+
+        # "Disable" middle mouse paste
+        # disable-primary-select = {
+        #     description = "Disable primary selection paste";
+        #     wantedBy = [ "default.target" ];
+
+        #     script = ''
+        #         if [ "$XDG_SESSION_TYPE" == "wayland" ]; then
+        #             echo "Wayland"
+        #             wl-paste -p --watch wl-copy -p < /dev/null  # Usually works.
+        #             # wl-paste -p --watch wl-copy -cp  # 100% Effective, may cause issues selecting text in GTK applications.
+        #         fi
+
+        #         while [ "$XDG_SESSION_TYPE" == "x11" ]; do
+        #             echo "X11"
+        #             xsel -fin </dev/null  # 100% Effective, May cause issues selecting text in GTK applications.
+        #         done
+
+        #         echo "Done - you should never see this"
+        #     '';
+        # };
     };
 }
