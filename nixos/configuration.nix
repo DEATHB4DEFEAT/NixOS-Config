@@ -100,6 +100,7 @@
         gparted
         ntfs3g
         ntfsprogs
+        ckb-next
     ];
 
     fonts.packages = with pkgs; [
@@ -109,6 +110,8 @@
         noto-fonts-extra
         jetbrains-mono
     ];
+
+    hardware.ckb-next.enable = true;
 
 
     # Enable the OpenSSH daemon.
