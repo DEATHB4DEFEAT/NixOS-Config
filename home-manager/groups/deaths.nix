@@ -26,6 +26,8 @@
 
 
     imports = [
+        ../../_secrets/home-manager/.
+
         ../config/apps/foot.nix
         ../config/apps/shell.nix
 
