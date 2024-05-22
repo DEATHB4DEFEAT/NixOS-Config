@@ -105,6 +105,7 @@
         ntfsprogs
         ckb-next
         kdePackages.filelight
+        sshfs
     ];
 
     fonts.packages = with pkgs; [
