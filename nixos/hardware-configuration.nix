@@ -40,7 +40,7 @@
 
         "/drives/C" = {
             device = "/dev/disk/by-uuid/2CC2BC65C2BC3544";
-            fsType = "ntfs3";
+            fsType = "ntfs";
         };
         "/drives/D" = {
             device = "/dev/disk/by-uuid/06AEE5082B74F336";
