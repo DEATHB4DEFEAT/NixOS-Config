@@ -7,6 +7,7 @@
     programs =
         let shellAliases = {
             reconf = "git add .; nh os switch . -- --impure"; # Damn impure symlinks...
+            hs = "cat ~/.bash_history | grep -i";
         };
     in {
         bash = {
