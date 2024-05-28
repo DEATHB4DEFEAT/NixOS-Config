@@ -107,6 +107,8 @@
         kdePackages.filelight
         sshfs
         sddm-kcm
+        hyfetch
+        fastfetch
     ];
 
     fonts.packages = with pkgs; [
