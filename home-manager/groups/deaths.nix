@@ -7,12 +7,12 @@
     home.stateVersion = "23.11";
     home.packages = with pkgs; [
         vscode
-        vscode-extensions.ms-dotnettools.csharp
         nh
         nixd
         vesktop
         termius
         youtube-music
+        freetube
         obsidian
         obs-studio
         mpv
