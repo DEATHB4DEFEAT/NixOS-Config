@@ -100,15 +100,16 @@
         firefox
         wl-clipboard
         xsel
-        gparted
         ntfs3g
         ntfsprogs
         ckb-next
         kdePackages.filelight
+        kdePackages.partitionmanager
         sshfs
         sddm-kcm
         hyfetch
         fastfetch
+        (python310.withPackages (ps: with ps; [ ]))
     ];
 
     fonts.packages = with pkgs; [
