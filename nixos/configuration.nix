@@ -110,6 +110,7 @@
         hyfetch
         fastfetch
         (python310.withPackages (ps: with ps; [ ]))
+        linux-wifi-hotspot
     ];
 
     fonts.packages = with pkgs; [
