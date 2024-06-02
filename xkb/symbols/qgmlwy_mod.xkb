@@ -1,5 +1,5 @@
 xkb_symbols "custom" {
-    include "us(basic)"
+    include "pc+us+inet(evdev)"
     name[Group1]= "English (US) - QGMLWY (modified)";
 
 

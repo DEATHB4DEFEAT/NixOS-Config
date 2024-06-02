@@ -56,9 +56,10 @@
 
 
     # Configure keymap
+    console.useXkbConfig = true;
     services.xserver = {
         xkb = {
-            layout = "us";
+            layout = "custom,us";
 
             extraLayouts = {
                 custom = {
