@@ -4,24 +4,29 @@
 }:
 
 {
-    home.stateVersion = "23.11";
-    home.packages = with pkgs; [
-        vscode
-        nh
-        nixd
-        vesktop
-        termius
-        youtube-music
-        freetube
-        obsidian
-        obs-studio
-        mpv
-        krita
-        jetbrains.rider
-    ];
+    home = {
+        stateVersion = "23.11";
 
-    home.sessionVariables = {
-        FLAKE = "/home/death/.setup";
+        packages = with pkgs; [
+            vscode
+            nh
+            nixd
+            vesktop
+            termius
+            youtube-music
+            freetube
+            obsidian
+            obs-studio
+            mpv
+            krita
+            jetbrains.rider
+        ];
+
+        sessionVariables = {
+            FLAKE = "/home/death/.setup";
+        };
+
+        keyboard = null;
     };
 
 

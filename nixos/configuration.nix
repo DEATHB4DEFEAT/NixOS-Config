@@ -56,10 +56,19 @@
     };
 
 
-    # Configure keymap in X11
+    # Configure keymap
     services.xserver = {
-        xkb.layout = "us";
-        xkb.variant = "";
+        xkb = {
+            layout = "custom";
+
+            extraLayouts = {
+                custom = {
+                    description = "A modified version of CarpalX's QGMLWY layout.";
+                    languages = [ "eng" ];
+                    symbolsFile = /home/death/.setup/xkb/symbols/qgmlwy_mod.xkb;
+                };
+            };
+        };
     };
 
 
@@ -105,12 +114,13 @@
         ckb-next
         kdePackages.filelight
         kdePackages.partitionmanager
+        kdePackages.sddm-kcm
         sshfs
-        sddm-kcm
         hyfetch
         fastfetch
         (python310.withPackages (ps: with ps; [ ]))
         linux-wifi-hotspot
+        xorg.xkbcomp
     ];
 
     fonts.packages = with pkgs; [
