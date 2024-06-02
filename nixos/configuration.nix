@@ -118,7 +118,6 @@
         sshfs
         hyfetch
         fastfetch
-        (python310.withPackages (ps: with ps; [ ]))
         linux-wifi-hotspot
         xorg.xkbcomp
     ];
