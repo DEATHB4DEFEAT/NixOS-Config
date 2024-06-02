@@ -4,6 +4,11 @@
 }:
 
 {
+    services.gpg-agent = {
+        enableBashIntegration = true;
+        enableNushellIntegration = true;
+    };
+
     programs =
         let shellAliases = {
             reconf = "git add .; nh os switch . -- --impure"; # Damn impure symlinks...

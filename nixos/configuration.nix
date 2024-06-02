@@ -12,7 +12,6 @@
     imports = [
         ../_secrets/.
 
-        # Include the results of the hardware scan.
         ./hardware-configuration.nix
 
         ./steam.nix
@@ -59,7 +58,7 @@
     # Configure keymap
     services.xserver = {
         xkb = {
-            layout = "custom";
+            layout = "us";
 
             extraLayouts = {
                 custom = {
@@ -84,20 +83,7 @@
         home = "/home/death";
     };
 
-    # Extra account, used for logging into KDE at the same time as death is in Hyprland
-    users.users.keath = {
-        isNormalUser = true;
-        description = "Keath";
-        extraGroups = [
-            "networkmanager"
-            "wheel"
-        ];
-        home = "/home/keath"; # This is a symlink to /home/death :)
-        createHome = false; # This is handled by the systemd service below
-    };
-
-
-    users.groups.deaths.members = [ "death" "keath" ];
+    users.groups.deaths.members = [ "death" ];
 
 
     # Allow unfree packages
@@ -106,6 +92,9 @@
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
+        nh
+        vscode
+        jetbrains.rider
         firefox
         wl-clipboard
         xsel
@@ -120,6 +109,10 @@
         fastfetch
         linux-wifi-hotspot
         xorg.xkbcomp
+        mpv
+        obsidian
+        obs-studio
+        krita
     ];
 
     fonts.packages = with pkgs; [
@@ -186,20 +179,6 @@
 
 
     systemd.services = {
-        # Run a script to fix permissions on the home directory
-        fix-permissions = {
-            description = "Fix permissions on home directory";
-            wantedBy = [ "default.target" ];
-
-            script = ''
-                ln -s /home/death /home/keath || true  # Make sure keath's home directory is a symlink to death's, ignore failure since it's probably already a symlink
-                chown -R death:deaths /home/death  # Give death and his group ownership of his home directory
-                chmod -R g=u /home/death  # Give the group whatever permissions death has
-                systemctl start home-manager-keath  # Fails during reconfigure after changing home-manager things, but works fine when started manually
-            '';
-        };
-
-
         # "Disable" middle mouse paste
         # disable-primary-select = {
         #     description = "Disable primary selection paste";

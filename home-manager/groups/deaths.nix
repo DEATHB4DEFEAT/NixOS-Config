@@ -8,18 +8,11 @@
         stateVersion = "23.11";
 
         packages = with pkgs; [
-            vscode
-            nh
             nixd
             vesktop
             termius
             youtube-music
             freetube
-            obsidian
-            obs-studio
-            mpv
-            krita
-            jetbrains.rider
         ];
 
         sessionVariables = {

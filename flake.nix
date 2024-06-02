@@ -29,7 +29,6 @@
                             useUserPackages = true;
                             useGlobalPkgs = true;
                             users.death = ./home-manager/users/death.nix;
-                            users.keath = ./home-manager/users/keath.nix;
                             backupFileExtension = "bak";
                         };
                     }
