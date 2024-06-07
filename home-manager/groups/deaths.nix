@@ -30,8 +30,6 @@
         ../config/apps/shell.nix
 
         ../config/hyprland/.
-        ../config/hyprland/keybinds.nix
-        ../config/hyprland/mousebinds.nix
 
         ../config/system/git.nix
         ../config/system/gpg.nix

@@ -76,15 +76,28 @@
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
     # Normal user account
-    users.users.death = {
-        isNormalUser = true;
-        description = "Death";
-        extraGroups = [
-            "networkmanager"
-            "wheel"
-        ];
-        home = "/home/death";
+    users.users = {
+        death = {
+            isNormalUser = true;
+            description = "Death";
+            extraGroups = [
+                "networkmanager"
+                "wheel"
+            ];
+            home = "/home/death";
+        };
+
+        test = {
+            isNormalUser = true;
+            description = "Test";
+            extraGroups = [
+                "networkmanager"
+                "wheel"
+            ];
+            home = "/home/test";
+        };
     };
+
 
     users.groups.deaths.members = [ "death" ];
 

@@ -1,4 +1,9 @@
 {
+    imports = [
+        ./keybinds.nix
+        ./mousebinds.nix
+    ];
+
     wayland.windowManager.hyprland = {
         enable = true;
         settings = {
