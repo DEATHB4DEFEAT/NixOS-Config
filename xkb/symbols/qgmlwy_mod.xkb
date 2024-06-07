@@ -1,6 +1,6 @@
 xkb_symbols "custom" {
     include "pc+us+inet(evdev)"
-    name[Group1]= "English (US) - QGMLWY (modified)";
+    name[Group1]= "English (US) - QGMLWY (mod)";
 
 
     // Row 2
@@ -37,5 +37,6 @@ xkb_symbols "custom" {
     key <AB07> { [ p, P, NoSymbol, NoSymbol ] };
 
     // Row 5
-    key <FK14> { [ ISO_Level3_Shift ] };
+    key <I480> { [ ISO_Level3_Shift ] }; // Rebind dead FN to ISO_Level3_Shift
+    key <I143> { [ ISO_Level5_Shift ] }; // Rebind dead Menu to ISO_Level5_Shift
 };

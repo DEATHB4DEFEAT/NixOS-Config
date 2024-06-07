@@ -60,12 +60,14 @@
     services.xserver = {
         xkb = {
             layout = "custom,us";
+            options = "grp:alts_toggle,grp_led:scroll";
 
             extraLayouts = {
                 custom = {
                     description = "A modified version of CarpalX's QGMLWY layout.";
                     languages = [ "eng" ];
                     symbolsFile = /home/death/.setup/xkb/symbols/qgmlwy_mod.xkb;
+                    keycodesFile = /home/death/.setup/xkb/keycodes/1024.xkb;
                 };
             };
         };
