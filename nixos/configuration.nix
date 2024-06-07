@@ -116,6 +116,7 @@
         obsidian
         obs-studio
         krita
+        manix
     ];
 
     fonts.packages = with pkgs; [
