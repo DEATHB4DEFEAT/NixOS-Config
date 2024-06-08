@@ -15,7 +15,10 @@
         ./hardware-configuration.nix
 
         ./steam.nix
+
+        ./ascii-workaround.nix
     ];
+
 
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
@@ -24,6 +27,7 @@
     boot.kernel.sysctl = {
         "vm.max_map_count" = 2147483642;
     };
+
 
     networking.hostName = "DTLinix"; # Define your hostname.
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

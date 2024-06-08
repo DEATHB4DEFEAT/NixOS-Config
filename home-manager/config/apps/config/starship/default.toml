@@ -23,9 +23,6 @@ symbol = "§"
 disabled = false
 format = '\[[$symbol]($style)\]'
 
-[os.symbols]
-NixOS = "❄️"
-
 [directory]
 style = "green bold"
 format = "[$read_only]($read_only_style)[$path]($style)"
