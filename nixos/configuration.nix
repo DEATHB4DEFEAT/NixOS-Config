@@ -194,6 +194,8 @@
 
     xdg.portal.enable = true;
 
+    programs.bash.blesh.enable = true;
+
 
     systemd.services = {
         # "Disable" middle mouse paste

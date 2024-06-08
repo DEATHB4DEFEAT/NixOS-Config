@@ -20,32 +20,21 @@
             shellAliases = shellAliases;
         };
 
-        nushell = {
-            enable = true;
-            configFile.source = ./config/nushell/config.nu;
-            envFile.source = ./config/nushell/env.nu;
-            shellAliases = shellAliases;
-        };
-
 
         starship =
             let catppuccin-flavour = "mocha";
         in {
             enable = true;
             enableNushellIntegration = true;
+
             settings = {
-                time = {
-                    disabled = false;
-                    time_format = "%Y-%m-%d %H:%M:%S";
-                };
-                aws.disabled = true;
-                gcloud.disabled = true;
-                openstack.disabled = true;
-                hostname.disabled = true;
-                nix_shell = {
-                    disabled = true;
-                    # heuristic = true;
-                };
+                # [❄️]@death — ~/.setup
+                # §❯ echo hi
+                format = "$os$username — $directory\n$sudo$character";
+                # 13:07:02
+                right_format = "$time";
+
+
                 palette = "catppuccin_${catppuccin-flavour}";
             }
             // builtins.fromTOML (
@@ -58,6 +47,8 @@
                     }
                     + /palettes/${catppuccin-flavour}.toml
                 )
+
+                + builtins.readFile ./config/starship/default.toml
             );
         };
 
