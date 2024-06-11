@@ -63,7 +63,7 @@
     console.useXkbConfig = true;
     services.xserver = {
         xkb = {
-            layout = "custom,us";
+            layout = "us,custom";
             options = "grp:alts_toggle,grp_led:scroll";
 
             extraLayouts = {
