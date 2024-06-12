@@ -134,6 +134,8 @@
         obs-studio
         krita
         manix
+        helvum
+        easyeffects
     ];
 
     fonts.packages = with pkgs; [
