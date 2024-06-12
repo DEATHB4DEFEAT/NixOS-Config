@@ -134,7 +134,7 @@
         obs-studio
         krita
         manix
-        helvum
+        qpwgraph
         easyeffects
     ];
 
