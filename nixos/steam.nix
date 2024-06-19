@@ -49,4 +49,7 @@
         # Steam needs this to find Proton-GE
         STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
     };
+
+
+    hardware.steam-hardware.enable = true;
 }

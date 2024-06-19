@@ -21,11 +21,15 @@
 
 
     # Bootloader.
-    boot.loader.systemd-boot.enable = true;
     systemd.enableEmergencyMode = false; # Causes issues when fstab fails to mount anything, annoying
-    boot.loader.efi.canTouchEfiVariables = true;
-    boot.kernel.sysctl = {
-        "vm.max_map_count" = 2147483642;
+    boot = {
+        loader = {
+            systemd-boot.enable = true;
+            efi.canTouchEfiVariables = true;
+        };
+        kernel.sysctl = {
+            "vm.max_map_count" = 2147483642;
+        };
     };
 
 
@@ -136,6 +140,7 @@
         manix
         qpwgraph
         easyeffects
+        xboxdrv
     ];
 
     fonts.packages = with pkgs; [
@@ -184,15 +189,59 @@
 
     services.flatpak.enable = true;
 
+    hardware.pulseaudio.enable = lib.mkForce false;
     services.pipewire = {
         enable = true;
         alsa.enable = true;
         alsa.support32Bit = true;
         pulse.enable = true;
         jack.enable = true;
+        wireplumber.enable = true;
+
+        extraConfig = {
+            pipewire.context.properties.default = {
+                clock.rate = 48000;
+                clock.allowed-rates = [ 48000 ];
+                clock.quantum = 2048;
+                clock.min-quantum = 1024;
+                clock.max-quantum = 1024;
+            };
+
+            pipewire-pulse = {
+                context.modules = [
+                    {
+                        name = "libpipewire-module-protocol-pulse";
+                        args = {
+                            pulse.min.req = "1024/48000";
+                            pulse.default.req = "1024/48000";
+                            pulse.max.req = "1024/48000";
+                            pulse.min.quantum = "1024/48000";
+                            pulse.default.quantum = "1024/48000";
+                            pulse.max.quantum = "1024/48000";
+                        };
+                    }
+                ];
+
+                stream.properties = {
+                    node.latency = "1024/48000";
+                    resample.quality = 1;
+                };
+            };
+        };
     };
 
-    hardware.pulseaudio.enable = lib.mkForce false;
+    hardware.bluetooth = {
+        enable = true;
+        powerOnBoot = true; # Power up the default Bluetooth controller on boot
+    };
+    services.blueman.enable = true;
+    systemd.user.services.mpris-proxy = {
+        description = "Mpris proxy";
+        after = [ "network.target" "sound.target" ];
+        wantedBy = [ "default.target" ];
+        serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
+    };
+
 
     programs.gnupg.agent = {
         enable = true;

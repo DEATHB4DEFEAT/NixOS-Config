@@ -29,6 +29,7 @@
 
         extraModprobeConfig = ''
             options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
+            options bluetooth disable_ertm=1
         '';
 
         supportedFilesystems = [
@@ -79,20 +80,25 @@
     # networking.interfaces.wlp3s0.useDHCP = lib.mkDefault true;
 
     nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-    hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
     services.xserver.videoDrivers = [ "nvidia" ];
 
-    hardware.nvidia = {
-        modesetting.enable = true;
-        open = true;
-        # Enable if you have issues and need beta
-        package = config.boot.kernelPackages.nvidiaPackages.beta;
-    };
+    hardware = {
+        cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-    hardware.opengl = {
-        enable = true;
-        driSupport = true;
-        driSupport32Bit = true;
+        nvidia = {
+            modesetting.enable = true;
+            open = true;
+            # Enable if you have issues and need beta
+            package = config.boot.kernelPackages.nvidiaPackages.beta;
+        };
+
+        opengl = {
+            enable = true;
+            driSupport = true;
+            driSupport32Bit = true;
+        };
+
+        xpadneo.enable = true;
     };
 }
