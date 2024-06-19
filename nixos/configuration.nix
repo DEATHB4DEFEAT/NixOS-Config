@@ -14,6 +14,7 @@
 
         ./hardware-configuration.nix
 
+        ./podman.nix
         ./steam.nix
 
         ./ascii-workaround.nix
@@ -27,9 +28,12 @@
             systemd-boot.enable = true;
             efi.canTouchEfiVariables = true;
         };
+
         kernel.sysctl = {
             "vm.max_map_count" = 2147483642;
         };
+
+        kernelPackages = pkgs.linuxPackages_zen;
     };
 
 
@@ -140,7 +144,8 @@
         manix
         qpwgraph
         easyeffects
-        xboxdrv
+        distrobox
+        nvidia-container-toolkit
     ];
 
     fonts.packages = with pkgs; [

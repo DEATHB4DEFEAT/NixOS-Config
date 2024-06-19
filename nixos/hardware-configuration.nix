@@ -86,6 +86,7 @@
     hardware = {
         cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
+        nvidia-container-toolkit.enable = true;
         nvidia = {
             modesetting.enable = true;
             open = true;
