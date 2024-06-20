@@ -147,6 +147,7 @@
         distrobox
         nvidia-container-toolkit
         github-copilot-intellij-agent
+        thunderbird
     ];
 
     fonts.packages = with pkgs; [
