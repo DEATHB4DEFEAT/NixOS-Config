@@ -146,6 +146,7 @@
         easyeffects
         distrobox
         nvidia-container-toolkit
+        github-copilot-intellij-agent
     ];
 
     fonts.packages = with pkgs; [
