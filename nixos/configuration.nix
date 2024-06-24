@@ -148,6 +148,7 @@
         nvidia-container-toolkit
         github-copilot-intellij-agent
         thunderbird
+        modrinth-app
     ];
 
     fonts.packages = with pkgs; [

@@ -19,7 +19,7 @@
         ];
 
         kernelModules = [
-            "kvm-intel"
+            "kvm-amd"
             "v4l2loopback"
         ];
 
@@ -84,7 +84,7 @@
     services.xserver.videoDrivers = [ "nvidia" ];
 
     hardware = {
-        cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+        cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
         nvidia-container-toolkit.enable = true;
         nvidia = {
@@ -96,7 +96,6 @@
 
         opengl = {
             enable = true;
-            driSupport = true;
             driSupport32Bit = true;
         };
 
