@@ -1,0 +1,167 @@
+(defcfg
+	process-unmapped-keys		yes
+
+	movemouse-inherit-accel-state	yes
+	movemouse-smooth-diagonals	yes
+)
+
+
+(defvar
+	tap-time	200
+	hold-time	150
+
+
+	mov-int		5
+	mov-intf	5
+	mov-dist	2
+	mov-distf	8
+
+	scr-int		100
+	scr-dist	120
+	scr-intf	50
+	scr-distf	240
+)
+
+(defalias
+	lybase	(layer-switch		base)
+	lynum	(layer-switch		num)
+	lynav	(layer-switch		nav)
+	lynavf	(layer-while-held	navfast)
+	lynavs	(layer-while-held	navscroll)
+	lynavp	(layer-while-held	navscrollfast)
+
+
+	mmu	(movemouse-up		$mov-int	$mov-dist)
+	mmd	(movemouse-down		$mov-int	$mov-dist)
+	mml	(movemouse-left		$mov-int	$mov-dist)
+	mmr	(movemouse-right	$mov-int	$mov-dist)
+
+	mmuf	(movemouse-up		$mov-intf	$mov-distf)
+	mmdf	(movemouse-down		$mov-intf	$mov-distf)
+	mmlf	(movemouse-left		$mov-intf	$mov-distf)
+	mmrf	(movemouse-right	$mov-intf	$mov-distf)
+
+	mwu	(mwheel-up		$scr-int	$scr-dist)
+	mwd	(mwheel-down		$scr-int	$scr-dist)
+	mwl	(mwheel-left		$scr-int	$scr-dist)
+	mwr	(mwheel-right		$scr-int	$scr-dist)
+
+	mwuf	(mwheel-up		$scr-intf	$scr-distf)
+	mwdf	(mwheel-down		$scr-intf	$scr-distf)
+	mwlf	(mwheel-left		$scr-intf	$scr-distf)
+	mwrf	(mwheel-right		$scr-intf	$scr-distf)
+
+
+	a	(tap-hold	$tap-time	$hold-time	a	lmet)
+	s	(tap-hold	$tap-time	$hold-time	s	lalt)
+	d	(tap-hold	$tap-time	$hold-time	d	lctl)
+	f	(tap-hold	$tap-time	$hold-time	f	lsft)
+
+	j	(tap-hold	$tap-time	$hold-time	j	rsft)
+	k	(tap-hold	$tap-time	$hold-time	k	rctl)
+	l	(tap-hold	$tap-time	$hold-time	l	ralt)
+	;	(tap-hold	$tap-time	$hold-time	;	rmet)
+)
+
+
+(defsrc
+	;;? G-Keys	1	2	3	4	5			6
+		f13	f14	f15	f16	f17	f18	f19	f20	f21	f22	f23	f24
+	esc	f1	f2	f3	f4	f5	f6	f7	f8	f9	f10	f11	f12
+	grv	1	2	3	4	5	6	7	8	9	0	-	=	bspc
+	tab	q	w	e	r	t	y	u	i	o	p	[	]	\
+	caps	a	s	d	f	g	h	j	k	l	;	'	ret
+	lsft	z	x	c	v	b	n	m	,	.	/	rsft
+	lctl	lmet	lalt			spc			ralt	rmet	menu	rctl
+)
+
+
+(deflayer	base
+	;;? G-Keys	1	2	3	4	5			6
+		_	_	@lynum	@lynav	_	_	_	_	lrld	_	_	_
+	_	_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+	_	@a	@s	@d	@f	_	_	@j	@k	@l	@;	_	_
+	_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	 	 	_	 	 	_	_	_	_
+)
+
+(deflayer	num
+	;;? G-Keys	1	2	3	4	5			6
+		_	@lybase	_	@lynav	_	_	_	_	lrld	_	_	_
+	_	_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+	_	XX	7	8	9	XX	XX	7	8	9	XX	XX	XX	XX
+	_	0	4	5	6	XX	XX	4	5	6	0	XX	_
+	_	XX	1	2	3	XX	XX	1	2	3	XX	_
+	_	_	_	 	 	_	 	 	_	_	_	_
+)
+
+(deflayer	nav
+	;;? G-Keys	1	2	3	4	5			6
+		_	@lybase	@lynum	_	_	_	_	_	lrld	_	_	_
+	_	_	_	_	_	_	_	_	_	_	_	_	_
+	_	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	_
+	_	XX	mrgt	@mmu	mlft	mfwd	XX	XX	up	XX	XX	XX	XX	XX
+	_	mmid	@mml	@mmd	@mmr	mbck	XX	left	down	right	XX	XX	_
+	@lynavs	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	_
+	_	_	_	 	 	@lynavf	 	 	_	_	_	_
+)
+
+(deflayer	navfast
+	;;? G-Keys	1	2	3	4	5			6
+		_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	@mmuf	_	_	_	_	_	_	_	_	_	_
+	_	_	@mmlf	@mmdf	@mmrf	_	_	_	_	_	_	_	_
+	_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	 	 	_	 	 	_	_	_	_
+)
+
+(deflayer	navscroll
+	;;? G-Keys	1	2	3	4	5			6
+		_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	@mwu	_	_	_	_	_	_	_	_	_	_
+	_	_	@mwl	@mwd	@mwr	_	_	_	_	_	_	_	_
+	_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	 	 	@lynavp	 	 	_	_	_	_
+)
+
+(deflayer	navscrollfast
+	;;? G-Keys	1	2	3	4	5			6
+		_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	@mwuf	_	_	_	_	_	_	_	_	_	_
+	_	_	@mwlf	@mwdf	@mwrf	_	_	_	_	_	_	_	_
+	_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	 	 	_	 	 	_	_	_	_
+)
+
+
+;;! Template layers
+(deflayer	null
+	;;? G-Keys	1	2	3	4	5			6
+		_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	 	 	_	 	 	_	_	_	_
+)
+
+(deflayer	noop
+	;;? G-Keys	1	2	3	4	5			6
+		XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
+	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
+	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
+	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
+	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
+	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX
+	XX	XX	XX			XX			XX	XX	XX	XX
+)

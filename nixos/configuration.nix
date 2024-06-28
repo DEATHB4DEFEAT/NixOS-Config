@@ -76,8 +76,8 @@
                 custom = {
                     description = "A modified version of CarpalX's QGMLWY layout.";
                     languages = [ "eng" ];
-                    symbolsFile = /home/death/.setup/xkb/symbols/qgmlwy_mod.xkb;
-                    keycodesFile = /home/death/.setup/xkb/keycodes/1024.xkb;
+                    symbolsFile = /home/death/.setup/keyboard/xkb/symbols/qgmlwy_mod.xkb;
+                    keycodesFile = /home/death/.setup/keyboard/xkb/keycodes/1024.xkb;
                 };
             };
         };
@@ -147,6 +147,7 @@
         github-copilot-intellij-agent
         thunderbird
         modrinth-app
+        kanata
     ];
 
     fonts.packages = with pkgs; [
