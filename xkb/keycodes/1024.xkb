@@ -1,6 +1,0 @@
-xkb_keycodes "custom" {
-    include "evdev+aliases(qwerty)"
-
-    minimum=8;
-    maximum=1024;
-};

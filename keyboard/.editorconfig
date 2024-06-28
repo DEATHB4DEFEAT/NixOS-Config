@@ -1,0 +1,4 @@
+[*]
+indent_style = tab
+indent_size = 8
+# The rest of the config is inherited

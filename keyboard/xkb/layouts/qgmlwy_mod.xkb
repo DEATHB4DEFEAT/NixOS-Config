@@ -1,0 +1,59 @@
+xkb_keymap {
+	xkb_keycodes	"custom" {
+		include	"evdev+aliases(qwerty)"
+
+		minimum = 8;
+		maximum = 1024;
+	};
+
+	xkb_types {
+		include	"complete"
+	};
+
+	xkb_compat {
+		include	"complete"
+	};
+
+	xkb_symbols {
+		include	"pc+us+inet(evdev)"
+		name[Group1] = "English (US) - QGMLWY (mod)";
+
+
+		// Row 2		base		shift	level 3		level 5
+		key <AD01>	{ [	q,		Q,	oslash,		Oslash		] };
+		key <AD02>	{ [	g,		G,	NoSymbol,	NoSymbol	] };
+		key <AD03>	{ [	m,		M,	mu,		NoSymbol	] };
+		key <AD04>	{ [	l,		L,	sterling,	NoSymbol	] };
+		key <AD05>	{ [	w,		W,	NoSymbol,	NoSymbol	] };
+		key <AD06>	{ [	y,		Y,	yen,		yen		] };
+		key <AD07>	{ [	n,		N,	ntilde,		Ntilde		] };
+		key <AD08>	{ [	u,		U,	udiaeresis,	Udiaeresis 	] };
+		key <AD09>	{ [	b,		B,	ssharp,		NoSymbol 	] };
+		key <AD10>	{ [	semicolon,	colon,	dead_diaeresis,	NoSymbol 	] };
+
+		// Row 3		base		shift	level 3		level 5
+		key <AC01>	{ [	d,		D,	eth,		ETH		] };
+		key <AC02>	{ [	s,		S,	NoSymbol,	NoSymbol	] };
+		key <AC03>	{ [	t,		T,	thorn,		THORN		] };
+		key <AC04>	{ [	f,		F,	NoSymbol,	NoSymbol	] };
+		key <AC05>	{ [	r,		R,	NoSymbol,	NoSymbol	] };
+		key <AC06>	{ [	i,		I,	NoSymbol,	NoSymbol	] };
+		key <AC07>	{ [	j,		J,	NoSymbol,	NoSymbol	] };
+		key <AC08>	{ [	e,		E,	eacute,		Eacute		] };
+		key <AC09>	{ [	o,		O,	otilde,		Otilde		] };
+		key <AC10>	{ [	h,		H,	mu,		NoSymbol	] };
+
+		// Row 4		base		shift	level 3		level 5
+		key <AB01>	{ [	z,		Z,	NoSymbol,	NoSymbol	] };
+		key <AB02>	{ [	x,		X,	NoSymbol,	NoSymbol	] };
+		key <AB03>	{ [	c,		C,	NoSymbol,	NoSymbol	] };
+		key <AB04>	{ [	v,		V,	NoSymbol,	NoSymbol	] };
+		key <AB05>	{ [	a,		A,	ae,		AE		] };
+		key <AB06>	{ [	k,		K,	NoSymbol,	NoSymbol	] };
+		key <AB07>	{ [	p,		P,	NoSymbol,	NoSymbol	] };
+	};
+
+	xkb_geometry {
+		include	"pc(pc105)"
+	};
+};
