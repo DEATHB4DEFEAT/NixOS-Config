@@ -148,6 +148,8 @@
         thunderbird
         modrinth-app
         kanata
+        qemu
+        quickemu
     ];
 
     fonts.packages = with pkgs; [
