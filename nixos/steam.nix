@@ -5,6 +5,8 @@
 }:
 
 {
+    hardware.steam-hardware.enable = true;
+
     programs = lib.mkDefault {
         steam = {
             enable = true;
@@ -31,6 +33,16 @@
         # 	];
         # };
 
+        gamemode = {
+            enable = true;
+
+            settings = {
+                general = {
+                    softrealtime = true;
+                };
+            };
+        };
+
         dconf.enable = true;
     };
 
@@ -40,16 +52,11 @@
         steamPackages.steamcmd
         steam-tui
         gamescope
-        gamemode
         bubblewrap
     ];
-
 
     environment.sessionVariables = {
         # Steam needs this to find Proton-GE
         STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
     };
-
-
-    hardware.steam-hardware.enable = true;
 }

@@ -221,12 +221,25 @@
                     {
                         name = "libpipewire-module-protocol-pulse";
                         args = {
-                            pulse.min.req = "1024/48000";
-                            pulse.default.req = "1024/48000";
-                            pulse.max.req = "1024/48000";
-                            pulse.min.quantum = "1024/48000";
-                            pulse.default.quantum = "1024/48000";
-                            pulse.max.quantum = "1024/48000";
+                            pulse = {
+                                min = {
+                                    req = "256/48000";
+                                    quantum = "256/48000";
+                                    frag = "256/48000";
+                                };
+
+                                default = {
+                                    req = "1024/48000";
+                                    quantum = "1024/48000";
+                                    frag = "1024/48000";
+                                };
+
+                                max = {
+                                    req = "1024/48000";
+                                    quantum = "1024/48000";
+                                    frag = "1024/48000";
+                                };
+                            };
                         };
                     }
                 ];
@@ -235,6 +248,23 @@
                     node.latency = "1024/48000";
                     resample.quality = 1;
                 };
+            };
+        };
+    };
+
+    systemd.user.services = {
+        pipewire.serviceConfig = { Nice = -10; };
+        pipewire-pulse.serviceConfig = { Nice = -10; };
+
+        # Easyeffects
+        easyeffects = {
+            description = "Easy Effects";
+            after = [ "pipewire-pulse.service" ];
+            wantedBy = [ "default.target" ];
+
+            serviceConfig = {
+                ExecStart = "${pkgs.easyeffects}/bin/easyeffects --gapplication-service";
+                Nice = -10;
             };
         };
     };
