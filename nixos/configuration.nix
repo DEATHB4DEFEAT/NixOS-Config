@@ -16,6 +16,8 @@
 
         ./podman.nix
         ./steam.nix
+
+        ./ascii-workaround.nix
     ];
 
 
