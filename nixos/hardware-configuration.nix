@@ -98,8 +98,7 @@
         nvidia = {
             modesetting.enable = true;
             open = true;
-            # Enable if you have issues and need beta
-            package = config.boot.kernelPackages.nvidiaPackages.beta;
+            # package = config.boot.kernelPackages.nvidiaPackages.beta;
         };
 
         opengl = {
