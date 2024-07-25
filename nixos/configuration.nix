@@ -140,6 +140,7 @@
         quickemu
         handbrake
         ffmpeg-full
+        arrpc
     ];
 
     fonts.packages = with pkgs; [
@@ -201,9 +202,9 @@
             pipewire.context.properties.default = {
                 clock.rate = 48000;
                 clock.allowed-rates = [ 48000 ];
-                clock.quantum = 2048;
-                clock.min-quantum = 1024;
-                clock.max-quantum = 1024;
+                clock.min-quantum = 32;
+                clock.quantum = 1024;
+                clock.max-quantum = 2048;
             };
 
             pipewire-pulse = {
@@ -213,9 +214,9 @@
                         args = {
                             pulse = {
                                 min = {
-                                    req = "256/48000";
-                                    quantum = "256/48000";
-                                    frag = "256/48000";
+                                    req = "32/48000";
+                                    quantum = "32/48000";
+                                    frag = "32/48000";
                                 };
 
                                 default = {
@@ -225,9 +226,9 @@
                                 };
 
                                 max = {
-                                    req = "1024/48000";
-                                    quantum = "1024/48000";
-                                    frag = "1024/48000";
+                                    req = "2048/48000";
+                                    quantum = "2048/48000";
+                                    frag = "2048/48000";
                                 };
                             };
                         };
