@@ -140,7 +140,6 @@
         quickemu
         handbrake
         ffmpeg-full
-        arrpc
     ];
 
     fonts.packages = with pkgs; [
