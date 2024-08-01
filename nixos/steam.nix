@@ -14,6 +14,7 @@
                 extraLibraries = p: with p; [
                     libunwind
                     pipewire
+                    openal
                     # For Space Station 14
                     openssl
                     fluidsynth
