@@ -86,8 +86,7 @@
     };
 
 
-    # Define a user account. Don't forget to set a password with ‘passwd’.
-    # Normal user account
+    # Don't forget to set a password with ‘passwd’.
     users.users = {
         death = {
             isNormalUser = true;
@@ -98,20 +97,7 @@
             ];
             home = "/home/death";
         };
-
-        test = {
-            isNormalUser = true;
-            description = "Test";
-            extraGroups = [
-                "networkmanager"
-                "wheel"
-            ];
-            home = "/home/test";
-        };
     };
-
-
-    users.groups.deaths.members = [ "death" ];
 
 
     # Allow unfree packages
