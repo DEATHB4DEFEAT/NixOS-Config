@@ -144,7 +144,7 @@
         handbrake
         ffmpeg-full
         appimage-run
-        linthesia
+        neothesia
     ];
 
     fonts.packages = with pkgs; [
