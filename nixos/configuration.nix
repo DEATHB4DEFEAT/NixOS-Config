@@ -138,6 +138,7 @@
         kanata
         qemu
         quickemu
+        handbrake
     ];
 
     fonts.packages = with pkgs; [
