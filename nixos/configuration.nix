@@ -76,9 +76,9 @@
 
             extraLayouts = {
                 custom = {
-                    description = "A modified version of CarpalX's QGMLWY layout.";
+                    description = "CarpalX's QGMLWY layout.";
                     languages = [ "eng" ];
-                    symbolsFile = /home/death/.setup/keyboard/xkb/symbols/qgmlwy_mod.xkb;
+                    symbolsFile = /home/death/.setup/keyboard/xkb/symbols/qgmlwy.xkb;
                     keycodesFile = /home/death/.setup/keyboard/xkb/keycodes/1024.xkb;
                 };
             };
