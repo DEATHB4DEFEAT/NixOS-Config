@@ -139,6 +139,7 @@
         qemu
         quickemu
         handbrake
+        ffmpeg-full
     ];
 
     fonts.packages = with pkgs; [
