@@ -43,7 +43,11 @@
         "/" = {
             device = "/dev/disk/by-uuid/2c55fee3-4f2b-4cd4-8c25-294f7a580f32";
             fsType = "btrfs";
-            options = [ "subvol=@" ];
+            options = [
+                "subvol=@"
+                "compress=zstd:5"
+                "noatime"
+            ];
         };
         "/boot" = {
             device = "/dev/disk/by-uuid/A425-1CF5";
@@ -52,6 +56,10 @@
         "/drives/LES" = {
             device = "/dev/disk/by-uuid/12a7a1a2-0bd4-42ee-8fd2-6b2209b33d55";
             fsType = "btrfs";
+            options = [
+                "compress-force=zstd:5"
+                "noatime"
+            ];
         };
 
         "/drives/C" = {
