@@ -89,7 +89,10 @@
 
     nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
-    services.xserver.videoDrivers = [ "nvidia" ];
+    services = {
+        xserver.videoDrivers = [ "nvidia" ];
+        ddccontrol.enable = true;
+    };
 
     hardware = {
         cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
@@ -107,5 +110,7 @@
         };
 
         xpadneo.enable = true;
+
+        i2c.enable = true;
     };
 }

@@ -67,25 +67,6 @@
     };
 
 
-    # Configure keymap
-    console.useXkbConfig = true;
-    services.xserver = {
-        xkb = {
-            layout = "us,custom";
-            options = "grp:alts_toggle,grp_led:scroll";
-
-            extraLayouts = {
-                custom = {
-                    description = "CarpalX's QGMLWY layout.";
-                    languages = [ "eng" ];
-                    symbolsFile = /home/death/.setup/keyboard/xkb/symbols/qgmlwy.xkb;
-                    keycodesFile = /home/death/.setup/keyboard/xkb/keycodes/1024.xkb;
-                };
-            };
-        };
-    };
-
-
     # Don't forget to set a password with ‘passwd’.
     users.users = {
         death = {
@@ -94,6 +75,7 @@
             extraGroups = [
                 "networkmanager"
                 "wheel"
+                "i2c"
             ];
             home = "/home/death";
         };
@@ -181,9 +163,28 @@
     ];
 
 
-    services.xserver.enable = true;
-    services.displayManager.sddm.enable = true;
-    services.desktopManager.plasma6.enable = true;
+    console.useXkbConfig = true;
+    services = {
+        xserver = {
+            enable = true;
+            xkb = {
+                layout = "us,custom";
+                options = "grp:alts_toggle,grp_led:scroll";
+
+                extraLayouts = {
+                    custom = {
+                        description = "CarpalX's QGMLWY layout.";
+                        languages = [ "eng" ];
+                        symbolsFile = /home/death/.setup/keyboard/xkb/symbols/qgmlwy.xkb;
+                        keycodesFile = /home/death/.setup/keyboard/xkb/keycodes/1024.xkb;
+                    };
+                };
+            };
+        };
+
+        displayManager.sddm.enable = true;
+        desktopManager.plasma6.enable = true;
+    };
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
         elisa
     ];
