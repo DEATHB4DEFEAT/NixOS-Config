@@ -295,7 +295,10 @@
 
     xdg.portal.enable = true;
 
-    programs.bash.blesh.enable = true;
+    programs = {
+        bash.blesh.enable = true;
+        thefuck.enable = true;
+    };
 
 
     systemd.services = {

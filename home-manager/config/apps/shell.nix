@@ -9,15 +9,14 @@
         enableNushellIntegration = true;
     };
 
-    programs =
-        let shellAliases = {
+    programs = {
+        bash = {
+            enable = true;
+            shellAliases = {
             reconf = "git add .; nh os switch . -- --impure"; # Damn impure symlinks...
             hs = "cat ~/.bash_history | grep -i";
         };
-    in {
-        bash = {
-            enable = true;
-            shellAliases = shellAliases;
+            bashrcExtra = "eval \"$(thefuck --alias --enable-experimental-instant-mode)\"";
         };
 
 
