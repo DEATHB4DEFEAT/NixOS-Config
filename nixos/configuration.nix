@@ -126,6 +126,7 @@
         handbrake
         ffmpeg-full
         appimage-run
+        linthesia
         neothesia
     ];
 
