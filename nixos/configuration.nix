@@ -128,6 +128,7 @@
         appimage-run
         linthesia
         neothesia
+        element-desktop-wayland
     ];
 
     fonts.packages = with pkgs; [
