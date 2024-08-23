@@ -122,13 +122,13 @@
         modrinth-app
         kanata
         qemu
-        quickemu
         handbrake
         ffmpeg-full
         appimage-run
         linthesia
         neothesia
         element-desktop-wayland
+        aseprite-unfree
     ];
 
     fonts.packages = with pkgs; [
