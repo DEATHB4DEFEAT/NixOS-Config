@@ -116,7 +116,6 @@
         qpwgraph
         easyeffects
         distrobox
-        nvidia-container-toolkit
         github-copilot-intellij-agent
         thunderbird
         modrinth-app

@@ -97,19 +97,18 @@
     nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
     services = {
-        xserver.videoDrivers = [ "nvidia" "amdgpu" ];
+        xserver.videoDrivers = [ "amdgpu"];# "nvidia" ];
         ddccontrol.enable = true;
     };
 
     hardware = {
         cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-        nvidia-container-toolkit.enable = true;
-        nvidia = {
-            modesetting.enable = true;
-            open = true;
-            # package = config.boot.kernelPackages.nvidiaPackages.beta;
-        };
+        # nvidia = {
+        #     modesetting.enable = true;
+        #     open = true;
+        #     # package = config.boot.kernelPackages.nvidiaPackages.beta;
+        # };
 
         graphics = {
             enable = true;
