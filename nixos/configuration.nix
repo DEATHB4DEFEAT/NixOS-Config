@@ -129,6 +129,7 @@
         neothesia
         element-desktop-wayland
         aseprite-unfree
+        openrgb-with-all-plugins
     ];
 
     fonts.packages = with pkgs; [
@@ -139,7 +140,13 @@
         jetbrains-mono
     ];
 
-    hardware.ckb-next.enable = true;
+    hardware = {
+        ckb-next.enable = true;
+    };
+    services.hardware =
+    {
+        openrgb.enable = true;
+    };
 
 
     # Enable the OpenSSH daemon.
