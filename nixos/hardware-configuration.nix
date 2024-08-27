@@ -9,14 +9,21 @@
     imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
     boot = {
-        initrd.availableKernelModules = [
-            "xhci_pci"
-            "ahci"
-            "nvme"
-            "usb_storage"
-            "usbhid"
-            "sd_mod"
-        ];
+        initrd =
+        {
+            availableKernelModules = [
+                "xhci_pci"
+                "ahci"
+                "nvme"
+                "usb_storage"
+                "usbhid"
+                "sd_mod"
+            ];
+
+            kernelModules = [
+                "amdgpu"
+            ];
+        };
 
         kernelModules = [
             "kvm-amd"
@@ -90,7 +97,7 @@
     nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
     services = {
-        xserver.videoDrivers = [ "nvidia" ];
+        xserver.videoDrivers = [ "nvidia" "amdgpu" ];
         ddccontrol.enable = true;
     };
 
