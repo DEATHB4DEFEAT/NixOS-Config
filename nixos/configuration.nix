@@ -84,7 +84,6 @@
 
     nixpkgs.config = {
         allowUnfree = true;
-        cudaSupport = true;
         enableParallelBuilding = true;
     };
 
