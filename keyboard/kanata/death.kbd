@@ -1,11 +1,3 @@
-(defcfg
-	process-unmapped-keys		yes
-
-	movemouse-inherit-accel-state	yes
-	movemouse-smooth-diagonals	yes
-)
-
-
 (defvar
 	tap-time	200
 	hold-time	150

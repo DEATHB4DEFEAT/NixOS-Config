@@ -1,0 +1,6 @@
+;;(defcfg
+process-unmapped-keys		yes
+
+movemouse-inherit-accel-state	yes
+movemouse-smooth-diagonals	yes
+;;)

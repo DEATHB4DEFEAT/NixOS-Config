@@ -184,6 +184,15 @@
 
         displayManager.sddm.enable = true;
         desktopManager.plasma6.enable = true;
+
+        kanata = {
+            enable = true;
+            keyboards.default = {
+                config = (builtins.readFile /home/death/.setup/keyboard/kanata/death.kbd);
+                extraDefCfg = (builtins.readFile /home/death/.setup/keyboard/kanata/death-defcfg);
+                devices = [ ];
+            };
+        };
     };
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
         elisa
