@@ -87,7 +87,7 @@
 	_	XX	7	8	9	XX	XX	7	8	9	XX	XX	XX	XX
 	_	0	4	5	6	XX	XX	4	5	6	0	XX	_
 	_	XX	1	2	3	XX	XX	1	2	3	XX	_
-	_	_	_	 	 	_	 	 	_	_	_	_
+	_	_	_	 	 	0	 	 	_	_	_	_
 )
 
 (deflayer	nav

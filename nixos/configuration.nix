@@ -188,6 +188,7 @@
         kanata = {
             enable = true;
             keyboards.default = {
+                #TODO: Hot reloading doesn't work and using includes never works
                 config = (builtins.readFile /home/death/.setup/keyboard/kanata/death.kbd);
                 extraDefCfg = (builtins.readFile /home/death/.setup/keyboard/kanata/death-defcfg);
                 devices = [ ];
