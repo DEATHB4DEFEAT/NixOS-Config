@@ -194,6 +194,12 @@
                 devices = [ ];
             };
         };
+
+        ollama = {
+            enable = true;
+            acceleration = "rocm";
+            rocmOverrideGfx = "11.0.0";
+        };
     };
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
         elisa

@@ -110,6 +110,8 @@
         #     # package = config.boot.kernelPackages.nvidiaPackages.beta;
         # };
 
+        amdgpu.opencl.enable = true;
+
         graphics = {
             enable = true;
             enable32Bit = true;
