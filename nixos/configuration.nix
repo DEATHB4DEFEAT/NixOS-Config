@@ -127,6 +127,7 @@
         neothesia
         element-desktop-wayland
         aseprite-unfree
+        openalSoft
     ];
 
     fonts.packages = with pkgs; [
