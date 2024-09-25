@@ -199,6 +199,9 @@
         ollama = {
             enable = true;
             acceleration = "rocm";
+            # environmentVariables = {
+            #   HSA_OVERRIDE_GFX_VERSION = "11.0.0";
+            # };
             rocmOverrideGfx = "11.0.0";
         };
     };
@@ -280,7 +283,7 @@
         pipewire.serviceConfig = { Nice = -10; };
         pipewire-pulse.serviceConfig = { Nice = -10; };
 
-        # Easyeffects
+        # Easy effects
         easyeffects = {
             description = "Easy Effects";
             after = [ "pipewire-pulse.service" ];
