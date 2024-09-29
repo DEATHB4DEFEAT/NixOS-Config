@@ -318,6 +318,7 @@
     programs = {
         bash.blesh.enable = true;
         thefuck.enable = true;
+        kdeconnect.enable = true;
     };
 
 
