@@ -21,18 +21,31 @@
                     soundfont-fluid
                 ];
             };
-            # gamescopeSession.enable = true;
+            gamescopeSession = {
+                enable = true;
+                args = [
+                    "-W 1920"
+                    "-H 1080"
+                    "-r 60"
+                    "--fullscreen"
+                ];
+            };
             remotePlay.openFirewall = true;
             dedicatedServer.openFirewall = true;
         };
 
-        # gamescope = {
-        # 	enable = true;
-        # 	capSysNice = true;
-        # 	args = [
-        # 		"--expose-wayland"
-        # 	];
-        # };
+        # gamescope -- %command%
+        gamescope = {
+        	enable = true;
+        	capSysNice = true;
+        	args = [
+                "-W 1920"
+                "-H 1080"
+                "-r 60"
+                "--fullscreen"
+        		# "--expose-wayland"
+        	];
+        };
 
         gamemode = {
             enable = true;
