@@ -14,18 +14,10 @@
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-
-        plasma-manager = {
-            url = "github:pjones/plasma-manager";
-            inputs = {
-                nixpkgs.follows = "nixpkgs";
-                home-manager.follows = "home-manager";
-            };
-        };
     };
 
 
-    outputs = { nixpkgs, nix-index-database, home-manager, plasma-manager, ... }:
+    outputs = { nixpkgs, nix-index-database, home-manager, ... }:
         let system = "x86_64-linux";
     in {
         nixosConfigurations = {
@@ -53,8 +45,6 @@
                             backupFileExtension = "bak";
                         };
                     }
-
-                    # plasma-manager.nixosModules.plasma-manager
                 ];
             };
         };
