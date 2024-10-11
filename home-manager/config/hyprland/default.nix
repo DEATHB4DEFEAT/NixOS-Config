@@ -40,6 +40,11 @@
 
             env = PATH=$PATH:$HOME/.setup/home-manager/hyprland/scripts
 
+            # env = HYPRCURSOR_THEME=Sweet-cursors
+            # env = HYPRCURSOR_SIZE=24
+            env = XCURSOR_THEME=Sweet-cursors
+            env = XCURSOR_SIZE=24
+
 
             monitor = HDMI-A-2, 1920x1080@144, 0x0, 1
             monitor = DP-1, 3840x2160@60, 1920x0, 2
