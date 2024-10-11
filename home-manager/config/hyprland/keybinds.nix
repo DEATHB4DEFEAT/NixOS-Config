@@ -5,12 +5,14 @@
                 [
                     "SUPER, F, exec, firefox"
                     "SUPER, RETURN, exec, foot"
+                    "SUPER, E, exec, dolphin"
                     "SUPER, Q, killactive"
                     "SUPER, L, exec, hyprctl dispatch exit"
+                    "SUPER, R, exec, hyprctl reload"
                 ]
                 ++ (
-                    # workspaces
-                    # binds SUPER + [shift +] {1..10} to [move to] workspace {1..10}
+                    # Workspaces
+                    # Binds SUPER + [shift +] {1..10} to [move to] workspace {1..10}
                     builtins.concatLists (
                         builtins.genList (
                             x:
