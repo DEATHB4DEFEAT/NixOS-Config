@@ -128,6 +128,7 @@
         element-desktop-wayland
         aseprite-unfree
         openalSoft
+        heroic
     ];
 
     fonts.packages = with pkgs; [
