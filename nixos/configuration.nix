@@ -129,6 +129,13 @@
         aseprite-unfree
         openalSoft
         heroic
+        bat
+        btop
+        fd
+        eza
+        ripgrep
+        zoxide
+        # fcp
     ];
 
     fonts.packages = with pkgs; [
@@ -318,7 +325,6 @@
 
     programs = {
         bash.blesh.enable = true;
-        thefuck.enable = true;
         kdeconnect.enable = true;
     };
 

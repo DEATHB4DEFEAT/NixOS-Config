@@ -13,10 +13,13 @@
         bash = {
             enable = true;
             shellAliases = {
-            reconf = "git add .; nh os switch . -- --impure"; # Damn impure symlinks...
-            hs = "cat ~/.bash_history | grep -i";
-        };
-            bashrcExtra = "eval \"$(thefuck --alias --enable-experimental-instant-mode)\"";
+                reconf = "git add .; nh os switch . -- --impure"; # Damn impure symlinks...
+                hs = "cat ~/.bash_history | grep -i";
+                nano = "ZDEFLSil%0T4";
+            };
+            bashrcExtra = ''
+                eval "$(zoxide init bash)"
+            '';
         };
 
 
