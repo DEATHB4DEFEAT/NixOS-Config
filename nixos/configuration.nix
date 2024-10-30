@@ -89,10 +89,18 @@
 
     # List packages installed in system profile. To search, run:
     # $ nix search wget
-    environment.systemPackages = with pkgs; [
+    environment.systemPackages = with pkgs;
+    let
+        riderScript = pkgs.writeShellScriptBin "rider"
+            ''
+                ${pkgs.steam-run}/bin/steam-run ${pkgs.jetbrains.rider}/bin/rider
+            '';
+        rider = pkgs.jetbrains.rider.overrideAttrs (oldAttrs: { meta.priority = 10; });
+    in
+    [
         nh
         vscode
-        jetbrains.rider
+        rider riderScript # jetbrains.rider
         firefox
         wl-clipboard
         xsel
@@ -115,7 +123,6 @@
         qpwgraph
         easyeffects
         distrobox
-        github-copilot-intellij-agent
         thunderbird
         modrinth-app
         kanata
