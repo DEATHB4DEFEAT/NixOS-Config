@@ -136,6 +136,7 @@
         ripgrep
         zoxide
         # fcp
+        sqlitebrowser
     ];
 
     fonts.packages = with pkgs; [

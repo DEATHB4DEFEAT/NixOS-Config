@@ -15,7 +15,7 @@
             shellAliases = {
                 reconf = "git add .; nh os switch . -- --impure"; # Damn impure symlinks...
                 hs = "cat ~/.bash_history | grep -i";
-                nano = "ZDEFLSil%0T4";
+                nano = "nano -ZDEFLSil%0T4";
             };
             bashrcExtra = ''
                 eval "$(zoxide init bash)"

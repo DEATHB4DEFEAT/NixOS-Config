@@ -5,8 +5,6 @@
 }:
 
 {
-    hardware.steam-hardware.enable = true;
-
     programs = lib.mkDefault {
         steam = {
             enable = true;
@@ -30,8 +28,10 @@
                     "--fullscreen"
                 ];
             };
+
             remotePlay.openFirewall = true;
             dedicatedServer.openFirewall = true;
+            localNetworkGameTransfers.openFirewall = true;
         };
 
         # gamescope -- %command%
@@ -59,6 +59,8 @@
 
         dconf.enable = true;
     };
+
+    hardware.steam-hardware.enable = true;
 
 
     environment.systemPackages = with pkgs; [
