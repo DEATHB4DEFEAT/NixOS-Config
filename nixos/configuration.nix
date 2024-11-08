@@ -144,6 +144,7 @@
         zoxide
         # fcp
         sqlitebrowser
+        piper-tts
     ];
 
     fonts.packages = with pkgs; [
