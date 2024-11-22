@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 {
     pkgs,
     lib,
@@ -21,7 +17,6 @@
     ];
 
 
-    # Bootloader.
     systemd.enableEmergencyMode = false; # Causes issues when fstab fails to mount anything, annoying
     boot = {
         loader = {
@@ -87,8 +82,6 @@
         enableParallelBuilding = true;
     };
 
-    # List packages installed in system profile. To search, run:
-    # $ nix search wget
     environment.systemPackages = with pkgs;
     let
         riderScript = pkgs.writeShellScriptBin "rider"
