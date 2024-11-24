@@ -65,7 +65,7 @@
 
     environment.systemPackages = with pkgs; [
         fluidsynth
-        steamPackages.steamcmd
+        steamcmd
         steam-tui
         gamescope
         bubblewrap
