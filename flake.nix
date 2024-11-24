@@ -14,19 +14,25 @@
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+
+
+        nix-minecraft = {
+            url = "github:Infinidoge/nix-minecraft";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
 
-    outputs = { nixpkgs, nix-index-database, home-manager, ... }:
+    outputs = inputs:
         let system = "x86_64-linux";
     in {
         nixosConfigurations = {
-            DTLinix = nixpkgs.lib.nixosSystem {
+            DTLinix = inputs.nixpkgs.lib.nixosSystem {
                 inherit system;
                 modules = [
                     ./nixos/configuration.nix
 
-                    nix-index-database.nixosModules.nix-index
+                    inputs.nix-index-database.nixosModules.nix-index
                     {
                         programs = {
                             nix-index-database.comma.enable = true;
@@ -35,7 +41,7 @@
                     }
 
 
-                    home-manager.nixosModules.home-manager
+                    inputs.home-manager.nixosModules.home-manager
                     {
                         home-manager = {
                             useUserPackages = true;
@@ -44,6 +50,14 @@
                             # users.test = ./home-manager/users/test.nix;
                             backupFileExtension = "bak";
                         };
+                    }
+
+
+                    inputs.nix-minecraft.nixosModules.minecraft-servers
+                    {
+                        nixpkgs.overlays = [
+                            inputs.nix-minecraft.overlay
+                        ];
                     }
                 ];
             };

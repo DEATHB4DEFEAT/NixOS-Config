@@ -77,9 +77,11 @@
     };
 
 
-    nixpkgs.config = {
-        allowUnfree = true;
-        enableParallelBuilding = true;
+    nixpkgs = {
+        config = {
+            allowUnfree = true;
+            enableParallelBuilding = true;
+        };
     };
 
     environment.systemPackages = with pkgs;
@@ -117,7 +119,7 @@
         easyeffects
         distrobox
         thunderbird
-        modrinth-app
+        prismlauncher
         kanata
         qemu
         handbrake
@@ -149,6 +151,33 @@
     ];
 
     hardware.ckb-next.enable = true;
+
+
+    services.minecraft-servers = {
+        enable = true;
+        eula = true;
+        user = "root";
+        group = "root";
+        servers = {
+            tests = {
+                enable = true;
+                autoStart = false;
+                package = pkgs.fabricServers.fabric-1_20_1;
+                jvmOpts = "-Xms6144M -Xmx8192M";
+                serverProperties = {
+                    server-port = 25566;
+                    difficulty = "hard";
+                    gamemode = "survival";
+                    max-players = 8;
+                    view-distance = 24;
+                    simulation-distance = 16;
+                    motd = "New Origins";
+                    allow-flight = true;
+                    online-mode = false;
+                };
+            };
+        };
+    };
 
 
     # Enable the OpenSSH daemon.
