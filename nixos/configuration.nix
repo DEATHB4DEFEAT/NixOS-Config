@@ -162,6 +162,7 @@
             tests = {
                 enable = true;
                 autoStart = false;
+                openFirewall = true;
                 package = pkgs.fabricServers.fabric-1_20_1;
                 jvmOpts = "-Xms6144M -Xmx8192M";
                 serverProperties = {
