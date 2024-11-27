@@ -20,6 +20,8 @@
             bashrcExtra = ''
                 eval "$(zoxide init bash)"
             '';
+            historyFileSize = 2147483647;
+            historySize = 2147483647;
         };
 
 
