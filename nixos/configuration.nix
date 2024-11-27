@@ -91,11 +91,12 @@
                 ${pkgs.steam-run}/bin/steam-run ${pkgs.jetbrains.rider}/bin/rider
             '';
         rider = pkgs.jetbrains.rider.overrideAttrs (oldAttrs: { meta.priority = 10; });
+        tetrio = tetrio-desktop.overrideAttrs (oldAttrs: { withTetrioPlus = tetrio-plus; });
     in
     [
         nh
         vscode
-        rider riderScript # jetbrains.rider
+        rider riderScript
         firefox
         wl-clipboard
         xsel
@@ -140,6 +141,7 @@
         # fcp
         sqlitebrowser
         piper-tts
+        tetrio
     ];
 
     fonts.packages = with pkgs; [
