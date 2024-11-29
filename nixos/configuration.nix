@@ -86,12 +86,11 @@
 
     environment.systemPackages = with pkgs;
     let
-        riderScript = pkgs.writeShellScriptBin "rider"
-            ''
-                ${pkgs.steam-run}/bin/steam-run ${pkgs.jetbrains.rider}/bin/rider
-            '';
+        riderScript = pkgs.writeShellScriptBin "rider" "${pkgs.steam-run}/bin/steam-run ${pkgs.jetbrains.rider}/bin/rider";
         rider = pkgs.jetbrains.rider.overrideAttrs (oldAttrs: { meta.priority = 10; });
         tetrio = tetrio-desktop.overrideAttrs (oldAttrs: { withTetrioPlus = tetrio-plus; });
+        rustdeskScript = pkgs.writeShellScriptBin "rustdesk" "WAYLAND_DISPLAY=\"\" ${pkgs.rustdesk}/bin/rustdesk";
+        rustdesk = pkgs.rustdesk.overrideAttrs (oldAttrs: { meta.priority = 10; });
     in
     [
         nh
@@ -142,7 +141,7 @@
         sqlitebrowser
         piper-tts
         tetrio
-        rustdesk
+        rustdesk rustdeskScript
     ];
 
     fonts.packages = with pkgs; [
