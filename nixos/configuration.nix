@@ -142,6 +142,7 @@
         sqlitebrowser
         piper-tts
         tetrio
+        rustdesk
     ];
 
     fonts.packages = with pkgs; [
