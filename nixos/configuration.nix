@@ -142,6 +142,11 @@
         piper-tts
         tetrio
         rustdesk rustdeskScript
+        inkscape-with-extensions
+        inkscape-extensions.hexmap
+        gimp-with-plugins
+        gimpPlugins.bimp
+        gimpPlugins.texturize
     ];
 
     fonts.packages = with pkgs; [
