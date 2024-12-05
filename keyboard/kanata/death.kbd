@@ -15,12 +15,49 @@
 )
 
 (defalias
+	0	0
+	1	1
+	2	2
+	3	3
+	4	4
+	5	5
+	6	6
+	7	7
+	8	8
+	9	9
+
+
 	lybase	(layer-switch		base)
+	lyspec	(layer-while-held	specl)
+	luspec	(layer-while-held 	specu)
 	lynum	(layer-switch		num)
 	lynav	(layer-switch		nav)
 	lynavf	(layer-while-held	navfast)
 	lynavs	(layer-while-held	navscroll)
 	lynavp	(layer-while-held	navscrollfast)
+
+
+	;; The unicode function didn't work, so here's this nonsense
+	eacute	(macro	C-S-A-i k @9 enter	) ;; é ue9
+	Eacute	(macro	C-S-A-i c @9 enter	) ;; É uc9
+	thorn	(macro	C-S-A-i u k enter	) ;; þ ufe
+	THORN	(macro	C-S-A-i a k enter	) ;; Þ ude
+	yen	(macro	C-S-A-i j @5 enter	) ;; ¥ ua5
+	ster	(macro	C-S-A-i j @3 enter	) ;; £ ua3
+	udiar	(macro	C-S-A-i u c enter	) ;; ü ufc
+	Udiar	(macro	C-S-A-i a c enter	) ;; Ü udc
+	iacute	(macro	C-S-A-i k a enter	) ;; í ued
+	Iacute	(macro	C-S-A-i c a enter	) ;; Í ucd
+	oacute	(macro	C-S-A-i u @3 enter	) ;; ó uf3
+	Oacute	(macro	C-S-A-i a @3 enter	) ;; Ó ud3
+	aacute	(macro	C-S-A-i k @1 enter	) ;; á ue1
+	Aacute	(macro	C-S-A-i c @1 enter	) ;; Á uc1
+	sectn	(macro	C-S-A-i j @7 enter	) ;; § ua7
+	eszett	(macro	C-S-A-i a u enter	) ;; ß udf
+	multx	(macro	C-S-A-i a @7 enter	) ;; × ud7
+	;;
+	ntilde	(macro	C-S-A-i u @1 enter	) ;; ñ uf1
+	Ntilde	(macro	C-S-A-i a @1 enter	) ;; Ñ ud1
 
 
 	mmu	(movemouse-up		$mov-int	$mov-dist)
@@ -77,6 +114,28 @@
 	;; _	@a	@s	@d	@f	_	_	@j	@k	@l	@;	_	_
 	_	_	_	_	_	_	_	_	_	_	_	_	_
 	_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	 	 	_	 	 	rpt	@lyspec	_	_
+)
+
+(deflayer	specl
+	;;? G-Keys	1	2	3	4	5			6
+		_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	@eacute	_	@thorn	@yen	@udiar	@iacute	@oacute	_	_	_	_
+	_	@aacute	@sectn	_	_	_	_	_	_	_	_	_	_
+	@luspec	_	@multx	_	_	_	@ntilde	_	_	_	_	@luspec
+	_	_	_	 	 	_	 	 	_	_	_	_
+)
+
+(deflayer specu
+	;;? G-Keys	1	2	3	4	5			6
+		_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	_	_	_	_	_	_	_	_	_	_	_
+	_	_	_	@Eacute	_	@THORN	_	@Udiar	@Iacute	@Oacute	_	_	_	_
+	_	@Aacute	@eszett	_	_	_	_	_	_	_	_	_	_
+	_	_	_	_	_	_	@Ntilde	_	_	_	_	_
 	_	_	_	 	 	_	 	 	_	_	_	_
 )
 
