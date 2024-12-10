@@ -8,7 +8,6 @@
         stateVersion = "23.11";
 
         packages = with pkgs; [
-            nixd
             vesktop
             termius
             youtube-music

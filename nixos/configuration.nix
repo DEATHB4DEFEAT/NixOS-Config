@@ -147,6 +147,7 @@
         gimp-with-plugins
         gimpPlugins.bimp
         gimpPlugins.texturize
+        nixd
     ];
 
     fonts.packages = with pkgs; [
