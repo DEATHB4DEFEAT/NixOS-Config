@@ -166,26 +166,86 @@
         eula = true;
         user = "root";
         group = "root";
-        servers = {
-            tests = {
-                enable = true;
-                autoStart = false;
-                openFirewall = true;
-                package = pkgs.fabricServers.fabric-1_20_1;
-                jvmOpts = "-Xms6144M -Xmx8192M";
-                serverProperties = {
-                    server-port = 25566;
-                    difficulty = "hard";
-                    gamemode = "survival";
-                    max-players = 8;
-                    view-distance = 24;
-                    simulation-distance = 16;
-                    motd = "New Origins";
-                    allow-flight = true;
-                    online-mode = false;
+        servers =
+            let copyFiles = from: to: (let
+                evalDir = (
+                    prefix: to: dir: (
+                        lib.mapAttrsToList
+                        (
+                            path: type: (
+                                let
+                                    diffPath = builtins.replaceStrings ["${prefix}"] [""] "${dir}";
+                                    diffPathRemovedDep = builtins.unsafeDiscardStringContext diffPath;
+                                in (
+                                    if (type == "directory")
+                                    then (evalDir prefix to "${prefix}${diffPath}/${path}")
+                                    else {
+                                        "${to}${diffPathRemovedDep}/${path}" = "${prefix}${diffPath}/${path}";
+                                    }
+                                )
+                            )
+                        )
+                        (builtins.readDir dir)
+                    )
+                );
+                in (
+                    lib.mergeAttrsList (lib.flatten (evalDir from to from))
+                )
+            );
+            in {
+                tests = {
+                    enable = true;
+                    autoStart = false;
+                    openFirewall = true;
+                    package = pkgs.fabricServers.fabric-1_20_1;
+                    jvmOpts = "-Xms6144M -Xmx8192M";
+                    serverProperties = {
+                        server-port = 25566;
+                        difficulty = "hard";
+                        gamemode = "survival";
+                        max-players = 8;
+                        view-distance = 24;
+                        simulation-distance = 16;
+                        motd = "New Origins";
+                        allow-flight = true;
+                        online-mode = false;
+                    };
+                };
+
+                aged =
+                    let modpack = pkgs.fetchModrinthModpack {
+                        # url = "https://cdn.modrinth.com/data/i4XHCd7Q/versions/7BgHWBWr/Aged.mrpack";
+                        # hash = "2ngz4lm4fdnxhzqr7hxa3989a23x7dgmng9ybjzas39c76h9mcq42hw7bks0dxpvz40i9mg28fnnkiswlcvwbk2hx6qb14wk1x2v4nz";
+                        mrpackFile = ./Aged.mrpack;
+                        removeProjectIDs = [
+                            "uXXizFIs"
+                            "uCdwusMi"
+                        ];
+                    };
+                in {
+                    enable = true;
+                    autoStart = false;
+                    openFirewall = true;
+                    package = pkgs.fabricServers.fabric-1_20_1;
+                    jvmOpts = "-Xms6144M -Xmx8192M";
+                    serverProperties = {
+                        server-port = 25567;
+                        difficulty = "hard";
+                        gamemode = "survival";
+                        max-players = 8;
+                        view-distance = 24;
+                        simulation-distance = 16;
+                        motd = "Aged";
+                        allow-flight = true;
+                        online-mode = false;
+                    };
+                    symlinks = {
+                        mods = "${modpack}/mods";
+                    };
+                    files = (copyFiles "${modpack}/config" "config");
+                    #     // (copyFiles "${modpack}/mods" "mods");
                 };
             };
-        };
     };
 
 
