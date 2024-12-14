@@ -57,6 +57,7 @@
                     {
                         nixpkgs.overlays = [
                             inputs.nix-minecraft.overlay
+                            (_: pkgs: (import ./pkgs {inherit pkgs;}))
                         ];
                     }
                 ];
