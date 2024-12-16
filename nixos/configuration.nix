@@ -245,6 +245,36 @@
                     files = (copyFiles "${modpack}/config" "config");
                     #     // (copyFiles "${modpack}/mods" "mods");
                 };
+
+                # stoneblock3 =
+                #     let modpack = pkgs.fetchModrinthModpack {
+                #         mrpackFile = ./StoneBlock3.mrpack;
+                #     };
+                # in {
+                #     enable = true;
+                #     autoStart = false;
+                #     openFirewall = true;
+                #     package = pkgs.forgeServers.forge-1_18_2.override {
+                #         loaderVersion = "40.2.14";
+                #         jre_headless = pkgs.jdk17;
+                #     };
+                #     jvmOpts = "-Xms6144M -Xmx8192M";
+                #     serverProperties = {
+                #         server-port = 25568;
+                #         difficulty = "hard";
+                #         gamemode = "survival";
+                #         max-players = 8;
+                #         view-distance = 24;
+                #         simulation-distance = 16;
+                #         motd = "StoneBlock 3";
+                #         allow-flight = true;
+                #         online-mode = false;
+                #     };
+                #     symlinks = {
+                #         mods = "${modpack}/mods";
+                #     };
+                #     files = (copyFiles "${modpack}/config" "config");
+                # };
             };
     };
 
