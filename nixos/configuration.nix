@@ -129,7 +129,6 @@
         neothesia
         element-desktop-wayland
         aseprite-unfree
-        openalSoft
         heroic
         bat
         btop
@@ -425,7 +424,7 @@
         easyeffects = {
             description = "Easy Effects";
             after = [ "pipewire-pulse.service" ];
-            wantedBy = [ "default.target" ];
+            wantedBy = [ "graphical-session.target" ];
 
             serviceConfig = {
                 ExecStart = "${pkgs.easyeffects}/bin/easyeffects --gapplication-service";
