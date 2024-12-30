@@ -9,7 +9,6 @@
 
         packages = with pkgs; [
             vesktop
-            termius
             youtube-music
             freetube
         ];

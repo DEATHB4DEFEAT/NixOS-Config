@@ -91,6 +91,8 @@
         tetrio = tetrio-desktop.overrideAttrs (oldAttrs: { withTetrioPlus = tetrio-plus; });
         rustdeskScript = pkgs.writeShellScriptBin "rustdesk" "WAYLAND_DISPLAY=\"\" ${pkgs.rustdesk}/bin/rustdesk";
         rustdesk = pkgs.rustdesk.overrideAttrs (oldAttrs: { meta.priority = 10; });
+        termiusScript = pkgs.writeShellScriptBin "termius-app" "LD_LIBRARY_PATH=\"${pkgs.lib.makeLibraryPath [ pkgs.libglvnd ]}\" ${pkgs.termius}/bin/termius-app";
+        termius = pkgs.termius.overrideAttrs (oldAttrs: { meta.priority = 10; });
     in
     [
         nh
@@ -147,6 +149,7 @@
         gimpPlugins.bimp
         gimpPlugins.texturize
         nixd
+        termius termiusScript
     ];
 
     fonts.packages = with pkgs; [
