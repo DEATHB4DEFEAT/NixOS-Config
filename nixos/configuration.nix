@@ -129,7 +129,7 @@
         appimage-run
         linthesia
         neothesia
-        element-desktop-wayland
+        element-desktop
         aseprite-unfree
         heroic
         bat
@@ -145,11 +145,10 @@
         rustdesk rustdeskScript
         inkscape-with-extensions
         inkscape-extensions.hexmap
-        gimp-with-plugins
-        gimpPlugins.bimp
-        gimpPlugins.texturize
+        gimp
         nixd
         termius termiusScript
+        desktop-file-utils
     ];
 
     fonts.packages = with pkgs; [
@@ -365,7 +364,6 @@
     };
 
 
-    hardware.pulseaudio.enable = lib.mkForce false;
     services.pipewire = {
         enable = true;
         alsa.enable = true;
