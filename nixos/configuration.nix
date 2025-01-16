@@ -32,7 +32,12 @@
     };
 
 
-    networking.hostName = "DTLinix"; # Define your hostname.
+    networking = {
+        hostName = "DTLinix";
+        hosts = {
+            "10.0.0.85" = [ "jellyfin.simplemodbot.tk" ];
+        };
+    };
     # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
     # Configure network proxy if necessary
@@ -149,6 +154,8 @@
         nixd
         termius termiusScript
         desktop-file-utils
+        qmk
+        via
     ];
 
     fonts.packages = with pkgs; [
@@ -343,6 +350,11 @@
             # };
             rocmOverrideGfx = "11.0.0";
         };
+
+        udev.packages = with pkgs; [
+            qmk-udev-rules
+            via
+        ];
     };
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
         elisa
