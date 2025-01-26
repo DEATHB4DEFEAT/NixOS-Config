@@ -156,6 +156,8 @@
         desktop-file-utils
         qmk
         via
+        nix-prefetch-github
+        death.godot_4_4-beta1
     ];
 
     fonts.packages = with pkgs; [
