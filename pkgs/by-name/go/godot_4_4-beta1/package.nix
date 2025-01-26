@@ -207,6 +207,7 @@ let
         runHook preInstall
 
         mkdir -p "$out/bin"
+        cp bin/godot.* $out/bin/godot${suffix}
         cp bin/godot.* $out/bin/godot4${suffix}
 
         installManPage misc/dist/linux/godot.6
