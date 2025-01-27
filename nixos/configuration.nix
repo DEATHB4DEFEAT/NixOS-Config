@@ -87,6 +87,10 @@
             allowUnfree = true;
             enableParallelBuilding = true;
         };
+
+        config.permittedInsecurePackages = [
+            "freeimage-unstable-2021-11-01"
+        ];
     };
 
     environment.systemPackages = with pkgs;
@@ -158,6 +162,8 @@
         via
         nix-prefetch-github
         death.godot_4_4-beta1
+        trenchbroom
+        death.robust-lsp
     ];
 
     fonts.packages = with pkgs; [
@@ -222,39 +228,39 @@
                     };
                 };
 
-                aged =
-                    let modpack = pkgs.fetchModrinthModpack {
-                        # url = "https://cdn.modrinth.com/data/i4XHCd7Q/versions/7BgHWBWr/Aged.mrpack";
-                        # hash = "2ngz4lm4fdnxhzqr7hxa3989a23x7dgmng9ybjzas39c76h9mcq42hw7bks0dxpvz40i9mg28fnnkiswlcvwbk2hx6qb14wk1x2v4nz";
-                        mrpackFile = ./Aged.mrpack;
-                        removeProjectIDs = [
-                            "uXXizFIs"
-                            "uCdwusMi"
-                        ];
-                    };
-                in {
-                    enable = true;
-                    autoStart = false;
-                    openFirewall = true;
-                    package = pkgs.fabricServers.fabric-1_20_1;
-                    jvmOpts = "-Xms6144M -Xmx8192M";
-                    serverProperties = {
-                        server-port = 25567;
-                        difficulty = "hard";
-                        gamemode = "survival";
-                        max-players = 8;
-                        view-distance = 24;
-                        simulation-distance = 16;
-                        motd = "Aged";
-                        allow-flight = true;
-                        online-mode = false;
-                    };
-                    symlinks = {
-                        mods = "${modpack}/mods";
-                    };
-                    files = (copyFiles "${modpack}/config" "config");
-                    #     // (copyFiles "${modpack}/mods" "mods");
-                };
+                # aged =
+                #     let modpack = pkgs.fetchModrinthModpack {
+                #         # url = "https://cdn.modrinth.com/data/i4XHCd7Q/versions/7BgHWBWr/Aged.mrpack";
+                #         # hash = "2ngz4lm4fdnxhzqr7hxa3989a23x7dgmng9ybjzas39c76h9mcq42hw7bks0dxpvz40i9mg28fnnkiswlcvwbk2hx6qb14wk1x2v4nz";
+                #         mrpackFile = ./Aged.mrpack;
+                #         removeProjectIDs = [
+                #             "uXXizFIs"
+                #             "uCdwusMi"
+                #         ];
+                #     };
+                # in {
+                #     enable = true;
+                #     autoStart = false;
+                #     openFirewall = true;
+                #     package = pkgs.fabricServers.fabric-1_20_1;
+                #     jvmOpts = "-Xms6144M -Xmx8192M";
+                #     serverProperties = {
+                #         server-port = 25567;
+                #         difficulty = "hard";
+                #         gamemode = "survival";
+                #         max-players = 8;
+                #         view-distance = 24;
+                #         simulation-distance = 16;
+                #         motd = "Aged";
+                #         allow-flight = true;
+                #         online-mode = false;
+                #     };
+                #     symlinks = {
+                #         mods = "${modpack}/mods";
+                #     };
+                #     files = (copyFiles "${modpack}/config" "config");
+                #     #     // (copyFiles "${modpack}/mods" "mods");
+                # };
 
                 # stoneblock3 =
                 #     let modpack = pkgs.fetchModrinthModpack {
@@ -365,6 +371,7 @@
     programs.hyprland.enable = true;
     environment.sessionVariables = {
         NIXOS_OZONE_WL = "1";
+        LSP_SERVER_PATH = "${pkgs.death.robust-lsp}/bin/robust-lsp";
     };
 
 
