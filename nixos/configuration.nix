@@ -164,6 +164,7 @@
         death.godot_4_4-beta1
         trenchbroom
         death.robust-lsp
+        blockbench
     ];
 
     fonts.packages = with pkgs; [
