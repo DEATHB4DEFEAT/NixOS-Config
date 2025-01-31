@@ -373,6 +373,7 @@
     environment.sessionVariables = {
         NIXOS_OZONE_WL = "1";
         LSP_SERVER_PATH = "${pkgs.death.robust-lsp}/bin/robust-lsp";
+        GSETTINGS_SCHEMA_DIR="${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}/glib-2.0/schemas";
     };
 
 
