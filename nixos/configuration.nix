@@ -165,6 +165,7 @@
         trenchbroom
         death.robust-lsp
         blockbench
+        kdePackages.yakuake
     ];
 
     fonts.packages = with pkgs; [
