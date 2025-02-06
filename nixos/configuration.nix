@@ -375,6 +375,7 @@
         NIXOS_OZONE_WL = "1";
         LSP_SERVER_PATH = "${pkgs.death.robust-lsp}/bin/robust-lsp";
         GSETTINGS_SCHEMA_DIR="${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}/glib-2.0/schemas";
+        PULSE_LATENCY_MSEC = "30";
     };
 
 
@@ -395,50 +396,6 @@
         pulse.enable = true;
         jack.enable = true;
         wireplumber.enable = true;
-
-        extraConfig = {
-            pipewire.context.properties.default = {
-                clock.rate = 48000;
-                clock.allowed-rates = [ 48000 ];
-                clock.min-quantum = 32;
-                clock.quantum = 1024;
-                clock.max-quantum = 2048;
-            };
-
-            pipewire-pulse = {
-                context.modules = [
-                    {
-                        name = "libpipewire-module-protocol-pulse";
-                        args = {
-                            pulse = {
-                                min = {
-                                    req = "32/48000";
-                                    quantum = "32/48000";
-                                    frag = "32/48000";
-                                };
-
-                                default = {
-                                    req = "1024/48000";
-                                    quantum = "1024/48000";
-                                    frag = "1024/48000";
-                                };
-
-                                max = {
-                                    req = "2048/48000";
-                                    quantum = "2048/48000";
-                                    frag = "2048/48000";
-                                };
-                            };
-                        };
-                    }
-                ];
-
-                stream.properties = {
-                    node.latency = "1024/48000";
-                    resample.quality = 1;
-                };
-            };
-        };
     };
 
     systemd.user.services = {
