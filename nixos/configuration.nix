@@ -10,7 +10,7 @@
 
         ./hardware-configuration.nix
 
-        ./podman.nix
+        # ./podman.nix
         ./steam.nix
 
         # ./ascii-workaround.nix
@@ -365,6 +365,10 @@
             qmk-udev-rules
             via
         ];
+
+        journald = {
+            extraConfig = "SystemMaxUse=100M";
+        };
     };
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
         elisa
@@ -461,5 +465,8 @@
         #         echo "Done - you should never see this"
         #     '';
         # };
+
+        kanata-default = { wantedBy = lib.mkForce [ "graphical-session.target" ]; };
+        ollama = { wantedBy = lib.mkForce [ "graphical-session.target" ]; };
     };
 }
