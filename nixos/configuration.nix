@@ -128,7 +128,6 @@
         manix
         qpwgraph
         easyeffects
-        distrobox
         thunderbird
         prismlauncher
         kanata
