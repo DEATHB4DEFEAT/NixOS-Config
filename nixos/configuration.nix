@@ -166,6 +166,7 @@
         death.robust-lsp
         blockbench
         kdePackages.yakuake
+        death.hints
     ];
 
     fonts.packages = with pkgs; [
