@@ -26,8 +26,8 @@ python3Packages.buildPythonPackage {
     src = pkgs.fetchFromGitHub {
         owner = "AlfredoSequeida";
         repo = "hints";
-        rev = "834e0c0d013ec6eb6b2a179243a9711c3824ea69";
-        sha256 = "sha256-mTPClVtkW04kG0q4jYiQXaNJew7HSYBjjhNfZ1cxiyo=";
+        rev = "6dd72ae5444002c3fa35d54a7a3c55db4de1cdab";
+        sha256 = "sha256-pWP8XVrFpzZ3xhLvsrerOyBMX0qx6v4DWahXTahqUZY=";
     };
 
     nativeBuildInputs = [
@@ -64,9 +64,9 @@ python3Packages.buildPythonPackage {
         pyscreenshot
     ];
 
-    patches = [
-        ./log.patch
-    ];
+    # patches = [
+    #     ./log.patch
+    # ];
 
     meta = {
         description = "Hints lets you navigate GUI applications in Linux without your mouse by displaying \"hints\" you can type on your keyboard to interact with GUI elements.";

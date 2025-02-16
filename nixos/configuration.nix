@@ -166,6 +166,7 @@
         blockbench
         kdePackages.yakuake
         death.hints
+        ydotool
     ];
 
     fonts.packages = with pkgs; [
@@ -380,6 +381,13 @@
         LSP_SERVER_PATH = "${pkgs.death.robust-lsp}/bin/robust-lsp";
         GSETTINGS_SCHEMA_DIR="${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}/glib-2.0/schemas";
         PULSE_LATENCY_MSEC = "30";
+
+        ACCESSIBILITY_ENABLED = "1";
+        GTK_MODULES = "gail:atk-bridge";
+        OOO_FORCE_DESKTOP = "gnome";
+        GNOME_ACCESSIBILITY = "1";
+        QT_ACCESSIBILITY = "1";
+        QT_LINUX_ACCESSIBILITY_ALWAYS_ON = "1";
     };
 
 
