@@ -1,1 +1,1 @@
-git diff hints/hint.py hints/hints.py > pkgs/by-name/hi/hints/log.patch
+git diff --output=./pkgs/by-name/hi/hints/log.patch --no-index ./hints/hint.py ./hints/hints.py
