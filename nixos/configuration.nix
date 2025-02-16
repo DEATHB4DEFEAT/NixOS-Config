@@ -166,7 +166,6 @@
         blockbench
         kdePackages.yakuake
         death.hints
-        ydotool
     ];
 
     fonts.packages = with pkgs; [
@@ -449,6 +448,7 @@
     programs = {
         bash.blesh.enable = true;
         kdeconnect.enable = true;
+        ydotool.enable = true;
     };
 
 
