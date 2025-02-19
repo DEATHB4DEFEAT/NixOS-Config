@@ -19,6 +19,9 @@
                     soundfont-fluid
                 ];
             };
+            extraCompatPackages = with pkgs; [
+                proton-ge-bin
+            ];
             gamescopeSession = {
                 enable = true;
                 args = [
@@ -72,8 +75,6 @@
     ];
 
     environment.sessionVariables = {
-        # Steam needs this to find Proton-GE
-        STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
         STEAM_FORCE_DESKTOPUI_SCALING = "2";
         LD_LIBRARY_PATH = [ "${pkgs.lib.makeLibraryPath [ pkgs.libunwind pkgs.pipewire pkgs.openal ]}" ];
     };
