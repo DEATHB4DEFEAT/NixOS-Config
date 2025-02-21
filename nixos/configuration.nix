@@ -416,7 +416,7 @@
         easyeffects = {
             description = "Easy Effects";
             after = [ "pipewire-pulse.service" ];
-            wantedBy = [ "graphical-session.target" ];
+            wantedBy = [ "graphical.target" ];
 
             serviceConfig = {
                 ExecStart = "${pkgs.easyeffects}/bin/easyeffects --gapplication-service";
@@ -472,7 +472,7 @@
         #     '';
         # };
 
-        kanata-default = { wantedBy = lib.mkForce [ "graphical-session.target" ]; };
-        ollama = { wantedBy = lib.mkForce [ "graphical-session.target" ]; };
+        kanata-default = { wantedBy = lib.mkForce [ "graphical.target" ]; };
+        ollama = { wantedBy = lib.mkForce [ "graphical.target" ]; };
     };
 }
