@@ -341,15 +341,22 @@
         displayManager.sddm.enable = true;
         desktopManager.plasma6.enable = true;
 
-        kanata = {
-            enable = true;
-            keyboards.default = {
-                #TODO: Hot reloading doesn't work and using includes never works
-                config = (builtins.readFile /home/death/.setup/keyboard/kanata/death.kbd);
-                extraDefCfg = (builtins.readFile /home/death/.setup/keyboard/kanata/death-defcfg);
-                devices = [ ];
+        kanata =
+            let
+                zippy = builtins.path {
+                    path = ../keyboard/kanata/zippy.txt;
+                    name = "zippy.txt";
+                };
+            in{
+                enable = true;
+                package = pkgs.kanata;
+                keyboards.default = {
+                    #TODO: Hot reloading doesn't work, nor do includes
+                    config = (builtins.replaceStrings ["zippy.txt"] ["${(builtins.replaceStrings ["/nix/store/"] [""] zippy)}"] (builtins.readFile ../keyboard/kanata/death.kbd));
+                    extraDefCfg = (builtins.readFile ../keyboard/kanata/death-defcfg);
+                    devices = [ ];
+                };
             };
-        };
 
         ollama = {
             enable = true;

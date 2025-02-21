@@ -12,6 +12,32 @@
 	scr-dist	120
 	scr-intf	50
 	scr-distf	240
+
+	zippypath	zippy.txt
+)
+
+(defzippy
+	$zippypath
+	on-first-press-chord-deadline	500
+	idle-reactivate-time		500
+	smart-space-punctuation (? ! . , ; :)
+	output-character-mappings (
+		;; This should work for US international.
+		! S-1
+		? S-/
+		% S-5
+		"(" S-9
+		")" S-0
+		: S-;
+		< S-,
+		> S-.
+		r#"""# S-'
+		| S-\
+		_ S--
+		® AG-r
+		’ (no-erase `)
+		é (single-output ' e)
+	)
 )
 
 (defalias
