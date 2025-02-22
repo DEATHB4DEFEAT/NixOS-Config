@@ -12,15 +12,14 @@
 	scr-dist	120
 	scr-intf	50
 	scr-distf	240
-
-	zippypath	zippy.txt
 )
 
 (defzippy
-	$zippypath
+	zippy.txt
 	on-first-press-chord-deadline	500
 	idle-reactivate-time		500
-	smart-space-punctuation (? ! . , ; :)
+	smart-space			full
+	smart-space-punctuation		(? ! . , ; :)
 	output-character-mappings (
 		;; This should work for US international.
 		! S-1

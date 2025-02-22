@@ -1,7 +1,0 @@
-dy	day
-dy 1	Monday
-dy 2	Tuesday
- abc	alphabet
- w  a	Washington
-gi	git
-gi f p	git fetch -p
