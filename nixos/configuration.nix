@@ -435,12 +435,6 @@
         enable = true;
     };
 
-    xdg.portal = {
-        enable = true;
-        extraPortals = with pkgs; [ kdePackages.xdg-desktop-portal-kde xdg-desktop-portal-gtk ];
-        xdgOpenUsePortal = true;
-    };
-
     programs = {
         bash.blesh.enable = true;
         kdeconnect.enable = true;
