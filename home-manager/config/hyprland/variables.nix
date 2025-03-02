@@ -7,7 +7,7 @@
             "custom"
         ];
         options = [
-            "grp:alts_toggle"
+            "grp:shifts_toggle"
             "grp_led:scroll"
         ];
     };

@@ -11,13 +11,27 @@
     ];
 
 
+    home.packages = with pkgs; [
+        playerctl
+        brightnessctl
+        # Theming
+        kdePackages.qtstyleplugin-kvantum
+        kdePackages.qt6ct
+        (catppuccin-kvantum.override {
+            accent = "mauve";
+            variant = "mocha";
+        })
+
+        hyprland-qtutils
+        hyprshot
+    ];
 
     wayland.windowManager.hyprland = {
         enable = true;
         package = pkgs.hyprland;
         xwayland.enable = true;
 
-        extraConfig =
+        settings =
             let
                 inherit (import ./variables.nix)
                     #browser #TODO
@@ -25,49 +39,51 @@
                     keyboardLayout
                 ;
         in
-        ''
-            # env = LIBVA_DRIVER_NAME=nvidia
-            # env = GBM_BACKEND=nvidia-drm
-            # env = __GLX_VENDOR_LIBRARY_NAME=nvidia
-            env = WLR_NO_HARDWARE_CURSORS=1
+        {
+            env = [
+                # "LIBVA_DRIVER_NAME, nvidia"
+                # "GBM_BACKEND, nvidia-drm"
+                # "__GLX_VENDOR_LIBRARY_NAME, nvidia"
+                "WLR_NO_HARDWARE_CURSORS, 1"
 
-            env = XDG_SESSION_TYPE=wayland
-            env = ELECTRON_OZONE_PLATFORM_HINT=auto
+                "XDG_SESSION_TYPE, wayland"
+                "XDG_MENU_PREFIX, plasma-"
+                "ELECTRON_OZONE_PLATFORM_HINT, auto"
 
-            env = QT_QPA_PLATFORMTHEME=kde
-            env = QT_QPA_PLATFORM=wayland
-            env = XDG_MENU_PREFIX=plasma-
+                "QT_QPA_PLATFORM, wayland"
+                "QT_QPA_PLATFORMTHEME, kde"
+                "QT_STYLE_OVERRIDE, Breeze"
+                "QT_WAYLAND_DISABLE_WINDOWDECORATION, 1"
 
-            env = PATH=$PATH:$HOME/.setup/home-manager/hyprland/scripts
+                "PATH, $PATH:$HOME/.setup/home-manager/hyprland/scripts"
 
-            # env = HYPRCURSOR_THEME=Sweet-cursors
-            # env = HYPRCURSOR_SIZE=24
-            env = XCURSOR_THEME=Sweet-cursors
-            env = XCURSOR_SIZE=24
+                "XCURSOR_THEME, Sweet-cursors"
+                "XCURSOR_SIZE, 24"
+            ];
 
+            monitor = [
+                "HDMI-A-2, 1920x1080@144, 0x0, 1"
+                "DP-1, 3840x2160@60, 1920x0, 2"
+            ];
 
-            monitor = HDMI-A-2, 1920x1080@144, 0x0, 1
-            monitor = DP-1, 3840x2160@60, 1920x0, 2
+            input = {
+                follow_mouse = 1;
+                kb_layout = lib.concatStringsSep ", " keyboardLayout.layouts;
+                kb_options = lib.concatStringsSep ", " keyboardLayout.options;
+            };
 
+            xwayland = {
+                force_zero_scaling = true;
+            };
 
-            input {
-                follow_mouse = 1
-                kb_layout = ${lib.concatStringsSep ", " keyboardLayout.layouts}
-                kb_options = ${lib.concatStringsSep ", " keyboardLayout.options}
-            }
+            exec-once = [
+                "kstart plasmashell"
+                "ckb-next"
+            ];
 
-
-            xwayland {
-                force_zero_scaling = true
-            }
-
-
-            # exec-once = kstart plasmashell #TODO
-
-
-            misc {
-                middle_click_paste = false
-            }
-        '';
+            misc = {
+                middle_click_paste = false;
+            };
+        };
     };
 }
