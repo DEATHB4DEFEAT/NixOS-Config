@@ -55,7 +55,6 @@
 	lybase	(layer-switch		base)
 	lyspec	(layer-while-held	specl)
 	luspec	(layer-while-held 	specu)
-	lynum	(layer-switch		num)
 	lynav	(layer-switch		nav)
 	lynavf	(layer-while-held	navfast)
 	lynavs	(layer-while-held	navscroll)
@@ -132,7 +131,7 @@
 
 (deflayer	base
 	;;? G-Keys	1	2	3	4	5			6
-		_	_	@lynum	@lynav	_	_	_	_	lrld	_	_	_
+		_	_	@lynav	_	_	_	_	_	_	_	_	_
 	_	_	_	_	_	_	_	_	_	_	_	_	_
 	_	_	_	_	_	_	_	_	_	_	_	_	_	_
 	_	_	_	_	_	_	_	_	_	_	_	_	_	_
@@ -164,20 +163,9 @@
 	_	_	_	 	 	_	 	 	_	_	_	_
 )
 
-(deflayer	num
-	;;? G-Keys	1	2	3	4	5			6
-		_	@lybase	_	@lynav	_	_	_	_	lrld	_	_	_
-	_	_	_	_	_	_	_	_	_	_	_	_	_
-	_	_	_	_	_	_	_	_	_	_	_	_	_	_
-	_	XX	7	8	9	XX	XX	7	8	9	XX	XX	XX	XX
-	_	0	4	5	6	XX	XX	4	5	6	0	XX	_
-	_	XX	1	2	3	XX	XX	1	2	3	XX	_
-	_	_	_	 	 	0	 	 	_	_	_	_
-)
-
 (deflayer	nav
 	;;? G-Keys	1	2	3	4	5			6
-		_	@lybase	@lynum	_	_	_	_	_	lrld	_	_	_
+		_	@lybase	_	_	_	_	_	_	_	_	_	_
 	_	_	_	_	_	_	_	_	_	_	_	_	_
 	_	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	XX	_
 	_	XX	mrgt	@mmu	mlft	mfwd	XX	XX	up	XX	XX	XX	XX	XX
