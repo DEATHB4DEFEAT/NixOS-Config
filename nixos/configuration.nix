@@ -31,6 +31,8 @@
         kernelPackages = pkgs.linuxPackages_zen;
     };
 
+    security.rtkit.enable = true;
+
 
     networking = {
         hostName = "DTLinix";
@@ -44,26 +46,18 @@
     # networking.proxy.default = "http://user:password@proxy:port/";
     # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-    # Enable networking
     networking.networkmanager.enable = true;
 
 
-    # Set your time zone.
     time.timeZone = "America/Los_Angeles";
 
-    # Select internationalisation properties.
-    i18n.defaultLocale = "en_US.UTF-8";
-
-    i18n.extraLocaleSettings = {
-        LC_ADDRESS = "en_US.UTF-8";
-        LC_IDENTIFICATION = "en_US.UTF-8";
-        LC_MEASUREMENT = "en_US.UTF-8";
-        LC_MONETARY = "en_US.UTF-8";
-        LC_NAME = "en_US.UTF-8";
-        LC_NUMERIC = "en_US.UTF-8";
-        LC_PAPER = "en_US.UTF-8";
-        LC_TELEPHONE = "en_US.UTF-8";
-        LC_TIME = "en_US.UTF-8";
+    i18n = {
+        supportedLocales = [ "en_US.UTF-8/UTF-8" "en_IE.UTF-8/UTF-8" "en_CA.UTF-8/UTF-8" ];
+        defaultLocale = "en_US.UTF-8";
+        extraLocaleSettings = {
+            LC_MEASUREMENT = "en_CA.UTF-8";
+            LC_TIME = "en_IE.UTF-8";
+        };
     };
 
 
@@ -95,7 +89,7 @@
 
     environment.systemPackages = with pkgs;
     let
-        riderScript = pkgs.writeShellScriptBin "rider" "${pkgs.steam-run}/bin/steam-run ${pkgs.jetbrains.rider}/bin/rider";
+        riderScript = pkgs.writeShellScriptBin "rider" "nice -n 10 ${pkgs.steam-run}/bin/steam-run ${pkgs.jetbrains.rider}/bin/rider";
         rider = pkgs.jetbrains.rider.overrideAttrs (oldAttrs: { meta.priority = 10; });
         tetrio = tetrio-desktop.overrideAttrs (oldAttrs: { withTetrioPlus = tetrio-plus; });
         rustdeskScript = pkgs.writeShellScriptBin "rustdesk" "WAYLAND_DISPLAY=\"\" ${pkgs.rustdesk}/bin/rustdesk";
@@ -130,7 +124,6 @@
         easyeffects
         thunderbird
         prismlauncher
-        kanata
         qemu
         handbrake
         ffmpeg-full
@@ -342,15 +335,22 @@
         displayManager.sddm.enable = true;
         desktopManager.plasma6.enable = true;
 
-        kanata = {
-            enable = true;
-            keyboards.default = {
-                #TODO: Hot reloading doesn't work and using includes never works
-                config = (builtins.readFile /home/death/.setup/keyboard/kanata/death.kbd);
-                extraDefCfg = (builtins.readFile /home/death/.setup/keyboard/kanata/death-defcfg);
-                devices = [ ];
+        kanata =
+            let
+                zippy = builtins.path {
+                    path = ../keyboard/kanata/zippy;
+                    name = "zippy";
+                };
+            in{
+                enable = true;
+                package = pkgs.kanata;
+                keyboards.default = {
+                    #TODO: Hot reloading doesn't work, nor do includes
+                    config = (builtins.replaceStrings ["zippy.txt"] ["${(builtins.replaceStrings ["/nix/store/"] [""] zippy)}"] (builtins.readFile ../keyboard/kanata/death.kbd));
+                    extraDefCfg = (builtins.readFile ../keyboard/kanata/death-defcfg);
+                    devices = [ ];
+                };
             };
-        };
 
         ollama = {
             enable = true;
@@ -417,7 +417,7 @@
         easyeffects = {
             description = "Easy Effects";
             after = [ "pipewire-pulse.service" ];
-            wantedBy = [ "graphical-session.target" ];
+            wantedBy = [ "graphical.target" ];
 
             serviceConfig = {
                 ExecStart = "${pkgs.easyeffects}/bin/easyeffects --gapplication-service";
@@ -442,8 +442,6 @@
     programs.gnupg.agent = {
         enable = true;
     };
-
-    xdg.portal.enable = true;
 
     programs = {
         bash.blesh.enable = true;
@@ -474,7 +472,8 @@
         #     '';
         # };
 
-        kanata-default = { wantedBy = lib.mkForce [ "graphical-session.target" ]; };
-        ollama = { wantedBy = lib.mkForce [ "graphical-session.target" ]; };
+        kanata-default = { wantedBy = lib.mkForce [ "graphical.target" ]; };
+        ckb-next = { wantedBy = lib.mkForce [ "graphical.target" ]; };
+        ollama = { wantedBy = lib.mkForce [ "graphical.target" ]; };
     };
 }
