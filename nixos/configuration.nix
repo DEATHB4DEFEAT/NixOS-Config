@@ -109,7 +109,6 @@
         ckb-next
         kdePackages.filelight
         kdePackages.partitionmanager
-        kdePackages.sddm-kcm
         sshfs
         hyfetch
         fastfetch
@@ -318,7 +317,7 @@
             enable = true;
             xkb = {
                 layout = "us,custom";
-                options = "grp:alts_toggle,grp_led:scroll";
+                options = "grp:shifts_toggle,grp_led:scroll";
 
                 extraLayouts = {
                     custom = {
@@ -331,8 +330,15 @@
             };
         };
 
-        displayManager.sddm.enable = true;
         desktopManager.plasma6.enable = true;
+
+        displayManager = {
+            defaultSession = "hyprland";
+            autoLogin = {
+                enable = true;
+                user = "death";
+            };
+        };
 
         kanata =
             let

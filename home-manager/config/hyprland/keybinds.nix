@@ -19,7 +19,8 @@
                     ", XF86AudioNext, exec, playerctl next"
                     ", XF86AudioPrev, exec, playerctl previous"
 
-                    "SUPER, L, exec, hyprctl dispatch exit"
+                    "SUPER, L, exec, hyprlock"
+                    "SUPERSHIFT, L, exec, hyprctl dispatch exit"
                     "SUPER, R, exec, hyprctl reload"
                     "SUPER, F, togglefloating"
                     ", F11, fullscreen"

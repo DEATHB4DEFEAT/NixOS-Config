@@ -6,9 +6,10 @@
 
 {
     imports = [
+        ./plugins/hypr-dynamic-cursors.nix
+        ./hyprlock.nix
         ./keybinds.nix
         ./mousebinds.nix
-        ./plugins/hypr-dynamic-cursors.nix
     ];
 
 
@@ -80,6 +81,7 @@
             };
 
             exec-once = [
+                "hyprlock"
                 "kstart plasmashell"
                 "ckb-next"
             ];
