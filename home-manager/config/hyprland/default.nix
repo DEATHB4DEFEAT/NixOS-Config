@@ -8,7 +8,7 @@
     imports = [
         ./keybinds.nix
         ./mousebinds.nix
-        # ./plugins/hypr-dynamic-cursors.nix
+        ./plugins/hypr-dynamic-cursors.nix
     ];
 
 

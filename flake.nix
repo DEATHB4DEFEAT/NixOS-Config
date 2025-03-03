@@ -23,8 +23,8 @@
     };
 
 
-    outputs = inputs:
-        let system = "x86_64-linux";
+    outputs = inputs: let
+        system = "x86_64-linux";
     in {
         nixosConfigurations = {
             DTLinix = inputs.nixpkgs.lib.nixosSystem {
@@ -47,7 +47,6 @@
                             useUserPackages = true;
                             useGlobalPkgs = true;
                             users.death = ./home-manager/users/death.nix;
-                            # users.test = ./home-manager/users/test.nix;
                             backupFileExtension = "bak";
                         };
                     }
