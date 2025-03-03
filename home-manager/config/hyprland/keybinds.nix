@@ -8,6 +8,7 @@
                     "SUPER, E, exec, dolphin"
                     "SUPER, Q, killactive"
                     "SUPER, Space, exec, krunner"
+                    ", Print, exec, hyprshot -m region --clipboard-only"
 
                     ", XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%"
                     ", XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%"
