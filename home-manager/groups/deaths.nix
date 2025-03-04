@@ -1,17 +1,10 @@
 {
-    pkgs,
     ...
 }:
 
 {
     home = {
         stateVersion = "23.11";
-
-        packages = with pkgs; [
-            vesktop
-            youtube-music
-            freetube
-        ];
 
         sessionVariables = {
             FLAKE = "/home/death/.setup";

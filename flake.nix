@@ -52,13 +52,7 @@
                     }
 
 
-                    inputs.nix-minecraft.nixosModules.minecraft-servers
-                    {
-                        nixpkgs.overlays = [
-                            inputs.nix-minecraft.overlay
-                            (_: pkgs: (import ./pkgs {inherit pkgs; lib = (inputs.nixpkgs.lib);}))
-                        ];
-                    }
+                    inputs.nix-minecraft.nixosModules.minecraft-servers { nixpkgs.overlays = [ inputs.nix-minecraft.overlay ]; }
                 ];
             };
         };

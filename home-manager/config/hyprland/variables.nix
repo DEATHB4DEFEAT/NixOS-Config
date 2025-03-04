@@ -1,6 +1,9 @@
 {
+    workspaces = 10;
+
     browser = "firefox";
     terminal = "foot";
+
     keyboardLayout = {
         layouts = [
             "us"

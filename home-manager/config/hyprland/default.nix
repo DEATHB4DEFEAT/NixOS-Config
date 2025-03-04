@@ -7,6 +7,7 @@
 {
     imports = [
         ./plugins/hypr-dynamic-cursors.nix
+        ./plugins/split-monitor-workspaces.nix
         ./hyprlock.nix
         ./keybinds.nix
         ./mousebinds.nix
@@ -33,13 +34,10 @@
         package = pkgs.hyprland;
         xwayland.enable = true;
 
-        settings =
-            let
-                inherit (import ./variables.nix)
-                    #browser #TODO
-                    #terminal #TODO
-                    keyboardLayout
-                ;
+        settings = let
+            inherit (import ./variables.nix)
+                keyboardLayout
+            ;
         in
         {
             env = [

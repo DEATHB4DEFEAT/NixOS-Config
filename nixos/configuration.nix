@@ -80,10 +80,13 @@
         config = {
             allowUnfree = true;
             enableParallelBuilding = true;
+            permittedInsecurePackages = [
+                "freeimage-unstable-2021-11-01"
+            ];
         };
 
-        config.permittedInsecurePackages = [
-            "freeimage-unstable-2021-11-01"
+        overlays = [
+            (_: pkgs: (import ../pkgs {inherit pkgs lib;}))
         ];
     };
 
@@ -157,6 +160,7 @@
         death.robust-lsp
         blockbench
         kdePackages.yakuake
+        vesktop
     ];
 
     fonts.packages = with pkgs; [
