@@ -8,6 +8,7 @@
                 path = "screenshot";
                 blur_passes = 2;
                 blur_size = 7;
+                brightness = 0.4;
             };
 
 
