@@ -1,13 +1,31 @@
 {
+    lib,
+    ...
+}:
+
+{
     wayland.windowManager.hyprland = {
         settings = let
             inherit (import ./variables.nix)
                 workspaces
                 browser
                 terminal
+                keyboardLayout
             ;
         in
         {
+            input = {
+                follow_mouse = 1;
+                kb_layout = lib.concatStringsSep ", " keyboardLayout.layouts;
+                kb_options = lib.concatStringsSep ", " keyboardLayout.options;
+                repeat_rate = 25;
+                repeat_delay = 250;
+            };
+
+            misc = {
+                middle_click_paste = false;
+            };
+
             bind = [
                 # "SUPER, B, exec, ${browser}"
                 "SUPER, RETURN, exec, ${terminal}"

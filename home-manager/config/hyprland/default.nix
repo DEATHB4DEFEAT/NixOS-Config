@@ -1,15 +1,16 @@
 {
-    lib,
     pkgs,
     ...
 }:
 
 {
     imports = [
-        ./hyprlock/hyprlock.nix
+        ./hyprlock/.
         ./plugins/hypr-dynamic-cursors.nix
         ./plugins/split-monitor-workspaces.nix
-        ./keybinds.nix
+        ./decoration.nix
+        ./display.nix
+        ./input.nix
         ./mousebinds.nix
     ];
 
@@ -36,7 +37,7 @@
 
         settings = let
             inherit (import ./variables.nix)
-                keyboardLayout
+                # keyboardLayout
             ;
         in
         {
@@ -61,70 +62,11 @@
                 "XCURSOR_SIZE, 24"
             ];
 
-            monitor = [
-                "HDMI-A-2, 1920x1080@144, 0x0, 1"
-                "DP-1, 3840x2160@60, 1920x0, 2"
-            ];
-
-            input = {
-                follow_mouse = 1;
-                kb_layout = lib.concatStringsSep ", " keyboardLayout.layouts;
-                kb_options = lib.concatStringsSep ", " keyboardLayout.options;
-                repeat_rate = 25;
-                repeat_delay = 250;
-            };
-
-            xwayland = {
-                force_zero_scaling = true;
-            };
-
             exec-once = [
-                "hyprlock"
                 "kstart plasmashell"
+                "hyprlock"
                 "ckb-next"
             ];
-
-            general = {
-                gaps_in = 5;
-                gaps_out = 10;
-                border_size = 2;
-                "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-                "col.inactive_border" = "rgba(595959aa)";
-                layout = "dwindle";
-            };
-
-            decoration = {
-                rounding = 8;
-
-                blur = {
-                    enabled = true;
-                    size = 3;
-                    passes = 1;
-                    vibrancy = 0.1696;
-                    new_optimizations = true;
-                };
-
-                shadow = {
-                    enabled = true;
-                    range = 4;
-                    render_power = 3;
-                    color = "rgba(1a1a1aee)";
-                };
-            };
-
-            animations = {
-                enabled = true;
-
-                bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
-                animation = [
-                    "windows, 1, 7, myBezier"
-                    "windowsOut, 1, 7, default, popin 80%"
-                    "border, 1, 10, default"
-                    "borderangle, 1, 8, default"
-                    "fade, 1, 7, default"
-                    "workspaces, 1, 6, default"
-                ];
-            };
 
             dwindle = {
                 pseudotile = true;
@@ -132,7 +74,6 @@
             };
 
             misc = {
-                middle_click_paste = false;
                 force_default_wallpaper = 0;
                 vfr = true;
             };

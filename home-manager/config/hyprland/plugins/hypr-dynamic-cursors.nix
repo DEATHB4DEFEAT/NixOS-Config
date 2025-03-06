@@ -1,6 +1,5 @@
 {
     pkgs,
-    # hypr-dynamic-cursors,
     ...
 }:
 
