@@ -6,9 +6,9 @@
 
 {
     imports = [
+        ./hyprlock/hyprlock.nix
         ./plugins/hypr-dynamic-cursors.nix
         ./plugins/split-monitor-workspaces.nix
-        ./hyprlock.nix
         ./keybinds.nix
         ./mousebinds.nix
     ];
@@ -134,6 +134,7 @@
             misc = {
                 middle_click_paste = false;
                 force_default_wallpaper = 0;
+                vfr = true;
             };
 
             windowrulev2 = [

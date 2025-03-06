@@ -169,7 +169,7 @@
         noto-fonts-emoji
         noto-fonts-extra
         jetbrains-mono
-    ];
+    ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
     hardware.ckb-next.enable = true;
 
