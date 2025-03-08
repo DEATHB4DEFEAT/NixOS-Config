@@ -20,8 +20,18 @@
     systemd.enableEmergencyMode = false; # Causes issues when fstab fails to mount anything, annoying
     boot = {
         loader = {
-            systemd-boot.enable = true;
-            efi.canTouchEfiVariables = true;
+            # systemd-boot.enable = true;
+            grub = {
+                enable = true;
+                device = "nodev";
+                efiSupport = true;
+                useOSProber = true;
+                theme = ./grub-themes/HyperFluent-NixOS;
+            };
+            efi = {
+                canTouchEfiVariables = true;
+                efiSysMountPoint = "/boot";
+            };
         };
 
         kernel.sysctl = {
@@ -309,10 +319,25 @@
     # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
     system.stateVersion = "23.11"; # Did you read the comment?
 
-    nix.settings.experimental-features = [
-        "nix-command"
-        "flakes"
-    ];
+    nix = {
+        settings = {
+            experimental-features = [
+                "nix-command"
+                "flakes"
+            ];
+        };
+
+        optimise = {
+            automatic = true;
+            dates = [ "03:45 "];
+        };
+
+        gc = {
+            automatic = true;
+            dates = "weekly";
+            options = "--delete-older-than 14d";
+        };
+    };
 
 
     console.useXkbConfig = true;
