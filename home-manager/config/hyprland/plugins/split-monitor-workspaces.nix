@@ -16,6 +16,7 @@
             plugin = {
                 split-monitor-workspaces = {
                     count = workspaces;
+                    keep_focused = true;
                 };
             };
         };
