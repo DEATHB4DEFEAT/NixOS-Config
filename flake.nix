@@ -21,18 +21,9 @@
             submodules = true;
             inputs.nixpkgs.follows = "nixpkgs";
         };
-        hypr-dynamic-cursors = {
-            url = "github:VirtCode/hypr-dynamic-cursors";
-            inputs.hyprland.follows = "hyprland";
-        };
-        Hyprspace = {
-            url = "github:KZDKM/Hyprspace";
-            inputs.hyprland.follows = "hyprland";
-        };
-        split-monitor-workspaces = {
-            url = "github:Duckonaut/split-monitor-workspaces";
-            inputs.hyprland.follows = "hyprland";
-        };
+        hypr-dynamic-cursors = { url = "github:VirtCode/hypr-dynamic-cursors"; inputs.hyprland.follows = "hyprland"; };
+        Hyprspace = { url = "github:KZDKM/Hyprspace"; inputs.hyprland.follows = "hyprland"; };
+        split-monitor-workspaces = { url = "github:Duckonaut/split-monitor-workspaces"; inputs.hyprland.follows = "hyprland"; };
 
 
         nix-minecraft = {

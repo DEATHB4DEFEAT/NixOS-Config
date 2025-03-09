@@ -58,7 +58,7 @@
                         x:
                             let ws =
                                 let c = (x + 1) / workspaces;
-                                in builtins.toString (x + 1 - (c * workspaces));
+                                in builtins.toString (if x == 9 then 0 else x + 1);
                         in
                         [
                             #? Default Hyprland
@@ -71,6 +71,11 @@
                     ) workspaces
                 )
             );
+
+            bindm = [
+                "SUPER, mouse:272, movewindow"
+                "SUPER, mouse:273, resizewindow"
+            ];
         };
     };
 }

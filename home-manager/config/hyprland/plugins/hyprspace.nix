@@ -22,7 +22,11 @@
                 workspaceActiveBorder = "rgba(33ccffee)";
                 workspaceInactiveBorder = "rgba(595959aa)";
 
+                affectStrut = false;
+                centerAligned = true;
                 overrideGaps = false;
+
+                showNewWorkspace = false;
             };
         };
     };

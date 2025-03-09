@@ -106,8 +106,8 @@
         riderScript = pkgs.writeShellScriptBin "rider" "nice -n 10 ${pkgs.steam-run}/bin/steam-run ${pkgs.jetbrains.rider}/bin/rider";
         rider = pkgs.jetbrains.rider.overrideAttrs (oldAttrs: { meta.priority = 10; });
         tetrio = tetrio-desktop.overrideAttrs (oldAttrs: { withTetrioPlus = tetrio-plus; });
-        rustdeskScript = pkgs.writeShellScriptBin "rustdesk" "WAYLAND_DISPLAY=\"\" ${pkgs.rustdesk}/bin/rustdesk";
-        rustdesk = pkgs.rustdesk.overrideAttrs (oldAttrs: { meta.priority = 10; });
+        # rustdeskScript = pkgs.writeShellScriptBin "rustdesk" "WAYLAND_DISPLAY=\"\" ${pkgs.rustdesk}/bin/rustdesk";
+        # rustdesk = pkgs.rustdesk.overrideAttrs (oldAttrs: { meta.priority = 10; });
         termiusScript = pkgs.writeShellScriptBin "termius-app" "LD_LIBRARY_PATH=\"${pkgs.lib.makeLibraryPath [ pkgs.libglvnd ]}\" ${pkgs.termius}/bin/termius-app";
         termius = pkgs.termius.overrideAttrs (oldAttrs: { meta.priority = 10; });
     in
@@ -156,7 +156,7 @@
         sqlitebrowser
         piper-tts
         tetrio
-        rustdesk rustdeskScript
+        rustdesk #rustdeskScript
         inkscape-with-extensions
         inkscape-extensions.hexmap
         gimp

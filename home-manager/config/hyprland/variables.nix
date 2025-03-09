@@ -1,5 +1,5 @@
 {
-    workspaces = 4;
+    workspaces = 5;
 
     browser = "firefox";
     terminal = "foot";

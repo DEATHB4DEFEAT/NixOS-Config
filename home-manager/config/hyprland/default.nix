@@ -13,7 +13,6 @@
         ./decoration.nix
         ./display.nix
         ./input.nix
-        ./mousebinds.nix
     ];
 
 
