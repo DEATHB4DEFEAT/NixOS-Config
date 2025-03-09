@@ -12,6 +12,7 @@
         ./plugins/split-monitor-workspaces.nix
         ./decoration.nix
         ./display.nix
+        # ./flameshot.nix
         ./input.nix
     ];
 
