@@ -15,6 +15,25 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
+        hyprland = {
+            type = "git";
+            url = "https://github.com/hyprwm/Hyprland";
+            submodules = true;
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+        hypr-dynamic-cursors = {
+            url = "github:VirtCode/hypr-dynamic-cursors";
+            inputs.hyprland.follows = "hyprland";
+        };
+        Hyprspace = {
+            url = "github:KZDKM/Hyprspace";
+            inputs.hyprland.follows = "hyprland";
+        };
+        split-monitor-workspaces = {
+            url = "github:Duckonaut/split-monitor-workspaces";
+            inputs.hyprland.follows = "hyprland";
+        };
+
 
         nix-minecraft = {
             url = "github:Infinidoge/nix-minecraft";
@@ -29,6 +48,7 @@
         nixosConfigurations = {
             DTLinix = inputs.nixpkgs.lib.nixosSystem {
                 inherit system;
+                specialArgs = { inherit inputs; };
                 modules = [
                     ./nixos/configuration.nix
 
@@ -48,6 +68,7 @@
                             useGlobalPkgs = true;
                             users.death = ./home-manager/users/death.nix;
                             backupFileExtension = "bak";
+                            extraSpecialArgs = { inherit inputs; };
                         };
                     }
 

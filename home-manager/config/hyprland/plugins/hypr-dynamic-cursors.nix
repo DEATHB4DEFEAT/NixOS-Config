@@ -1,12 +1,13 @@
 {
     pkgs,
+    inputs,
     ...
 }:
 
 {
     wayland.windowManager.hyprland = {
         plugins = [
-            pkgs.hyprlandPlugins.hypr-dynamic-cursors
+            inputs.hypr-dynamic-cursors.packages.${pkgs.system}.hypr-dynamic-cursors
         ];
         settings = {
             "plugin:dynamic-cursors" = {

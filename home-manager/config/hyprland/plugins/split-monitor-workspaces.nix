@@ -1,12 +1,13 @@
 {
     pkgs,
+    inputs,
     ...
 }:
 
 {
     wayland.windowManager.hyprland = {
         plugins = [
-            pkgs.death.split-monitor-workspaces
+            inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
         ];
         settings = let
             inherit (import ../variables.nix)
