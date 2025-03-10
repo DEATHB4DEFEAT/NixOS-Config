@@ -14,6 +14,7 @@
         ./display.nix
         # ./flameshot.nix
         ./input.nix
+        # ./rofi.nix
     ];
 
 
@@ -40,7 +41,7 @@
 
         settings = let
             inherit (import ./variables.nix)
-
+                plasmashell
             ;
         in
         {
@@ -66,9 +67,10 @@
             ];
 
             exec-once = [
-                "kstart plasmashell"
+                (if plasmashell then "kstart plasmashell" else "ags")
                 "hyprlock"
-                "ckb-next"
+                "ckb-next -b"
+                "nice -n -10 easyeffects --gapplication-service"
             ];
 
             dwindle = {

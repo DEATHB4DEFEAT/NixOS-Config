@@ -15,6 +15,8 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
+        ags.url = "github:aylur/ags/v1";
+
         hyprland = {
             type = "git";
             url = "https://github.com/hyprwm/Hyprland";
@@ -55,6 +57,7 @@
                     inputs.home-manager.nixosModules.home-manager
                     {
                         home-manager = {
+                            verbose = true;
                             useUserPackages = true;
                             useGlobalPkgs = true;
                             users.death = ./home-manager/users/death.nix;

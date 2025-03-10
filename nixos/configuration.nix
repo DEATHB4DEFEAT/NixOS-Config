@@ -453,18 +453,6 @@
     systemd.user.services = {
         pipewire.serviceConfig = { Nice = -10; };
         pipewire-pulse.serviceConfig = { Nice = -10; };
-
-        # Easy effects
-        easyeffects = {
-            description = "Easy Effects";
-            after = [ "pipewire-pulse.service" ];
-            wantedBy = [ "graphical.target" ];
-
-            serviceConfig = {
-                ExecStart = "${pkgs.easyeffects}/bin/easyeffects --gapplication-service";
-                Nice = -10;
-            };
-        };
     };
 
     hardware.bluetooth = {

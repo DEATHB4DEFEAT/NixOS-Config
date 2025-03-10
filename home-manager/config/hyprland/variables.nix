@@ -3,6 +3,7 @@
 
     browser = "firefox";
     terminal = "foot";
+    plasmashell = false;
 
     keyboardLayout = {
         layouts = [
