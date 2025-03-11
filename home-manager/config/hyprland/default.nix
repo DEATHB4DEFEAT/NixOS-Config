@@ -11,11 +11,11 @@
         ./plugins/hypr-dynamic-cursors.nix
         ./plugins/hyprspace.nix
         ./plugins/split-monitor-workspaces.nix
+        ./rofi/.
         ./decoration.nix
         ./display.nix
         # ./flameshot.nix
         ./input.nix
-        # ./rofi.nix
     ];
 
 
@@ -61,18 +61,19 @@
                 "QT_STYLE_OVERRIDE, Breeze"
                 "QT_WAYLAND_DISABLE_WINDOWDECORATION, 1"
 
-                "PATH, $PATH:$HOME/.setup/home-manager/hyprland/scripts"
+                "PATH, $PATH:$HOME/.setup/home-manager/hyprland/scripts:$HOME/.setup/home-manager/config/hyprland/rofi/scripts"
 
                 "XCURSOR_THEME, Sweet-cursors"
                 "XCURSOR_SIZE, 24"
             ];
 
             exec-once = [
-                (if plasmashell then "kstart plasmashell" else "echo plasmashell disabled, you probably have something else")
                 "hyprlock"
                 "ckb-next -b"
                 "nice -n -10 easyeffects --gapplication-service"
-            ];
+            ] ++ (if plasmashell then [
+                "kstart plasmashell"
+            ] else []);
 
             dwindle = {
                 pseudotile = true;

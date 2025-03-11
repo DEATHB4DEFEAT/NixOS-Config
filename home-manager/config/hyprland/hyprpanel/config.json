@@ -5,7 +5,7 @@
   "terminal": "foot",
   "menus.transition": "crossfade",
   "theme.bar.menus.enableShadow": true,
-  "scalingPriority": "hyprland",
+  "scalingPriority": "gdk",
   "theme.bar.buttons.modules.microphone.enableBorder": false,
   "theme.bar.buttons.modules.ram.enableBorder": false,
   "menus.dashboard.shortcuts.left.shortcut3.command": "vesktop",
@@ -39,7 +39,7 @@
   "theme.bar.border.location": "vertical",
   "theme.bar.border.width": "0.1em",
   "theme.bar.enableShadow": false,
-  "bar.launcher.icon": "󰣇",
+  "bar.launcher.icon": "",
   "bar.launcher.autoDetectIcon": true,
   "theme.bar.buttons.dashboard.enableBorder": false,
   "theme.bar.buttons.workspaces.enableBorder": false,
@@ -55,7 +55,7 @@
   "bar.network.label": false,
   "bar.battery.label": false,
   "theme.bar.buttons.systray.enableBorder": false,
-  "bar.media.truncation_size": 30,
+  "bar.media.truncation_size": 65,
   "bar.media.show_label": true,
   "bar.notifications.show_total": true,
   "bar.notifications.hideCountWhenZero": true,
@@ -117,5 +117,10 @@
   "theme.bar.buttons.padding_x": "0.7rem",
   "theme.bar.buttons.spacing": "0.2em",
   "theme.bar.buttons.radius": "0.3em",
-  "theme.bar.layer": "top"
+  "theme.bar.layer": "top",
+  "menus.clock.time.hideSeconds": false,
+  "theme.bar.scaling": 100,
+  "menus.dashboard.powermenu.avatar.image": "/home/death/.setup/home-manager/config/hyprland/hyprlock/pfp.png",
+  "bar.workspaces.spacing": 0.25,
+  "menus.dashboard.shortcuts.right.shortcut3.command": "hyprshot -m region --clipboard-only --silent"
 }

@@ -10,6 +10,7 @@
                 workspaces
                 browser
                 terminal
+                plasmashell
                 keyboardLayout
             ;
         in
@@ -31,7 +32,6 @@
                 "SUPER, RETURN, exec, ${terminal}"
                 "SUPER, E, exec, dolphin"
                 "SUPER, Q, killactive"
-                "SUPER, Space, exec, krunner"
                 ", Print, exec, hyprshot -m region --clipboard-only --silent"
 
                 ", XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%"
@@ -68,7 +68,9 @@
                         ]
                     ) workspaces
                 )
-            );
+            ) ++ (if plasmashell then [
+                "SUPER, Space, exec, krunner"
+            ] else []);
 
             bindm = [
                 "SUPER, mouse:272, movewindow"

@@ -388,7 +388,6 @@
                 enable = true;
                 package = pkgs.kanata;
                 keyboards.default = {
-                    #TODO: Hot reloading doesn't work, nor do includes
                     config = (builtins.replaceStrings ["zippy.txt"] ["${(builtins.replaceStrings ["/nix/store/"] [""] zippy)}"] (builtins.readFile ../keyboard/kanata/death.kbd));
                     extraDefCfg = (builtins.readFile ../keyboard/kanata/death-defcfg);
                     devices = [ ];
@@ -533,6 +532,8 @@
 
             symlink /home/death/.setup/home-manager/config/hyprland/hyprpanel \
                 /home/death/.config/hyprpanel
+            symlink /home/death/.setup/home-manager/config/hyprland/rofi \
+                /home/death/.config/rofi
         '';
     };
 }
