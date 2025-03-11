@@ -3,8 +3,7 @@
   "theme.font.name": "JetBrainsMono Nerd Font Propo",
   "theme.font.label": "JetBrainsMono Nerd Font Propo",
   "terminal": "foot",
-  "menus.transition": "crossfade",
-  "theme.bar.menus.enableShadow": true,
+  "menus.transition": "none",
   "scalingPriority": "gdk",
   "theme.bar.buttons.modules.microphone.enableBorder": false,
   "theme.bar.buttons.modules.ram.enableBorder": false,
@@ -22,9 +21,7 @@
   "theme.osd.orientation": "vertical",
   "theme.osd.monitor": 0,
   "theme.osd.active_monitor": false,
-  "theme.osd.enableShadow": true,
   "notifications.position": "top",
-  "theme.notification.enableShadow": true,
   "notifications.autoDismiss": true,
   "menus.media.displayTimeTooltip": true,
   "menus.media.noMediaText": "No Media",
@@ -37,8 +34,7 @@
   "theme.bar.buttons.enableBorders": true,
   "theme.bar.buttons.borderSize": "0.1em",
   "theme.bar.border.location": "vertical",
-  "theme.bar.border.width": "0.1em",
-  "theme.bar.enableShadow": false,
+  "theme.bar.border.width": "0.15em",
   "bar.launcher.icon": "",
   "bar.launcher.autoDetectIcon": true,
   "theme.bar.buttons.dashboard.enableBorder": false,
@@ -81,7 +77,7 @@
         "clock"
       ]
     },
-    "1": {
+    "*": {
       "left": [
         "dashboard",
         "notifications",
@@ -89,24 +85,11 @@
         "windowtitle"
       ],
       "middle": [
-        "media"
+        "cava"
       ],
       "right": [
-        "volume",
-        "clock"
-      ]
-    },
-    "2": {
-      "left": [
-        "dashboard",
-        "notifications",
-        "workspaces",
-        "windowtitle"
-      ],
-      "middle": [
-        "media"
-      ],
-      "right": [
+        "hyprsunset",
+        "hypridle",
         "volume",
         "clock"
       ]
@@ -122,5 +105,10 @@
   "theme.bar.scaling": 100,
   "menus.dashboard.powermenu.avatar.image": "/home/death/.setup/home-manager/config/hyprland/hyprlock/pfp.png",
   "bar.workspaces.spacing": 0.25,
-  "menus.dashboard.shortcuts.right.shortcut3.command": "hyprshot -m region --clipboard-only --silent"
+  "menus.dashboard.shortcuts.right.shortcut3.command": "hyprshot -m region --clipboard-only --silent",
+  "theme.bar.margin_top": "0.25em",
+  "theme.bar.margin_sides": "0.25em",
+  "theme.notification.enableShadow": false,
+  "theme.osd.enableShadow": false,
+  "menus.dashboard.shortcuts.left.shortcut4.command": "launcher_t6"
 }

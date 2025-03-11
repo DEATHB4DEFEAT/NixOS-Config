@@ -9,7 +9,7 @@
     ];
 
     wayland.windowManager.hyprland.settings = {
-        binds = [
+        bind = [
             "SUPER, Space, exec, launcher_t6"
         ];
     };

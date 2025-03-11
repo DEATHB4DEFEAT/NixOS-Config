@@ -16,7 +16,7 @@ xkb_keymap {
 
 	xkb_symbols {
 		include	"pc+us+inet(evdev)"
-		name[Group1] = "English (US) - QGMLWY (mod)";
+		name[Group1] = "QGMLWY (mod)";
 
 
 		// Row 2		base		shift	level 3		level 5
