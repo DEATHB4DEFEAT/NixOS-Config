@@ -7,13 +7,13 @@
 {
     imports = [
         ./hyprlock/.
+        ./hyprpanel/.
         ./plugins/hypr-dynamic-cursors.nix
         ./plugins/hyprspace.nix
         ./plugins/split-monitor-workspaces.nix
         ./decoration.nix
         ./display.nix
         # ./flameshot.nix
-        ./hyprpanel.nix
         ./input.nix
         # ./rofi.nix
     ];

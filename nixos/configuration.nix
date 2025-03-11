@@ -510,4 +510,29 @@
         ckb-next = { wantedBy = lib.mkForce [ "graphical.target" ]; };
         ollama = { wantedBy = lib.mkForce [ "graphical.target" ]; };
     };
+
+    system.activationScripts = {
+        hyprpanel = ''
+            symlink() {
+                local src="$1"
+                local dest="$2"
+                local user="$3"
+                [[ -e "$src" ]] && {
+                    [[ -e $dest ]] && {
+                        echo "****** OK: $dest exists"
+                    } || {
+                        ln -s "$src" "$dest" || {
+                            echo "****** ERROR: could not symlink $src to $dest"
+                        }
+                        echo "****** CHANGED: $dest updated"
+                    }
+                } || {
+                    echo "****** ERROR: source $src does not exist"
+                }
+            }
+
+            symlink /home/death/.setup/home-manager/config/hyprland/hyprpanel \
+                /home/death/.config/hyprpanel
+        '';
+    };
 }
