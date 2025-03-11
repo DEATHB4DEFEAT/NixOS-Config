@@ -13,6 +13,7 @@
         ./decoration.nix
         ./display.nix
         # ./flameshot.nix
+        ./hyprpanel.nix
         ./input.nix
         # ./rofi.nix
     ];
@@ -67,7 +68,7 @@
             ];
 
             exec-once = [
-                (if plasmashell then "kstart plasmashell" else "ags")
+                (if plasmashell then "kstart plasmashell" else "echo plasmashell disabled, you probably have something else")
                 "hyprlock"
                 "ckb-next -b"
                 "nice -n -10 easyeffects --gapplication-service"
