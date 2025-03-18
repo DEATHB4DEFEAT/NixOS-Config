@@ -34,15 +34,19 @@
                 "SUPER, Q, killactive"
                 ", Print, exec, hyprshot -m region --clipboard-only --silent"
 
+                # Volume
                 ", XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%"
                 ", XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%"
                 ", XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle"
                 ", XF86AudioMicMute, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+
+                # Media
                 ", XF86AudioPlay, exec, playerctl play-pause"
                 ", XF86AudioPause, exec, playerctl play-pause"
                 ", XF86AudioNext, exec, playerctl next"
                 ", XF86AudioPrev, exec, playerctl previous"
 
+                # System
                 "SUPER, L, exec, hyprlock"
                 "SUPERSHIFT, L, exec, hyprctl dispatch exit"
                 "SUPER, R, exec, hyprctl reload"

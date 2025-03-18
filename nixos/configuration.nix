@@ -173,6 +173,8 @@
         kdePackages.yakuake
         vesktop
         dbeaver-bin
+        jq
+        pstree
     ];
 
     fonts.packages = with pkgs; [
