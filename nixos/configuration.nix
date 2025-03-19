@@ -510,6 +510,32 @@
         kanata-default = { wantedBy = lib.mkForce [ "graphical.target" ]; };
         ckb-next = { wantedBy = lib.mkForce [ "graphical.target" ]; };
         ollama = { wantedBy = lib.mkForce [ "graphical.target" ]; };
+
+        # Boot sounds
+        startup-sound = {
+            enable = true;
+            description = "Startup Sound";
+            wants = [ "sound.target" ];
+            after = [ "sound.target" ];
+            wantedBy = [ "multi-user.target" ];
+            serviceConfig = {
+                Type = "oneshot";
+                ExecStart = "${pkgs.alsa-utils}/bin/aplay -c 2 -D hdmi:CARD=HDMI,DEV=3 ${../resources/audio/startup.wav}";
+                RemainAfterExit = false;
+            };
+        };
+        shutdown-sound = {
+            enable = true;
+            description = "Shutdown Sound";
+            wants = [ "sound.target" ];
+            after = [ "final.target" ];
+            wantedBy = [ "final.target" ];
+            serviceConfig = {
+                Type = "oneshot";
+                ExecStart = "${pkgs.alsa-utils}/bin/aplay -c 2 -D hdmi:CARD=HDMI,DEV=3 ${../resources/audio/shutdown.wav}";
+                RemainAfterExit = false;
+            };
+        };
     };
 
     system.activationScripts = {

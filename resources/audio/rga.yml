@@ -1,0 +1,10 @@
+# https://docs.spacestation14.com/en/specifications/robust-generic-attribution.html
+- files: ["shutdown.wav"]
+  license: "Pixabay Content License"
+  copyright: "soft startup sound by RasolAsaad. Converted from MP3 to WAV."
+  source: "https://pixabay.com/sound-effects/soft-startup-sound-269291"
+
+- files: ["startup.wav"]
+  license: "CC0-1.0"
+  copyright: "Retro Audio Logo by Breviceps. Converted from MP3 to WAV."
+  source: "https://freesound.org/people/Breviceps/sounds/564237"
