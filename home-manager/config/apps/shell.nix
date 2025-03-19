@@ -13,7 +13,7 @@
         bash = {
             enable = true;
             shellAliases = {
-                reconf = "git add .; nh os switch . -- --impure"; # Damn impure symlinks...
+                reconf = "git add .; nh os switch . -- --impure; hyprctl switchxkblayout all 1";
                 hs = "cat ~/.bash_history | grep -i";
                 nano = "nano -ZDEFLSil%0T4";
             };
