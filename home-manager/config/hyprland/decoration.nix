@@ -15,16 +15,16 @@
 
                 blur = {
                     enabled = true;
-                    size = 3;
-                    passes = 1;
+                    size = 7;
+                    passes = 2;
                     vibrancy = 0.1696;
                     new_optimizations = true;
                 };
 
                 shadow = {
                     enabled = true;
-                    range = 4;
-                    render_power = 3;
+                    range = 5;
+                    render_power = 2;
                     color = "rgba(1a1a1aee)";
                 };
             };

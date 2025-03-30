@@ -87,7 +87,7 @@
             };
 
             workspace = [
-                "special:magic, gapsin:10, gapsout:10, on-created-empty: gromit-mpx -a"
+                "special:magic, gapsin:10, gapsout:10"
             ];
 
             windowrulev2 = [
@@ -95,7 +95,7 @@
 
                 "stayfocused, title:^()$, class:^(steam)$"
 
-                # Fix plasmashell popups
+                # Fix plasmashell popups kinda
                 "float, class:^(org.kde.plasmashell)$"
                 "move onscreen cursor -50% -1%, class:^(org.kde.plasmashell)$"
 
@@ -110,6 +110,8 @@
                 "noborder, class:^(jetbrains-.*)$, title:^( )$, floating:1"
                 #? Disable window flicker when autocomplete or tooltips appear
                 "nofocus, class:^(jetbrains-.*)$, title:^(win.*)$, floating:1"
+
+                # "opacity 0.8 0.65, class:^(foot)$"
             ];
         };
     };
