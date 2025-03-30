@@ -51,7 +51,7 @@
   "bar.network.label": false,
   "bar.battery.label": false,
   "theme.bar.buttons.systray.enableBorder": false,
-  "bar.media.truncation_size": 65,
+  "bar.media.truncation_size": 50,
   "bar.media.show_label": true,
   "bar.notifications.show_total": true,
   "bar.notifications.hideCountWhenZero": true,

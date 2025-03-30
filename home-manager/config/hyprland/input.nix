@@ -53,10 +53,14 @@
                 "SUPER, F, togglefloating"
                 ", F11, fullscreen"
                 "SUPER, Tab, cyclenext"
+
+                # Workspaces
+                "SUPER, W, togglespecialworkspace, magic"
+                "SUPER SHIFT, W, movetoworkspace, special:magic"
             ]
+            # Also workspaces
             ++ (
                 builtins.concatLists (
-                    # Workspaces
                     # Binds SUPER + [shift +] {1..10} to [move to] workspace {1..10}
                     builtins.genList (
                         x: let

@@ -15,6 +15,7 @@
         ./decoration.nix
         ./display.nix
         # ./flameshot.nix
+        ./gromit.nix
         ./input.nix
     ];
 
@@ -84,6 +85,10 @@
                 force_default_wallpaper = 0;
                 vfr = true;
             };
+
+            workspace = [
+                "special:magic, gapsin:10, gapsout:10, on-created-empty: gromit-mpx -a"
+            ];
 
             windowrulev2 = [
                 "suppressevent maximize,class:.*"
