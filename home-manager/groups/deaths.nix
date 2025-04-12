@@ -17,6 +17,8 @@
     imports = [
         ../../_secrets/home-manager/.
 
+        ../config/apps/config/mpv.nix
+
         ../config/apps/foot.nix
         ../config/apps/shell.nix
 

@@ -175,6 +175,8 @@
         dbeaver-bin
         jq
         pstree
+        jellyfin-media-player
+        chromium
     ];
 
     fonts.packages = with pkgs; [
@@ -482,6 +484,22 @@
     programs = {
         bash.blesh.enable = true;
         kdeconnect.enable = true;
+        nix-ld = {
+            enable = true;
+            libraries = with pkgs; [
+                libunwind
+                pipewire
+                openal
+                openssl
+                fluidsynth
+                soundfont-fluid
+                xorg.libSM
+                icu
+                fontconfig
+                xorg.libX11
+                xorg.libICE
+            ];
+        };
     };
 
 

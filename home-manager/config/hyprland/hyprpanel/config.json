@@ -142,5 +142,13 @@
   "menus.dashboard.stats.interval": 1000,
   "menus.dashboard.shortcuts.left.shortcut3.icon": "󰑓",
   "menus.dashboard.shortcuts.left.shortcut3.tooltip": "Restart",
-  "bar.customModules.hyprsunset.temperature": "3500k"
+  "bar.customModules.hyprsunset.temperature": "3500k",
+  "theme.bar.menus.background": "#000000",
+  "theme.bar.opacity": 80,
+  "theme.bar.buttons.monochrome": false,
+  "theme.bar.buttons.background_opacity": 80,
+  "theme.bar.buttons.opacity": 80,
+  "theme.notification.opacity": 80,
+  "theme.osd.opacity": 80,
+  "menus.dashboard.shortcuts.right.shortcut1.command": "sleep 1 && hyprpicker -a"
 }
