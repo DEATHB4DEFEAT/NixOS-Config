@@ -76,6 +76,5 @@
 
     environment.sessionVariables = {
         STEAM_FORCE_DESKTOPUI_SCALING = "2";
-        LD_LIBRARY_PATH = [ "${pkgs.lib.makeLibraryPath [ pkgs.libunwind pkgs.pipewire pkgs.openal ]}" ];
     };
 }

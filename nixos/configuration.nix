@@ -498,8 +498,19 @@
                 fontconfig
                 xorg.libX11
                 xorg.libICE
+                xdotool
+                gtk3
+                gdk-pixbuf
+                webkitgtk_4_1
+                cairo
+                libsoup_3
+                glib
             ];
         };
+    };
+
+    environment.sessionVariables = {
+        LD_LIBRARY_PATH = [ "/run/current-system/sw/share/nix-ld/lib" ];
     };
 
 
