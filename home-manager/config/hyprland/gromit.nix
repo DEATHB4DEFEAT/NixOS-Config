@@ -14,8 +14,8 @@
         ];
 
         windowrule = [
-            "noblur, ^(Gromit-mpx)$"
-            "opacity 1 override, 1 override, ^(Gromit-mpx)$"
+            "noblur, title:^(Gromit-mpx)$"
+            "opacity 1 override, 1 override, title:^(Gromit-mpx)$"
         ];
 
         bind = [

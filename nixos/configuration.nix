@@ -93,6 +93,7 @@
             enableParallelBuilding = true;
             permittedInsecurePackages = [
                 "freeimage-unstable-2021-11-01"
+                "freeimage-3.18.0-unstable-2024-04-18"
             ];
         };
 
@@ -156,7 +157,7 @@
         sqlitebrowser
         piper-tts
         tetrio
-        rustdesk #rustdeskScript
+        # rustdesk #rustdeskScript # https://nixpk.gs/pr-tracker.html?pr=390171
         inkscape-with-extensions
         inkscape-extensions.hexmap
         gimp
@@ -507,10 +508,6 @@
                 glib
             ];
         };
-    };
-
-    environment.sessionVariables = {
-        LD_LIBRARY_PATH = [ "/run/current-system/sw/share/nix-ld/lib" ];
     };
 
 
