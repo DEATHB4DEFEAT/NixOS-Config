@@ -167,8 +167,8 @@
         qmk
         via
         nix-prefetch-github
-        death.godot_4_4-beta1
-        trenchbroom
+        # death.godot_4_4-beta1
+        # trenchbroom
         death.robust-lsp
         blockbench
         kdePackages.yakuake

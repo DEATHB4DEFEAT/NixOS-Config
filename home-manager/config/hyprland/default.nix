@@ -8,8 +8,8 @@
     imports = [
         ./hyprlock/.
         ./hyprpanel/.
-        ./plugins/hypr-dynamic-cursors.nix
-        # ./plugins/hyprspace.nix
+        # ./plugins/hypr-dynamic-cursors.nix
+        ./plugins/hyprspace.nix
         ./plugins/split-monitor-workspaces.nix
         ./rofi/.
         ./decoration.nix

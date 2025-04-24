@@ -20,6 +20,10 @@
                     keep_focused = true;
                 };
             };
+
+            # bind = [
+            #     "SUPER, Y, split-grabroguewindows"
+            # ];
         };
     };
 }
