@@ -5,6 +5,7 @@
             main = {
                 font = "monospace:size=16";
                 dpi-aware = "yes";
+                gamma-correct-blending = "no";
             };
 
             scrollback = {
