@@ -9,7 +9,7 @@
 
 rustPlatform.buildRustPackage {
     pname = "robust-lsp";
-    version = "0.5.3";
+    version = "0.9.0";
 
     nativeBuildInputs = [ pkg-config ];
     buildInputs = [ openssl ];
@@ -17,8 +17,8 @@ rustPlatform.buildRustPackage {
     src = fetchFromGitHub {
         owner = "Ertanic";
         repo = "robust-lsp";
-        rev = "643bc8d047286a99751f4360b7dc52333f239cf8";
-        hash = "sha256-NxYjcY7I6GSZzjIazjEMFeK/Dwan8a3uYlZBRxgQvK0=";
+        rev = "509c3c5507e95ba7750834bec023977c38578138";
+        hash = "sha256-xqJH1IbQyUUV5f3RwAivOS7jgQFWuIAhAjxF7ag+Ucs=";
     };
 
     cargoLock = {
