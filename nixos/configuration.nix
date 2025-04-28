@@ -178,6 +178,7 @@
         pstree
         jellyfin-media-player
         chromium
+        yt-dlg
     ];
 
     fonts.packages = with pkgs; [
