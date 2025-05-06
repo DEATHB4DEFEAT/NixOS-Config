@@ -179,6 +179,7 @@
         jellyfin-media-player
         chromium
         yt-dlg
+        syncplay
     ];
 
     fonts.packages = with pkgs; [
