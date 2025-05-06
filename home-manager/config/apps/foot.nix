@@ -19,6 +19,8 @@
             colors = {
                 alpha = 0.0;
                 background = "1a1a1a";
+                selection-background = "000000";
+                selection-foreground = "ffffff";
             };
         };
     };
