@@ -53,6 +53,10 @@
                 "SUPER, F, togglefloating"
                 ", F11, fullscreen"
                 "SUPER, Tab, cyclenext"
+                "SUPER, J, exec, wl-kbptr -c $HOME/.setup/home-manager/config/apps/config/wl-kbptr"
+                "SUPERCTRL, 1, focusmonitor, 0"
+                "SUPERCTRL, 2, focusmonitor, 1"
+                "SUPERCTRL, 3, focusmonitor, 2"
 
                 # Workspaces
                 "SUPER, W, togglespecialworkspace, magic"

@@ -91,7 +91,7 @@
             ];
 
             windowrulev2 = [
-                "suppressevent maximize,class:.*"
+                # "suppressevent maximize,class:.*"
 
                 "stayfocused, title:^()$, class:^(steam)$"
 
