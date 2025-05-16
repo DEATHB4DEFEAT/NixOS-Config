@@ -392,7 +392,7 @@
                     path = ../keyboard/kanata/zippy;
                     name = "zippy";
                 };
-            in{
+            in {
                 enable = true;
                 package = pkgs.kanata;
                 keyboards.default = {
@@ -516,7 +516,17 @@
                 cairo
                 libsoup_3
                 glib
-            ];
+                alsa-lib
+                wayland
+                libxkbcommon
+                coreutils
+                file
+                lsb-release
+                pciutils
+                glibc_multi.bin
+                xz
+                zenity
+            ]; # ++ config.environment.systemPackages;
         };
     };
 

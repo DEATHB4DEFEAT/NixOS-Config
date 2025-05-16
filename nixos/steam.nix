@@ -42,8 +42,8 @@
         	enable = true;
         	capSysNice = true;
         	args = [
-                "-W 1920"
-                "-H 1080"
+                "-W 3840"
+                "-H 2160"
                 "-r 60"
                 "--fullscreen"
         		# "--expose-wayland"
