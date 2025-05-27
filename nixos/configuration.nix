@@ -72,7 +72,7 @@
     };
 
 
-    # Don't forget to set a password with ‘passwd’.
+    #! Don't forget to set a password with ‘passwd’.
     users.users = {
         death = {
             isNormalUser = true;
@@ -81,6 +81,7 @@
                 "networkmanager"
                 "wheel"
                 "i2c"
+                "video"
             ];
             home = "/home/death";
         };
@@ -131,7 +132,6 @@
         xorg.xkbcomp
         mpv
         obsidian
-        obs-studio
         krita
         manix
         qpwgraph
@@ -181,6 +181,9 @@
         yt-dlg
         syncplay
         wl-kbptr
+        droidcam
+        openseeface
+        v4l-utils
     ];
 
     fonts.packages = with pkgs; [
@@ -316,8 +319,8 @@
     services.openssh.enable = true;
 
     # Open ports in the firewall.
-    # networking.firewall.allowedTCPPorts = [ ... ];
-    # networking.firewall.allowedUDPPorts = [ ... ];
+    networking.firewall.allowedTCPPorts = [ 25565 24454 ];
+    networking.firewall.allowedUDPPorts = [ 25565 24454 ];
     # Or disable the firewall altogether.
     # networking.firewall.enable = false;
 
@@ -527,6 +530,14 @@
                 xz
                 zenity
             ]; # ++ config.environment.systemPackages;
+        };
+
+        obs-studio = {
+            enable = true;
+            # enableVirtualCamera = true; # Done manually in hardware config
+            plugins = with pkgs.obs-studio-plugins; [
+                droidcam-obs
+            ];
         };
     };
 

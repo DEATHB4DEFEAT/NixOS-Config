@@ -7,7 +7,7 @@
         stateVersion = "23.11";
 
         sessionVariables = {
-            FLAKE = "/home/death/.setup";
+            NH_FLAKE = "/home/death/.setup";
         };
 
         keyboard = null;

@@ -38,7 +38,7 @@
         ];
 
         extraModprobeConfig = ''
-            options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
+            options v4l2loopback devices=2 video_nr=0,1 card_label="OBS Virtual Cam","DroidCam" exclusive_caps=1,1
             options bluetooth disable_ertm=1
         '';
 
@@ -132,7 +132,10 @@
     };
 
     hardware = {
-        cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+        cpu.amd = {
+            updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+            ryzen-smu.enable = true;
+        };
 
         # nvidia = {
         #     modesetting.enable = true;
@@ -157,4 +160,10 @@
             qmk.enable = true;
         };
     };
+
+    programs = {
+        ryzen-monitor-ng.enable = true;
+    };
+
+    powerManagement.cpuFreqGovernor = "performance";
 }
