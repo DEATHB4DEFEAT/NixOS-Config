@@ -537,6 +537,7 @@
             # enableVirtualCamera = true; # Done manually in hardware config
             plugins = with pkgs.obs-studio-plugins; [
                 droidcam-obs
+                waveform
             ];
         };
     };

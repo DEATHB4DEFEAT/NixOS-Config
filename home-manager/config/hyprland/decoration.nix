@@ -7,8 +7,7 @@
                 gaps_in = 0;
                 gaps_out = 0;
                 border_size = 2;
-                # "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-                "col.active_border" = "rgba(9b59b6ee) rgba(71368aee) 45deg";
+                "col.active_border" = "rgba(9b59b6ee) rgba(84469e6f) rgba(71368aee) 45deg";
                 "col.inactive_border" = "rgba(595959aa)";
                 layout = "dwindle";
             };
@@ -40,13 +39,15 @@
                 enabled = true;
 
                 bezier = [
-                    "myBezier, 0.05, 0.9, 0.1, 1.05"
+                    "linear, 0, 0, 1, 1"
+                    "somen, 0.05, 0.9, 0.1, 1.05"
+                    "easeInOutCubic, 0.65, 0.05, 0.36, 1"
                 ];
                 animation = [
-                    "windows, 1, 5, myBezier"
+                    "windows, 1, 5, somen"
                     "windowsOut, 1, 5, default, popin 80%"
-                    "border, 1, 10, default"
-                    "borderangle, 1, 8, default"
+                    "border, 1, 4, linear"
+                    "borderangle, 1, 8, easeInOutCubic"
                     "fade, 1, 7, default"
                     "workspaces, 1, 6, default"
                 ];
