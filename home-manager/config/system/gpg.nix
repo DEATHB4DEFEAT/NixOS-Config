@@ -6,7 +6,7 @@
 {
     services = {
         gpg-agent = {
-            pinentryPackage = pkgs.pinentry-curses;
+            pinentry.package = pkgs.pinentry-curses;
             defaultCacheTtl = 1800;
             enableSshSupport = true;
         };

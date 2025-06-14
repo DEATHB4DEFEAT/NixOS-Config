@@ -155,5 +155,8 @@
   "theme.bar.enableShadow": false,
   "theme.bar.dropdownGap": "2.7em",
   "theme.bar.buttons.separator.margins": "0.15em",
-  "theme.bar.border_radius": "0.4em"
+  "theme.bar.border_radius": "0.4em",
+  "bar.customModules.storage.paths": [
+    "/"
+  ]
 }
