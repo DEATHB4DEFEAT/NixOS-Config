@@ -39,7 +39,6 @@
 
         extraModprobeConfig = ''
             options v4l2loopback devices=2 video_nr=0,1 card_label="OBS Virtual Cam","DroidCam" exclusive_caps=1,1
-            options bluetooth disable_ertm=1
         '';
 
         supportedFilesystems = [
@@ -150,7 +149,6 @@
             enable32Bit = true;
         };
 
-        xpadneo.enable = true;
         enableAllFirmware = true;
         enableRedistributableFirmware = true;
 

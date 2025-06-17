@@ -9,6 +9,7 @@
     imports = [
         ../_secrets/.
 
+        ./bluetooth.nix
         ./hardware-configuration.nix
 
         # ./podman.nix
@@ -478,11 +479,6 @@
         pipewire-pulse.serviceConfig = { Nice = -10; };
     };
 
-    hardware.bluetooth = {
-        enable = true;
-        powerOnBoot = true; # Power up the default Bluetooth controller on boot
-    };
-    services.blueman.enable = true;
     systemd.user.services.mpris-proxy = {
         description = "Mpris proxy";
         after = [ "network.target" "sound.target" ];
