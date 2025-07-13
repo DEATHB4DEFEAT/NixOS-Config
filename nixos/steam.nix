@@ -23,12 +23,12 @@
                 proton-ge-bin
             ];
             gamescopeSession = {
-                enable = true;
+                # enable = true;
                 args = [
-                    "-W 1920"
-                    "-H 1080"
+                    "-W 3840"
+                    "-H 2160"
                     "-r 60"
-                    "--fullscreen"
+                    "-O DP-1"
                 ];
             };
 
@@ -39,14 +39,13 @@
 
         # gamescope -- %command%
         gamescope = {
-        	enable = true;
+        	# enable = true;
         	capSysNice = true;
         	args = [
                 "-W 3840"
                 "-H 2160"
                 "-r 60"
-                "--fullscreen"
-        		# "--expose-wayland"
+                "-O DP-1"
         	];
         };
 
@@ -56,6 +55,11 @@
             settings = {
                 general = {
                     softrealtime = true;
+                    renice = 10;
+                };
+                gpu = {
+                    apply_gpu_optimisations = "accept-responsibility";
+                    amd_performance_level = "high";
                 };
             };
         };
@@ -70,7 +74,7 @@
         fluidsynth
         steamcmd
         steam-tui
-        gamescope
+        # gamescope
         bubblewrap
     ];
 

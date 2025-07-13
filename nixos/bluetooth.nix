@@ -21,11 +21,10 @@
         };
     };
 
-    hardware.xpadneo.enable = true;
     hardware.xone.enable = true;
 
     boot = {
-        extraModulePackages = with config.boot.kernelPackages; [ xpadneo ];
+        extraModulePackages = with config.boot.kernelPackages; [ xone ];
         extraModprobeConfig = ''
             options bluetooth disable_ertm=Y
         '';

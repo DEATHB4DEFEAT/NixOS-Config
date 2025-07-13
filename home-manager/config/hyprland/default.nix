@@ -8,7 +8,7 @@
     imports = [
         ./hyprlock/.
         ./hyprpanel/.
-        ./plugins/hypr-dynamic-cursors.nix
+        # ./plugins/hypr-dynamic-cursors.nix
         ./plugins/hyprspace.nix
         ./plugins/split-monitor-workspaces.nix
         ./rofi/.
@@ -37,6 +37,7 @@
 
     wayland.windowManager.hyprland = {
         enable = true;
+        systemd.enable = false;
         package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
         portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
         xwayland.enable = true;
@@ -69,8 +70,9 @@
             ];
 
             exec-once = [
-                "hyprlock"
-                "ckb-next -b"
+                "hyprctl switchxkblayout all 1"
+                # "hyprlock"
+                # "ckb-next -b"
                 "nice -n -10 easyeffects --gapplication-service"
             ] ++ (if plasmashell then [
                 "kstart plasmashell"

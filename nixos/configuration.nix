@@ -10,8 +10,10 @@
         ../_secrets/.
 
         ./bluetooth.nix
+        # ./ethernet-out.nix
         ./hardware-configuration.nix
 
+        # ./jovian.nix
         # ./podman.nix
         ./steam.nix
 
@@ -83,6 +85,7 @@
                 "wheel"
                 "i2c"
                 "video"
+                "libvirtd"
             ];
             home = "/home/death";
         };
@@ -123,10 +126,10 @@
         xsel
         ntfs3g
         ntfsprogs
-        ckb-next
+        # ckb-next
         kdePackages.filelight
         kdePackages.partitionmanager
-        sshfs
+        # sshfs
         hyfetch
         fastfetch
         linux-wifi-hotspot
@@ -134,7 +137,7 @@
         mpv
         obsidian
         krita
-        manix
+        # manix
         qpwgraph
         easyeffects
         thunderbird
@@ -156,7 +159,7 @@
         zoxide
         # fcp
         sqlitebrowser
-        piper-tts
+        # piper-tts
         tetrio
         # rustdesk #rustdeskScript # https://nixpk.gs/pr-tracker.html?pr=390171
         inkscape-with-extensions
@@ -165,8 +168,8 @@
         nixd
         termius termiusScript
         desktop-file-utils
-        qmk
-        via
+        # qmk
+        # via
         nix-prefetch-github
         # death.godot_4_4-beta1
         # trenchbroom
@@ -175,8 +178,6 @@
         kdePackages.yakuake
         vesktop
         dbeaver-bin
-        jq
-        pstree
         jellyfin-media-player
         chromium
         yt-dlg
@@ -185,6 +186,9 @@
         droidcam
         openseeface
         v4l-utils
+        kdePackages.kdenlive
+        uxplay
+        # steam-rom-manager
     ];
 
     fonts.packages = with pkgs; [
@@ -195,7 +199,7 @@
         jetbrains-mono
     ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
-    hardware.ckb-next.enable = true;
+    # hardware.ckb-next.enable = true;
 
 
     services.minecraft-servers = {
@@ -320,10 +324,22 @@
     services.openssh.enable = true;
 
     # Open ports in the firewall.
-    networking.firewall.allowedTCPPorts = [ 25565 24454 ];
-    networking.firewall.allowedUDPPorts = [ 25565 24454 ];
+    networking.firewall.allowedTCPPorts = [ 25565 24454 7100 7000 7001 ];
+    networking.firewall.allowedUDPPorts = [ 25565 24454 7011 6001 6000 ];
     # Or disable the firewall altogether.
     # networking.firewall.enable = false;
+
+    services.avahi = {
+        enable = true;
+        nssmdns4 = true;
+        publish = {
+            enable = true;
+            userServices = true;
+        };
+        openFirewall = true;
+    };
+    virtualisation.libvirtd.enable = true;
+    programs.virt-manager.enable = true;
 
     # This value determines the NixOS release from which the default
     # settings for stateful data, like file locations and database versions
@@ -383,7 +399,7 @@
         desktopManager.plasma6.enable = true;
 
         displayManager = {
-            defaultSession = "hyprland";
+            defaultSession = "hyprland-uwsm";
             autoLogin = {
                 enable = true;
                 user = "death";
@@ -407,7 +423,7 @@
             };
 
         ollama = {
-            enable = true;
+            enable = false;
             acceleration = "rocm";
             # environmentVariables = {
             #   HSA_OVERRIDE_GFX_VERSION = "11.0.0";
@@ -430,6 +446,7 @@
 
     programs.hyprland = {
         enable = true;
+        withUWSM  = true;
         package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
         portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     };
@@ -477,19 +494,14 @@
     systemd.user.services = {
         pipewire.serviceConfig = { Nice = -10; };
         pipewire-pulse.serviceConfig = { Nice = -10; };
+        mpris-proxy = {
+            description = "Mpris proxy";
+            after = [ "network.target" "sound.target" ];
+            wantedBy = [ "default.target" ];
+            serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
+        };
     };
 
-    systemd.user.services.mpris-proxy = {
-        description = "Mpris proxy";
-        after = [ "network.target" "sound.target" ];
-        wantedBy = [ "default.target" ];
-        serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
-    };
-
-
-    programs.gnupg.agent = {
-        enable = true;
-    };
 
     programs = {
         bash.blesh.enable = true;
@@ -536,6 +548,10 @@
                 waveform
             ];
         };
+
+        gnupg.agent = {
+            enable = true;
+        };
     };
 
 
@@ -560,10 +576,6 @@
         #         echo "Done - you should never see this"
         #     '';
         # };
-
-        kanata-default = { wantedBy = lib.mkForce [ "graphical.target" ]; };
-        ckb-next = { wantedBy = lib.mkForce [ "graphical.target" ]; };
-        ollama = { wantedBy = lib.mkForce [ "graphical.target" ]; };
 
         # Boot sounds
         # startup-sound = {

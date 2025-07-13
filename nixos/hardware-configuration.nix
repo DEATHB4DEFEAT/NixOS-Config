@@ -8,7 +8,6 @@
 {
     imports = [
         (modulesPath + "/installer/scan/not-detected.nix")
-        # ./plymouth.nix
     ];
 
     boot = {
@@ -89,6 +88,7 @@
 
         "/drives/death-share" = {
             device = "//10.0.0.251/death-share";
+            # device = "//192.168.0.41/death-share";
             fsType = "cifs";
             options =
                 let
@@ -98,6 +98,7 @@
         };
         "/drives/data" = {
             device = "//10.0.0.85/data";
+            # device = "//192.168.0.40/data";
             fsType = "cifs";
             options =
                 let

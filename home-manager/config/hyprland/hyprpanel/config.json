@@ -163,5 +163,6 @@
   "theme.bar.border_radius": "0.4em",
   "bar.customModules.storage.paths": [
     "/"
-  ]
+  ],
+  "menus.power.logout": "uwsm stop"
 }
