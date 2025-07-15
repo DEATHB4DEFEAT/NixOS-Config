@@ -11,7 +11,7 @@
             "custom"
         ];
         options = [
-            "grp:shifts_toggle"
+            # "grp:shifts_toggle"
             "grp_led:scroll"
         ];
     };

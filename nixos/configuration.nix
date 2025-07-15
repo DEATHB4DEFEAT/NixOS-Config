@@ -189,6 +189,11 @@
         kdePackages.kdenlive
         uxplay
         # steam-rom-manager
+        libsForQt5.layer-shell-qt
+        jq
+        clonehero
+        unzip
+        wget
     ];
 
     fonts.packages = with pkgs; [
@@ -400,6 +405,22 @@
 
         displayManager = {
             defaultSession = "hyprland-uwsm";
+            sddm = {
+                enable = true;
+                wayland = {
+                    enable = true;
+                    compositorCommand = "${pkgs.hyprland}/bin/hyprland -c ${pkgs.writeTextFile { name = "sddm-hyprland"; destination = "/sddm-hyprland.conf"; text = builtins.readFile ./sddm-hyprland.conf; } }/sddm-hyprland.conf";
+                };
+                settings = {
+                    General = {
+                        GreeterEnvironment = "QT_WAYLAND_SHELL_INTEGRATION=layer-shell";
+                    };
+                    Theme = {
+                        CursorTheme = "Sweet-cursors";
+                        CursorSize = 24;
+                    };
+                };
+            };
             autoLogin = {
                 enable = true;
                 user = "death";

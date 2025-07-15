@@ -16,6 +16,7 @@
                 reconf = "git add .; nh os switch . -- --impure; hyprctl switchxkblayout all 1";
                 hs = "cat ~/.bash_history | grep -i";
                 nano = "nano -ZDEFLSil%0T4";
+                c = "clear";
             };
             bashrcExtra = ''
                 eval "$(zoxide init bash)"
