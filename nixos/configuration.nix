@@ -197,6 +197,7 @@
         unzip
         wget
         unityhub unityhubScript
+        finamp
     ];
 
     fonts.packages = with pkgs; [
