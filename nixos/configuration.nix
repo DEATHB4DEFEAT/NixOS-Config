@@ -1,6 +1,7 @@
 {
     pkgs,
     inputs,
+    config,
     lib,
     ...
 }:
@@ -13,7 +14,6 @@
         # ./ethernet-out.nix
         ./hardware-configuration.nix
 
-        # ./jovian.nix
         # ./podman.nix
         ./steam.nix
 
@@ -116,6 +116,8 @@
         # rustdesk = pkgs.rustdesk.overrideAttrs (oldAttrs: { meta.priority = 10; });
         termiusScript = pkgs.writeShellScriptBin "termius-app" "LD_LIBRARY_PATH=\"${pkgs.lib.makeLibraryPath [ pkgs.libglvnd ]}\" ${pkgs.termius}/bin/termius-app";
         termius = pkgs.termius.overrideAttrs (oldAttrs: { meta.priority = 10; });
+        unityhubScript = pkgs.writeShellScriptBin "unityhub" "LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/drives/LES/Code/Unity/home HOME=\"/drives/LES/Code/Unity/home\" XDG_DATA_HOME=\"/drives/LES/Code/Unity/home/.local/share\" XDG_CONFIG_HOME=\"/drives/LES/Code/Unity/home/.config\" XDG_CACHE_HOME=\"/drives/LES/Code/Unity/home/.cache\" GDK_SCALE=2 ${pkgs.death.unityhub}/bin/unityhub";
+        unityhub = pkgs.death.unityhub.overrideAttrs (oldAttrs: { meta.priority = 10; });
     in
     [
         nh
@@ -194,6 +196,7 @@
         clonehero
         unzip
         wget
+        unityhub unityhubScript
     ];
 
     fonts.packages = with pkgs; [
@@ -541,6 +544,8 @@
                 fontconfig
                 xorg.libX11
                 xorg.libICE
+                xorg.libXcursor
+                xorg.libXrandr
                 xdotool
                 gtk3
                 gdk-pixbuf
@@ -558,6 +563,8 @@
                 glibc_multi.bin
                 xz
                 zenity
+                libxml2
+                libGL
             ]; # ++ config.environment.systemPackages;
         };
 
@@ -650,5 +657,9 @@
             symlink /home/death/.setup/home-manager/config/hyprland/rofi \
                 /home/death/.config/rofi
         '';
+    };
+
+    environment.variables = {
+        LD_LIBRARY_PATH = lib.mkForce "${pkgs.lib.makeLibraryPath config.programs.nix-ld.libraries}";
     };
 }

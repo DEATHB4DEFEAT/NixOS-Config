@@ -32,6 +32,8 @@
             "v4l2loopback"
         ];
 
+        kernelParams = [ "acpi_backlight=video" ];
+
         extraModulePackages = with config.boot.kernelPackages; [
             v4l2loopback
         ];
@@ -129,6 +131,10 @@
     services = {
         xserver.videoDrivers = [ "amdgpu" ]; # "nvidia"
         ddccontrol.enable = true;
+        # Fix b550 motherboard suspend issues
+        udev.extraRules = ''
+            ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x1022", ATTR{device}=="0x1483", ATTR{power/wakeup}="disabled"
+        '';
     };
 
     hardware = {

@@ -16,6 +16,7 @@
         ./display.nix
         # ./flameshot.nix
         ./gromit.nix
+        ./hypridle.nix
         ./input.nix
     ];
 
@@ -71,7 +72,8 @@
 
             exec-once = [
                 "hyprctl switchxkblayout all 1"
-                # "hyprlock"
+                "hyprlock"
+                "kwalletd6"
                 # "ckb-next -b"
                 "nice -n -10 easyeffects --gapplication-service"
             ] ++ (if plasmashell then [
