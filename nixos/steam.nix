@@ -8,17 +8,19 @@
     programs = lib.mkDefault {
         steam = {
             enable = true;
-            package = pkgs.steam.override {
-                extraLibraries = p: with p; [
-                    libunwind
-                    pipewire
-                    openal
-                    # For Space Station 14
-                    openssl
-                    fluidsynth
-                    soundfont-fluid
-                ];
-            };
+            package = pkgs.steam-millennium
+            # .override {
+            #     extraLibraries = p: with p; [
+            #         libunwind
+            #         pipewire
+            #         openal
+            #         # For Space Station 14
+            #         openssl
+            #         fluidsynth
+            #         soundfont-fluid
+            #     ];
+            # }
+            ;
             extraCompatPackages = with pkgs; [
                 proton-ge-bin
             ];

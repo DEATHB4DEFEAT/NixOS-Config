@@ -104,6 +104,7 @@
 
         overlays = [
             (_: pkgs: (import ../pkgs {inherit pkgs lib;}))
+            inputs.millennium.overlays.default
         ];
     };
 
@@ -660,7 +661,7 @@
         '';
     };
 
-    environment.variables = {
-        LD_LIBRARY_PATH = lib.mkForce "${pkgs.lib.makeLibraryPath config.programs.nix-ld.libraries}";
-    };
+    # environment.variables = {
+    #     LD_LIBRARY_PATH = lib.mkForce "${pkgs.lib.makeLibraryPath config.programs.nix-ld.libraries}";
+    # };
 }

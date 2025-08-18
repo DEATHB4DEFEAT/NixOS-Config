@@ -16,13 +16,15 @@
         };
 
         ags.url = "github:aylur/ags/v1";
+        millennium.url = "git+https://github.com/SteamClientHomebrew/Millennium";
 
         hyprland = {
-            type = "git";
-            url = "https://github.com/hyprwm/Hyprland";
-            # rev = "29e2e59fdbab8ed2cc23a20e3c6043d5decb5cdc"; # v0.48.1
-        rev = "9958d297641b5c84dcff93f9039d80a5ad37ab00"; # v0.49.0
-            submodules = true;
+            # type = "git";
+            # url = "https://github.com/hyprwm/Hyprland";
+            url = "github:hyprwm/Hyprland";
+            # rev = "9958d297641b5c84dcff93f9039d80a5ad37ab00"; # v0.49.0
+            # rev = "4e242d086e20b32951fdc0ebcbfb4d41b5be8dcc"; # v0.50.1
+            # submodules = true;
             inputs.nixpkgs.follows = "nixpkgs";
         };
         hypr-dynamic-cursors = { url = "github:VirtCode/hypr-dynamic-cursors"; inputs.hyprland.follows = "hyprland"; };
