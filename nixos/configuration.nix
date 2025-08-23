@@ -1,7 +1,6 @@
 {
     pkgs,
     inputs,
-    config,
     lib,
     ...
 }:
@@ -13,6 +12,7 @@
         ./bluetooth.nix
         # ./ethernet-out.nix
         ./hardware-configuration.nix
+        ./stylix.nix
 
         # ./podman.nix
         ./steam.nix
@@ -105,6 +105,7 @@
         overlays = [
             (_: pkgs: (import ../pkgs {inherit pkgs lib;}))
             inputs.millennium.overlays.default
+            inputs.dolphin-overlay.overlays.default
         ];
     };
 
@@ -199,6 +200,37 @@
         wget
         unityhub unityhubScript
         finamp
+        candy-icons
+        (pkgs.catppuccin-sddm.override {
+            flavor = "macchiato";
+            font  = "Jetbrains Mono";
+            fontSize = "16";
+            background = "${../resources/images/wallpapers/wall0.png}";
+            loginBackground = true;
+        })
+        dconf-editor
+
+        kdePackages.ark
+        kdePackages.dolphin
+        kdePackages.dolphin-plugins
+        kdePackages.ffmpegthumbs
+        kdePackages.gwenview
+        kdePackages.kate
+        kdePackages.kio
+        kdePackages.kdf
+        kdePackages.kio-fuse
+        kdePackages.kio-extras
+        kdePackages.kio-admin
+        kdePackages.kwallet-pam
+        kdePackages.kwalletmanager
+        pinentry-qt
+        kdePackages.polkit-kde-agent-1
+        # libsForQt5.qt5ct
+        # kdePackages.qt6ct
+        # kdePackages.qtstyleplugin-kvantum
+        kdePackages.qtsvg
+        # (catppuccin-kvantum.override { accent = "mauve"; variant = "macchiato"; })
+        shared-mime-info
     ];
 
     fonts.packages = with pkgs; [
@@ -406,7 +438,7 @@
             };
         };
 
-        desktopManager.plasma6.enable = true;
+        desktopManager.plasma6.enable = false;
 
         displayManager = {
             defaultSession = "hyprland-uwsm";
@@ -416,12 +448,13 @@
                     enable = true;
                     compositorCommand = "${pkgs.hyprland}/bin/hyprland -c ${pkgs.writeTextFile { name = "sddm-hyprland"; destination = "/sddm-hyprland.conf"; text = builtins.readFile ./sddm-hyprland.conf; } }/sddm-hyprland.conf";
                 };
+                theme = "catppuccin-macchiato";
                 settings = {
                     General = {
                         GreeterEnvironment = "QT_WAYLAND_SHELL_INTEGRATION=layer-shell";
                     };
                     Theme = {
-                        CursorTheme = "Sweet-cursors";
+                        CursorTheme = "catppuccin-macchiato-mauve-cursors";
                         CursorSize = 24;
                     };
                 };
@@ -465,6 +498,8 @@
         journald = {
             extraConfig = "SystemMaxUse=100M";
         };
+
+        gvfs.enable = true;
     };
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
         elisa
@@ -531,7 +566,10 @@
 
     programs = {
         bash.blesh.enable = true;
-        kdeconnect.enable = true;
+        kdeconnect = {
+            enable = true;
+            # package = pkgs.valent;
+        };
         nix-ld = {
             enable = true;
             libraries = with pkgs; [
@@ -582,6 +620,9 @@
         gnupg.agent = {
             enable = true;
         };
+
+        xfconf.enable = true;
+        dconf.enable = true;
     };
 
 
@@ -635,7 +676,7 @@
     };
 
     system.activationScripts = {
-        hyprpanel = ''
+        mutableConfigs = ''
             symlink() {
                 local src="$1"
                 local dest="$2"
@@ -658,6 +699,10 @@
                 /home/death/.config/hyprpanel
             symlink /home/death/.setup/home-manager/config/hyprland/rofi \
                 /home/death/.config/rofi
+            symlink /home/death/.setup/home-manager/config/apps/config/dolphinrc \
+                /home/death/.config/dolphinrc
+            symlink /home/death/.setup/home-manager/config/apps/config/kdeglobals \
+                /home/death/.config/kdeglobals
         '';
     };
 

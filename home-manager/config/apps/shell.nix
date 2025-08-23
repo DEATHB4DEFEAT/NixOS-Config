@@ -27,7 +27,7 @@
 
 
         starship =
-            let catppuccin-flavour = "mocha";
+            let catppuccin-flavour = "macchiato";
         in {
             enable = true;
             enableNushellIntegration = true;
@@ -40,20 +40,20 @@
                 right_format = "$time";
 
 
-                palette = "catppuccin_${catppuccin-flavour}";
+                # palette = "catppuccin_${catppuccin-flavour}";
             }
             // builtins.fromTOML (
-                builtins.readFile (
-                    pkgs.fetchFromGitHub {
-                        owner = "catppuccin";
-                        repo = "starship";
-                        rev = "5629d2356f62a9f2f8efad3ff37476c19969bd4f";
-                        hash = "sha256-nsRuxQFKbQkyEI4TXgvAjcroVdG+heKX5Pauq/4Ota0=";
-                    }
-                    + /palettes/${catppuccin-flavour}.toml
-                )
+                # builtins.readFile (
+                #     pkgs.fetchFromGitHub {
+                #         owner = "catppuccin";
+                #         repo = "starship";
+                #         rev = "5629d2356f62a9f2f8efad3ff37476c19969bd4f";
+                #         hash = "sha256-nsRuxQFKbQkyEI4TXgvAjcroVdG+heKX5Pauq/4Ota0=";
+                #     }
+                #     + /palettes/${catppuccin-flavour}.toml
+                # ) +
 
-                + builtins.readFile ./config/starship/default.toml
+                builtins.readFile ./config/starship/default.toml
             );
         };
 

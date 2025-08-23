@@ -26,5 +26,7 @@
 
         ../config/system/git.nix
         ../config/system/gpg.nix
+        ../config/system/stylix.nix
+        ../config/system/theme.nix
     ];
 }

@@ -1,0 +1,38 @@
+[$Version]
+update_info=dolphin_detailsmodesettings.upd:rename-leading-padding,dolphin_detailsmodesettings.upd:move-content-display
+
+[ExtractDialog]
+2 screens: Height=480
+2 screens: Width=1278
+2 screens: Window-Maximized=true
+DirHistory[$e]=$HOME/.local/share/
+
+[FileDialogSize]
+2 screens: Window-Maximized=true
+3 screens: Window-Maximized=true
+
+[General]
+BrowseThroughArchives=true
+ConfirmClosingMultipleTabs=false
+GlobalViewProps=false
+RememberOpenedTabs=false
+ShowFullPathInTitlebar=true
+UseTabForSwitchingSplitView=true
+Version=202
+ViewPropsTimestamp=2024,5,11,18,13,23.654
+
+[IconsMode]
+PreviewSize=176
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[Notification Messages]
+ConfirmOpenManyFolders=false
+
+[PreviewSettings]
+Plugins=appimagethumbnail,audiothumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,opendocumentthumbnail,svgthumbnail,textthumbnail,ffmpegthumbs
+
+[UiSettings]
+ColorScheme=*

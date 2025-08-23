@@ -1,10 +1,15 @@
 {
+    lib,
+    ...
+}:
+
+{
     programs.foot = {
         enable = true;
         settings = {
             main = {
-                font = "monospace:size=16";
-                dpi-aware = "yes";
+                # font = "monospace:size=16";
+                dpi-aware = lib.mkForce "yes";
                 gamma-correct-blending = "no";
             };
 
@@ -17,10 +22,10 @@
             };
 
             colors = {
-                alpha = 0.0;
-                background = "1a1a1a";
-                selection-background = "000000";
-                selection-foreground = "ffffff";
+                alpha = lib.mkForce 0.0;
+                # background = "1a1a1a";
+                # selection-background = "000000";
+                # selection-foreground = "ffffff";
             };
         };
     };

@@ -60,13 +60,13 @@
                 "ELECTRON_OZONE_PLATFORM_HINT, auto"
 
                 "QT_QPA_PLATFORM, wayland"
-                "QT_QPA_PLATFORMTHEME, kde"
-                "QT_STYLE_OVERRIDE, Breeze"
+                # "QT_QPA_PLATFORMTHEME, qt6ct"
+                # "QT_STYLE_OVERRIDE, kvantum"
                 "QT_WAYLAND_DISABLE_WINDOWDECORATION, 1"
 
                 "PATH, $PATH:$HOME/.setup/home-manager/hyprland/scripts:$HOME/.setup/home-manager/config/hyprland/rofi/scripts"
 
-                "XCURSOR_THEME, Sweet-cursors"
+                "XCURSOR_THEME, catppuccin-macchiato-mauve-cursors"
                 "XCURSOR_SIZE, 24"
             ];
 

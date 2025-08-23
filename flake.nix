@@ -17,6 +17,11 @@
 
         ags.url = "github:aylur/ags/v1";
         millennium.url = "git+https://github.com/SteamClientHomebrew/Millennium";
+        dolphin-overlay.url = "github:rumboon/dolphin-overlay";
+        stylix = {
+            url = "github:nix-community/stylix";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
 
         hyprland = {
             # type = "git";
@@ -69,6 +74,8 @@
                         };
                     }
 
+
+                    inputs.stylix.nixosModules.stylix
 
                     inputs.nix-minecraft.nixosModules.minecraft-servers { nixpkgs.overlays = [ inputs.nix-minecraft.overlay ]; }
                 ];
