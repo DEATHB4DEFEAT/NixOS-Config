@@ -436,6 +436,7 @@
                     };
                 };
             };
+            exportConfiguration = lib.mkForce true;
         };
 
         desktopManager.plasma6.enable = false;
@@ -614,6 +615,7 @@
             plugins = with pkgs.obs-studio-plugins; [
                 droidcam-obs
                 waveform
+                obs-scale-to-sound
             ];
         };
 

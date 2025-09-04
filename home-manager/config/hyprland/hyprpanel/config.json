@@ -164,5 +164,5 @@
   "bar.customModules.storage.paths": [
     "/"
   ],
-  "menus.power.logout": "uwsm stop"
+  "menus.power.logout": "loginctl kill-session $XDG_SESSION_ID\n"
 }
