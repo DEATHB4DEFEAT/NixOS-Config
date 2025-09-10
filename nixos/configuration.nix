@@ -175,7 +175,7 @@
         # qmk
         # via
         nix-prefetch-github
-        # death.godot_4_4-beta1
+        godot
         # trenchbroom
         death.robust-lsp
         blockbench
@@ -209,6 +209,7 @@
             loginBackground = true;
         })
         dconf-editor
+        r2modman
 
         kdePackages.ark
         kdePackages.dolphin
