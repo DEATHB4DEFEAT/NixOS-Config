@@ -76,6 +76,8 @@
                 "kwalletd6"
                 # "ckb-next -b"
                 "nice -n -10 easyeffects --gapplication-service"
+                "vesktop"
+                "finamp"
             ] ++ (if plasmashell then [
                 "kstart plasmashell"
             ] else []);

@@ -2,6 +2,7 @@
     pkgs,
     inputs,
     lib,
+    config,
     ...
 }:
 
@@ -210,6 +211,7 @@
         })
         dconf-editor
         r2modman
+        discord-development
 
         kdePackages.ark
         kdePackages.dolphin
@@ -607,6 +609,7 @@
                 zenity
                 libxml2
                 libGL
+                openal
             ]; # ++ config.environment.systemPackages;
         };
 
@@ -709,7 +712,8 @@
         '';
     };
 
-    # environment.variables = {
-    #     LD_LIBRARY_PATH = lib.mkForce "${pkgs.lib.makeLibraryPath config.programs.nix-ld.libraries}";
-    # };
+    environment.variables = {
+        # LD_LIBRARY_PATH = lib.mkForce "${pkgs.lib.makeLibraryPath config.programs.nix-ld.libraries}";
+        # LD_LIBRARY_PATH = lib.mkForce "/run/current-system/sw/share/nix-ld/lib/";
+    };
 }
