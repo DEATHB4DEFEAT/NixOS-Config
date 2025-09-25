@@ -504,6 +504,22 @@
         };
 
         gvfs.enable = true;
+
+        qbittorrent = {
+            enable = true;
+            group = "users";
+            webuiPort = 8000;
+            serverConfig = {
+                LegalNotice.Accepted = true;
+                Preferences = {
+                    WebUI = {
+                        Username = "death";
+                        Password_PBKDF2 = "@ByteArray(t/ZxIZlPk0Oiu4v9XtXyDQ==:z90XZanIO0mPEmkeZWmFjl/qmZwERz35U/2VEvofnKIOYlC5VNBm0oXC4ggo8aUv2hSEEBegYTzY1NAORuiPGQ==)";
+                    };
+                    General.Locale = "en";
+                };
+            };
+        };
     };
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
         elisa
