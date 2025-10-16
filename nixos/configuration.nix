@@ -87,6 +87,7 @@
                 "i2c"
                 "video"
                 "libvirtd"
+                "ydotool"
             ];
             home = "/home/death";
         };
@@ -212,6 +213,7 @@
         dconf-editor
         r2modman
         discord-development
+        livecaptions
 
         kdePackages.ark
         kdePackages.dolphin
@@ -224,6 +226,7 @@
         kdePackages.kio-fuse
         kdePackages.kio-extras
         kdePackages.kio-admin
+        kdePackages.kwallet
         kdePackages.kwallet-pam
         kdePackages.kwalletmanager
         pinentry-qt
@@ -581,6 +584,11 @@
             wantedBy = [ "default.target" ];
             serviceConfig.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
         };
+        ydotoold = {
+            description = "An auto-input utility for wayland";
+            wantedBy = ["default.target"];
+            serviceConfig.execStart = "/run/current-system/sw/bin/ydotoold --socket-path /tmp/.ydotool_socket";
+        };
     };
 
 
@@ -626,6 +634,13 @@
                 libxml2
                 libGL
                 openal
+                gst_all_1.gstreamer
+                gst_all_1.gst-plugins-base
+                gst_all_1.gst-plugins-good
+                gst_all_1.gst-plugins-bad
+                gst_all_1.gst-plugins-ugly
+                gst_all_1.gst-libav
+                gst_all_1.gst-vaapi
             ]; # ++ config.environment.systemPackages;
         };
 
@@ -645,6 +660,8 @@
 
         xfconf.enable = true;
         dconf.enable = true;
+
+        ydotool.enable = true;
     };
 
 

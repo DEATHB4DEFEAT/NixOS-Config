@@ -78,11 +78,6 @@
       ]
     },
     "1": {
-      "left": [],
-      "middle": [],
-      "right": []
-    },
-    "2": {
       "left": [
         "clock",
         "volume",
@@ -98,6 +93,11 @@
         "notifications",
         "dashboard"
       ]
+    },
+    "2": {
+      "left": [],
+      "middle": [],
+      "right": []
     },
     "*": {
       "left": [

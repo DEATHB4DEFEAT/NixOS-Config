@@ -57,7 +57,7 @@
                 "SUPERCTRL, 1, focusmonitor, 0"
                 "SUPERCTRL, 2, focusmonitor, 1"
                 "SUPERCTRL, 3, focusmonitor, 2"
-                "SUPER, Z, exec, hyprctl switchxkblayout all next -q; hyprctl notify \"1 2500 rgb(ffffff) fontsize:50 Keyboard layout changed to $(hyprctl -j devices | jq '.keyboards' | jq '.[] | select (.main == true)' | awk -F '\"' '{if ($2==\"active_keymap\") print $4}')\""
+                "SUPER, Z, exec, $HOME/.setup/home-manager/config/hyprland/scripts/switch-layout.sh"
 
                 # Workspaces
                 "SUPER, W, togglespecialworkspace, magic"

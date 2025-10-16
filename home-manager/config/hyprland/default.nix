@@ -16,7 +16,7 @@
         ./display.nix
         # ./flameshot.nix
         ./gromit.nix
-        ./hypridle.nix
+        # ./hypridle.nix
         ./input.nix
     ];
 
@@ -73,11 +73,12 @@
             exec-once = [
                 "hyprctl switchxkblayout all 1"
                 "hyprlock"
+                "${pkgs.kdePackages.kwallet-pam}/libexec/pam_kwallet_init"
                 "kwalletd6"
                 # "ckb-next -b"
                 "nice -n -10 easyeffects --gapplication-service"
                 "vesktop"
-                "finamp"
+                "sleep 10; finamp"
             ] ++ (if plasmashell then [
                 "kstart plasmashell"
             ] else []);
