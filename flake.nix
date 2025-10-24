@@ -16,7 +16,7 @@
         };
 
         ags.url = "github:aylur/ags/v1";
-        millennium.url = "git+https://github.com/SteamClientHomebrew/Millennium";
+        # millennium.url = "git+https://github.com/SteamClientHomebrew/Millennium";
         dolphin-overlay.url = "github:rumboon/dolphin-overlay";
         stylix = {
             url = "github:nix-community/stylix";
@@ -34,7 +34,7 @@
         };
         hypr-dynamic-cursors = { url = "github:VirtCode/hypr-dynamic-cursors"; inputs.hyprland.follows = "hyprland"; };
         hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
-        Hyprspace = { url = "github:KZDKM/Hyprspace"; inputs.hyprland.follows = "hyprland"; };
+        # Hyprspace = { url = "github:KZDKM/Hyprspace"; inputs.hyprland.follows = "hyprland"; };
         split-monitor-workspaces = { url = "github:Duckonaut/split-monitor-workspaces"; inputs.hyprland.follows = "hyprland"; };
 
 

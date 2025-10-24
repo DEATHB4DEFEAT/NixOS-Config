@@ -101,12 +101,13 @@
             permittedInsecurePackages = [
                 "freeimage-unstable-2021-11-01"
                 "freeimage-3.18.0-unstable-2024-04-18"
+                "qtwebengine-5.15.19"
             ];
         };
 
         overlays = [
             (_: pkgs: (import ../pkgs {inherit pkgs lib;}))
-            inputs.millennium.overlays.default
+            # inputs.millennium.overlays.default
             inputs.dolphin-overlay.overlays.default
         ];
     };
@@ -148,13 +149,13 @@
         easyeffects
         thunderbird
         prismlauncher
-        qemu
+        # qemu
         handbrake
         ffmpeg-full
         appimage-run
         linthesia
         neothesia
-        element-desktop
+        # element-desktop
         aseprite-unfree
         heroic
         bat
@@ -166,7 +167,7 @@
         # fcp
         sqlitebrowser
         # piper-tts
-        tetrio
+        # tetrio
         # rustdesk #rustdeskScript # https://nixpk.gs/pr-tracker.html?pr=390171
         inkscape-with-extensions
         inkscape-extensions.hexmap
@@ -183,7 +184,7 @@
         blockbench
         kdePackages.yakuake
         vesktop
-        dbeaver-bin
+        # dbeaver-bin
         jellyfin-media-player
         chromium
         yt-dlg
@@ -195,9 +196,9 @@
         kdePackages.kdenlive
         uxplay
         # steam-rom-manager
-        libsForQt5.layer-shell-qt
+        kdePackages.layer-shell-qt
         jq
-        clonehero
+        # clonehero
         unzip
         wget
         unityhub unityhubScript

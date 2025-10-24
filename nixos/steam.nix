@@ -8,7 +8,8 @@
     programs = lib.mkDefault {
         steam = {
             enable = true;
-            package = pkgs.steam-millennium
+            # package = pkgs.steam-millennium
+            package = pkgs.steam
             # .override {
             #     extraLibraries = p: with p; [
             #         libunwind

@@ -8,14 +8,14 @@
     imports = [
         ./hyprlock/.
         ./hyprpanel/.
-        # ./plugins/hypr-dynamic-cursors.nix
-        ./plugins/hyprspace.nix
+        ./plugins/hypr-dynamic-cursors.nix
+        # ./plugins/hyprspace.nix
         ./plugins/split-monitor-workspaces.nix
         ./rofi/.
         ./decoration.nix
         ./display.nix
         # ./flameshot.nix
-        ./gromit.nix
+        # ./gromit.nix
         # ./hypridle.nix
         ./input.nix
     ];
@@ -25,6 +25,7 @@
         playerctl
         brightnessctl
         # Theming
+        libsForQt5.qtstyleplugin-kvantum
         kdePackages.qtstyleplugin-kvantum
         kdePackages.qt6ct
         (catppuccin-kvantum.override {
