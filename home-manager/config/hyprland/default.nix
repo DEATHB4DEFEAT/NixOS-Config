@@ -14,7 +14,6 @@
         ./rofi/.
         ./decoration.nix
         ./display.nix
-        # ./flameshot.nix
         # ./gromit.nix
         # ./hypridle.nix
         ./input.nix

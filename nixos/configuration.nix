@@ -185,7 +185,6 @@
         kdePackages.yakuake
         vesktop
         # dbeaver-bin
-        jellyfin-media-player
         chromium
         yt-dlg
         syncplay
@@ -215,6 +214,8 @@
         r2modman
         discord-development
         livecaptions
+        grimblast
+        satty
 
         kdePackages.ark
         kdePackages.dolphin

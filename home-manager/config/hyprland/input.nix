@@ -32,7 +32,13 @@
                 "SUPER, RETURN, exec, ${terminal}"
                 "SUPER, E, exec, dolphin"
                 "SUPER, Q, killactive"
-                ", Print, exec, hyprshot -m region --clipboard-only --silent"
+
+                # Screenshots
+                # ", Print, exec, hyprshot -m region --clipboard-only --silent"
+                ", Print, exec, grimblast --freeze save area - > /tmp/screenshot.png; wl-copy < /tmp/screenshot.png; curl -F \"somefile=@/tmp/screenshot.png\" https://img.simplemodbot.tk/upload"
+                "ALT, Print, exec, grimblast --freeze save area - > /tmp/screenshot.png; curl -F \"somefile=@/tmp/screenshot.png\" https://img.simplemodbot.tk/upload | wl-copy"
+                "SHIFT, Print, exec, grimblast --freeze save area - | satty --output-filename /tmp/screenshot.png --disable-notifications --initial-tool brush --copy-command wl-copy --save-after-copy --early-exit --filename -; curl -F \"somefile=@/tmp/screenshot.png\" https://img.simplemodbot.tk/upload"
+                "ALT SHIFT, Print, exec, grimblast --freeze save area - | satty --output-filename /tmp/screenshot.png --disable-notifications --initial-tool brush --copy-command wl-copy --save-after-copy --early-exit --filename -; curl -F \"somefile=@/tmp/screenshot.png\" https://img.simplemodbot.tk/upload | wl-copy"
 
                 # Volume
                 ", XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%"
@@ -48,15 +54,15 @@
 
                 # System
                 "SUPER, L, exec, hyprlock"
-                "SUPERSHIFT, L, exec, hyprctl dispatch exit"
+                "SUPER SHIFT, L, exec, hyprctl dispatch exit"
                 "SUPER, R, exec, hyprctl reload"
                 "SUPER, F, togglefloating"
                 ", F11, fullscreen"
                 "SUPER, Tab, cyclenext"
                 "SUPER, J, exec, wl-kbptr -c $HOME/.setup/home-manager/config/apps/config/wl-kbptr"
-                "SUPERCTRL, 1, focusmonitor, 0"
-                "SUPERCTRL, 2, focusmonitor, 1"
-                "SUPERCTRL, 3, focusmonitor, 2"
+                "SUPER CTRL, 1, focusmonitor, 0"
+                "SUPER CTRL, 2, focusmonitor, 1"
+                "SUPER CTRL, 3, focusmonitor, 2"
                 "SUPER, Z, exec, $HOME/.setup/home-manager/config/hyprland/scripts/switch-layout.sh"
 
                 # Workspaces
