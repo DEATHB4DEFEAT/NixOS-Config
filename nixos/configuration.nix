@@ -156,7 +156,7 @@
         linthesia
         neothesia
         # element-desktop
-        aseprite-unfree
+        aseprite
         heroic
         bat
         btop
@@ -213,9 +213,11 @@
         dconf-editor
         r2modman
         discord-development
+        # (livecaptions.overrideAttrs (oldAttrs: { rocmSupport = true; })) # Weirdly similar performance, but generally worse after the update?
         livecaptions
         grimblast
         satty
+        remmina
 
         kdePackages.ark
         kdePackages.dolphin
@@ -244,8 +246,7 @@
     fonts.packages = with pkgs; [
         noto-fonts
         noto-fonts-cjk-sans
-        noto-fonts-emoji
-        noto-fonts-extra
+        noto-fonts-color-emoji
         jetbrains-mono
     ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
