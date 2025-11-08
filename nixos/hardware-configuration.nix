@@ -51,7 +51,8 @@
 
     fileSystems = {
         "/" = {
-            device = "/dev/disk/by-uuid/2c55fee3-4f2b-4cd4-8c25-294f7a580f32";
+            # device = "/dev/disk/by-uuid/2c55fee3-4f2b-4cd4-8c25-294f7a580f32";
+            device = "/dev/disk/by-uuid/00b0d7d6-4072-4832-903f-f0cc6513ad63";
             fsType = "btrfs";
             options = [
                 "subvol=@"
@@ -60,10 +61,13 @@
             ];
         };
         "/boot" = {
-            device = "/dev/disk/by-uuid/A425-1CF5";
+            # device = "/dev/disk/by-uuid/A425-1CF5";
+            device = "/dev/disk/by-uuid/CB75-9377";
             fsType = "vfat";
             options = [
                 "noatime"
+                "fmask=0077"
+                "dmask=0077"
             ];
         };
         "/drives/LES" = {
@@ -83,10 +87,10 @@
             device = "/dev/disk/by-uuid/06AEE5082B74F336";
             fsType = "ntfs";
         };
-        "/drives/E" = {
-            device = "/dev/disk/by-uuid/5644295C6F90F411";
-            fsType = "ntfs";
-        };
+        # "/drives/E" = {
+        #     device = "/dev/disk/by-uuid/5644295C6F90F411";
+        #     fsType = "ntfs";
+        # };
 
         "/drives/death-share" = {
             device = "//10.0.0.251/death-share";
@@ -112,9 +116,12 @@
 
 
     swapDevices = [
+        # {
+        #     device = "/drives/LES/swapfile";
+        #     size = 32 * 1024; # 32GB
+        # }
         {
-            device = "/drives/LES/swapfile";
-            size = 32 * 1024; # 32GB
+            device = "/dev/disk/by-uuid/043c4bda-7222-4a78-be09-634eef195d98";
         }
     ];
 
