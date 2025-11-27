@@ -79,7 +79,6 @@
                 "nice -n -10 easyeffects --gapplication-service"
                 "vesktop"
                 "sleep 10; finamp"
-                "autoclicker.sh"
             ] ++ (if plasmashell then [
                 "kstart plasmashell"
             ] else []);
