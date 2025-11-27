@@ -88,6 +88,7 @@
                 "video"
                 "libvirtd"
                 "ydotool"
+                "input"
             ];
             home = "/home/death";
         };
@@ -218,6 +219,9 @@
         grimblast
         satty
         remmina
+        killall
+        libinput
+        puddletag
 
         kdePackages.ark
         kdePackages.dolphin
@@ -526,6 +530,8 @@
                 };
             };
         };
+
+        libinput.enable = true;
     };
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
         elisa
@@ -617,6 +623,7 @@
                 xorg.libICE
                 xorg.libXcursor
                 xorg.libXrandr
+                libxxf86vm
                 xdotool
                 gtk3
                 gdk-pixbuf
@@ -644,6 +651,8 @@
                 gst_all_1.gst-plugins-ugly
                 gst_all_1.gst-libav
                 gst_all_1.gst-vaapi
+                freetype
+                fluidsynth
             ]; # ++ config.environment.systemPackages;
         };
 
