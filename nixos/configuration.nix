@@ -2,7 +2,6 @@
     pkgs,
     inputs,
     lib,
-    config,
     ...
 }:
 
@@ -10,6 +9,7 @@
     imports = [
         ../_secrets/.
 
+        ./audio.nix
         ./bluetooth.nix
         # ./ethernet-out.nix
         ./hardware-configuration.nix
@@ -89,6 +89,7 @@
                 "libvirtd"
                 "ydotool"
                 "input"
+                "audio"
             ];
             home = "/home/death";
         };
