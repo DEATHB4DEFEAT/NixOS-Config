@@ -1,9 +1,13 @@
 {
-    pkgs,
     ...
 }:
 
 {
-    home.file.".local/share/jellyfinmediaplayer/scripts/mpris.so".source =
-        "${pkgs.mpvScripts.mpris}/share/mpv/scripts/mpris.so";
+    programs.mpv = {
+        enable = true;
+        config = {
+            volume = 50;
+            audio-device = "pipewire/Null-Music-Sink";
+        };
+    };
 }

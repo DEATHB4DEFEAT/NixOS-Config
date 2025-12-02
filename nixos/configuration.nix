@@ -223,6 +223,7 @@
         killall
         libinput
         puddletag
+        pavucontrol
 
         kdePackages.ark
         kdePackages.dolphin
