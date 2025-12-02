@@ -7,7 +7,7 @@
 {
     gtk = {
         enable = true;
-        iconTheme = {
+        iconTheme = lib.mkForce {
             name = "candy-icons";
             package = pkgs.candy-icons;
         };

@@ -98,28 +98,26 @@
                 "special:magic, gapsin:10, gapsout:10"
             ];
 
-            windowrulev2 = [
-                # "suppressevent maximize,class:.*"
-
-                "stayfocused, title:^()$, class:^(steam)$"
+            windowrule = [
+                "stay_focused on, match:title ^()$, match:class ^(steam)$"
 
                 # Fix plasmashell popups kinda
-                "float, class:^(org.kde.plasmashell)$"
-                "move onscreen cursor -50% -1%, class:^(org.kde.plasmashell)$"
+                "float on, match:class ^(org.kde.plasmashell)$"
+                "move onscreen cursor -50% -1%, match:class ^(org.kde.plasmashell)$"
 
                 # Fix odd behaviors in IntelliJ IDEs
                 #? Fix splash screen showing in weird places and prevent annoying focus takeovers
-                "center, class:^(jetbrains-.*)$, title:^(splash)$, floating:1"
-                "nofocus, class:^(jetbrains-.*)$, title:^(splash)$, floating:1"
-                "noborder, class:^(jetbrains-.*)$, title:^(splash)$, floating:1"
+                "center on, match:class ^(jetbrains-.*)$, match:title ^(splash)$, match:float 1"
+                "no_focus on, match:class ^(jetbrains-.*)$, match:title ^(splash)$, match:float 1"
+                "border_size 0, match:class ^(jetbrains-.*)$, match:title ^(splash)$, match:float 1"
                 #? Center popups/find windows
-                "center, class:^(jetbrains-.*)$, title:^( )$, floating:1"
-                "stayfocused, class:^(jetbrains-.*)$, title:^( )$, floating:1"
-                "noborder, class:^(jetbrains-.*)$, title:^( )$, floating:1"
+                "center on, match:class ^(jetbrains-.*)$, match:title ^( )$, match:float 1"
+                "stay_focused on, match:class ^(jetbrains-.*)$, match:title ^( )$, match:float 1"
+                "border_size 0, match:class ^(jetbrains-.*)$, match:title ^( )$, match:float 1"
                 #? Disable window flicker when autocomplete or tooltips appear
-                "nofocus, class:^(jetbrains-.*)$, title:^(win.*)$, floating:1"
+                "no_focus on, match:class ^(jetbrains-.*)$, match:title ^(win.*)$, match:float 1"
 
-                # "opacity 0.8 0.65, class:^(foot)$"
+                # "opacity 0.8 0.65, match:class ^(foot)$"
             ];
         };
     };
