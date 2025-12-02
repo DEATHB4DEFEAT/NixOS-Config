@@ -9,7 +9,6 @@
         systemPackages = with pkgs; [
             carla
             lsp-plugins
-            speexdsp
             rnnoise-plugin
             deepfilternet
         ];
