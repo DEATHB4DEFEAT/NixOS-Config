@@ -27,10 +27,21 @@
                 middle_click_paste = false;
             };
 
+            device = [
+                {
+                    name = "compx-2.4g-wireless-receiver-1";
+                    sensitivity = -1;
+                    # accel_profile = "custom 200 0 0.5";
+                    accel_profile = "adaptive";
+                }
+            ];
+
             binde = [
                 # Volume
-                ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
-                ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"
+                # ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
+                # ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"
+                ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 $(pw-dump | jq '.[] | select(.info.props.\"node.nick\" == \"HyperX QuadCast\") | select(.info.props.\"media.class\" == \"Audio/Sink\").id') 5%+"
+                ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.5 $(pw-dump | jq '.[] | select(.info.props.\"node.nick\" == \"HyperX QuadCast\") | select(.info.props.\"media.class\" == \"Audio/Sink\").id') 5%-"
             ];
 
             bind = [
@@ -47,7 +58,9 @@
                 "ALT SHIFT, Print, exec, grimblast --freeze save area - | satty --output-filename /tmp/screenshot.png --disable-notifications --initial-tool brush --copy-command wl-copy --save-after-copy --early-exit --filename -; curl -F \"somefile=@/tmp/screenshot.png\" https://img.simplemodbot.tk/upload | wl-copy"
 
                 # Volume
-                ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+                # ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+                ", XF86AudioMute, exec, wpctl set-mute $(pw-dump | jq '.[] | select(.info.props.\"node.nick\" == \"HyperX QuadCast\") | select(.info.props.\"media.class\" == \"Audio/Sink\").id') toggle"
+                "SUPER, XF86AudioMute, exec, hyprctl notify \"1 2500 rgb(ffffff) fontsize:50 $(wpctl get-volume $(pw-dump | jq '.[] | select(.info.props.\"node.nick\" == \"HyperX QuadCast\") | select(.info.props.\"media.class\" == \"Audio/Sink\").id'))\""
                 ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
 
                 # Media

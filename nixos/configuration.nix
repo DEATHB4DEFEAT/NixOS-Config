@@ -224,10 +224,13 @@
         libinput
         puddletag
         pavucontrol
+        deadlock-mod-manager
+        vintagestory
 
         kdePackages.ark
         kdePackages.dolphin
         kdePackages.dolphin-plugins
+        unrar
         kdePackages.ffmpegthumbs
         kdePackages.gwenview
         kdePackages.kate
@@ -497,14 +500,14 @@
                 };
             };
 
-        ollama = {
-            enable = false;
-            acceleration = "rocm";
+        # ollama = {
+            # enable = false;
+            # acceleration = "rocm";
             # environmentVariables = {
             #   HSA_OVERRIDE_GFX_VERSION = "11.0.0";
             # };
-            rocmOverrideGfx = "11.0.0";
-        };
+            # rocmOverrideGfx = "11.0.0";
+        # };
 
         udev.packages = with pkgs; [
             qmk-udev-rules

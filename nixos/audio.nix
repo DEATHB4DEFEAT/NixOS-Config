@@ -64,6 +64,7 @@
         in {
             "91-null-sinks" = {
                 "context.objects" = [
+                    ((sinker "Null-General-Sink") "Null General Sink")
                     ((sinker "Null-Music-Sink") "Null Music Sink")
                     ((sinker "Null-Comms-Sink") "Null Comms Sink")
                     ((sinker "Null-Experimental-Sink") "Null Experimental Sink")
