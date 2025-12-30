@@ -77,7 +77,7 @@
                 "kwalletd6"
                 # "ckb-next -b"
                 # "nice -n -10 easyeffects --gapplication-service"
-                "sleep 10; ${pkgs.carla}/bin/carla $HOME/Documents/carla_default.carxp"
+                "sleep 10; ${pkgs.carla}/bin/carla $HOME/.setup/home-manager/config/apps/config/carla.carxp"
                 "vesktop"
                 "sleep 5; finamp"
             ] ++ (if plasmashell then [

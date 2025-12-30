@@ -1,0 +1,1022 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE CARLA-PROJECT>
+<CARLA-PROJECT VERSION='2.5'>
+ <EngineSettings>
+  <ForceStereo>false</ForceStereo>
+  <PreferPluginBridges>false</PreferPluginBridges>
+  <PreferUiBridges>true</PreferUiBridges>
+  <UIsAlwaysOnTop>false</UIsAlwaysOnTop>
+  <MaxParameters>200</MaxParameters>
+  <UIBridgesTimeout>4000</UIBridgesTimeout>
+ </EngineSettings>
+
+ <Transport>
+  <BeatsPerMinute>120</BeatsPerMinute>
+ </Transport>
+
+ <!-- LSP Sidechain Compressor Stereo -->
+ <Plugin>
+  <Info>
+   <Type>LV2</Type>
+   <Name>LSP Sidechain Compressor Stereo</Name>
+   <URI>http://lsp-plug.in/plugins/lv2/sc_compressor_stereo</URI>
+  </Info>
+
+  <Data>
+   <Active>Yes</Active>
+   <ControlChannel>1</ControlChannel>
+   <Options>0x1</Options>
+
+   <Parameter>
+    <Index>0</Index>
+    <Name>Show pre-mix overlay</Name>
+    <Symbol>showpmx</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>1</Index>
+    <Name>Input to Link mix</Name>
+    <Symbol>in2lk</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>2</Index>
+    <Name>Link to Input mix</Name>
+    <Symbol>lk2in</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>3</Index>
+    <Name>Link to Sidechain mix</Name>
+    <Symbol>lk2sc</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>4</Index>
+    <Name>Input to Sidechain mix</Name>
+    <Symbol>in2sc</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>5</Index>
+    <Name>Sidechain to Input mix</Name>
+    <Symbol>sc2in</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>6</Index>
+    <Name>Sidechain to Link mix</Name>
+    <Symbol>sc2lk</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>7</Index>
+    <Name>Enabled</Name>
+    <Symbol>enabled</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>8</Index>
+    <Name>Input gain</Name>
+    <Symbol>g_in</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>9</Index>
+    <Name>Output gain</Name>
+    <Symbol>g_out</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>10</Index>
+    <Name>Show mix overlay</Name>
+    <Symbol>showmx</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>11</Index>
+    <Name>Show sidechain overlay</Name>
+    <Symbol>showsc</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>12</Index>
+    <Name>Pause graph analysis</Name>
+    <Symbol>pause</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>13</Index>
+    <Name>Clear graph analysis</Name>
+    <Symbol>clear</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>14</Index>
+    <Name>Stereo split</Name>
+    <Symbol>ssplit</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>15</Index>
+    <Name>Split sidechain source</Name>
+    <Symbol>sscs</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>16</Index>
+    <Name>Sidechain type</Name>
+    <Symbol>sct</Symbol>
+    <Value>2</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>17</Index>
+    <Name>Sidechain mode</Name>
+    <Symbol>scm</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>18</Index>
+    <Name>Sidechain lookahead</Name>
+    <Symbol>sla</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>19</Index>
+    <Name>Sidechain listen</Name>
+    <Symbol>scl</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>20</Index>
+    <Name>Sidechain source</Name>
+    <Symbol>scs</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>21</Index>
+    <Name>Sidechain reactivity</Name>
+    <Symbol>scr</Symbol>
+    <Value>10</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>22</Index>
+    <Name>Sidechain preamp</Name>
+    <Symbol>scp</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>23</Index>
+    <Name>High-pass filter mode</Name>
+    <Symbol>shpm</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>24</Index>
+    <Name>High-pass filter frequency</Name>
+    <Symbol>shpf</Symbol>
+    <Value>10</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>25</Index>
+    <Name>Low-pass filter mode</Name>
+    <Symbol>slpm</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>26</Index>
+    <Name>Low-pass filter frequency</Name>
+    <Symbol>slpf</Symbol>
+    <Value>20000</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>27</Index>
+    <Name>Compression mode</Name>
+    <Symbol>cm</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>28</Index>
+    <Name>Attack threshold</Name>
+    <Symbol>al</Symbol>
+    <Value>0.0332972444593906</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>29</Index>
+    <Name>Attack time</Name>
+    <Symbol>at</Symbol>
+    <Value>20</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>30</Index>
+    <Name>Release threshold</Name>
+    <Symbol>rrl</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>31</Index>
+    <Name>Release time</Name>
+    <Symbol>rt</Symbol>
+    <Value>200</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>32</Index>
+    <Name>Hold time</Name>
+    <Symbol>hold</Symbol>
+    <Value>200</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>33</Index>
+    <Name>Ratio</Name>
+    <Symbol>cr</Symbol>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>34</Index>
+    <Name>Knee</Name>
+    <Symbol>kn</Symbol>
+    <Value>0.501179993152618</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>35</Index>
+    <Name>Boost threshold</Name>
+    <Symbol>bth</Symbol>
+    <Value>0.000250999990385026</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>36</Index>
+    <Name>Boost signal amount</Name>
+    <Symbol>bsa</Symbol>
+    <Value>1.99526000022888</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>37</Index>
+    <Name>Makeup gain</Name>
+    <Symbol>mk</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>38</Index>
+    <Name>Dry gain</Name>
+    <Symbol>cdr</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>39</Index>
+    <Name>Wet gain</Name>
+    <Symbol>cwt</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>40</Index>
+    <Name>Dry/Wet balance</Name>
+    <Symbol>cdw</Symbol>
+    <Value>100</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>42</Index>
+    <Name>Sidechain level visibility Left</Name>
+    <Symbol>slv_l</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>43</Index>
+    <Name>Envelope level visibility Left</Name>
+    <Symbol>elv_l</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>44</Index>
+    <Name>Gain reduction visibility Left</Name>
+    <Symbol>grv_l</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>45</Index>
+    <Name>Input level visibility Left</Name>
+    <Symbol>ilv_l</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>46</Index>
+    <Name>Output level visibility Left</Name>
+    <Symbol>olv_l</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>53</Index>
+    <Name>Sidechain level visibility Right</Name>
+    <Symbol>slv_r</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>54</Index>
+    <Name>Envelope level visibility Right</Name>
+    <Symbol>elv_r</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>55</Index>
+    <Name>Gain reduction visibility Right</Name>
+    <Symbol>grv_r</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>56</Index>
+    <Name>Input level visibility Right</Name>
+    <Symbol>ilv_r</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>57</Index>
+    <Name>Output level visibility Right</Name>
+    <Symbol>olv_r</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <CustomData>
+    <Type>http://lv2plug.in/ns/ext/atom#String</Type>
+    <Key>http://lsp-plug.in/plugins/lv2/sc_compressor_stereo/ports#link</Key>
+    <Value></Value>
+   </CustomData>
+
+   <CustomData>
+    <Type>http://lv2plug.in/ns/ext/atom#Object</Type>
+    <Key>http://lsp-plug.in/plugins/lv2/sc_compressor_stereo/preset_state</Key>
+    <Value>AAAAAFUAAABWAAAAAAAAAAEAAAARAAAAAAAAAAAAAABXAAAAAAAAAAQAAAAHAAAAAAAAAAAAAABYAAAAAAAAAAQAAAAHAAAAAAAAAAAAAAA=</Value>
+   </CustomData>
+
+   <CustomData>
+    <Type>http://kxstudio.sf.net/ns/carla/property</Type>
+    <Key>CarlaSkinIsCompacted</Key>
+    <Value>false</Value>
+   </CustomData>
+  </Data>
+ </Plugin>
+
+ <!-- LSP Limiter Stereo -->
+ <Plugin>
+  <Info>
+   <Type>LV2</Type>
+   <Name>LSP Limiter Stereo</Name>
+   <URI>http://lsp-plug.in/plugins/lv2/limiter_stereo</URI>
+  </Info>
+
+  <Data>
+   <Active>Yes</Active>
+   <ControlChannel>1</ControlChannel>
+   <Options>0x1</Options>
+
+   <Parameter>
+    <Index>0</Index>
+    <Name>Show pre-mix overlay</Name>
+    <Symbol>showpmx</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>1</Index>
+    <Name>Input to Link mix</Name>
+    <Symbol>in2lk</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>2</Index>
+    <Name>Link to Input mix</Name>
+    <Symbol>lk2in</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>3</Index>
+    <Name>Link to Sidechain mix</Name>
+    <Symbol>lk2sc</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>4</Index>
+    <Name>Enabled</Name>
+    <Symbol>enabled</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>5</Index>
+    <Name>Input gain</Name>
+    <Symbol>g_in</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>6</Index>
+    <Name>Output gain</Name>
+    <Symbol>g_out</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>7</Index>
+    <Name>Sidechain preamp</Name>
+    <Symbol>scp</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>8</Index>
+    <Name>Automatic level regulation</Name>
+    <Symbol>alr</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>9</Index>
+    <Name>Automatic level regulation attack time</Name>
+    <Symbol>alr_at</Symbol>
+    <Value>5</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>10</Index>
+    <Name>Automatic level regulation release time</Name>
+    <Symbol>alr_rt</Symbol>
+    <Value>50</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>11</Index>
+    <Name>Operating mode</Name>
+    <Symbol>mode</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>12</Index>
+    <Name>Threshold</Name>
+    <Symbol>th</Symbol>
+    <Value>0.169296875596046</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>13</Index>
+    <Name>Knee level</Name>
+    <Symbol>knee</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>14</Index>
+    <Name>Gain boost</Name>
+    <Symbol>boost</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>15</Index>
+    <Name>Lookahead</Name>
+    <Symbol>lk</Symbol>
+    <Value>5</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>16</Index>
+    <Name>Attack time</Name>
+    <Symbol>at</Symbol>
+    <Value>5</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>17</Index>
+    <Name>Release time</Name>
+    <Symbol>rt</Symbol>
+    <Value>5</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>18</Index>
+    <Name>Oversampling</Name>
+    <Symbol>ovs</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>19</Index>
+    <Name>Dithering</Name>
+    <Symbol>dith</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>20</Index>
+    <Name>Pause graph analysis</Name>
+    <Symbol>pause</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>21</Index>
+    <Name>Clear graph analysis</Name>
+    <Symbol>clear</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>22</Index>
+    <Name>Sidechain type</Name>
+    <Symbol>extsc</Symbol>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>23</Index>
+    <Name>Stereo linking</Name>
+    <Symbol>slink</Symbol>
+    <Value>100</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>24</Index>
+    <Name>Input graph visibility Left</Name>
+    <Symbol>igv_l</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>25</Index>
+    <Name>Output graph visibility Left</Name>
+    <Symbol>ogv_l</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>26</Index>
+    <Name>Sidechain graph visibility Left</Name>
+    <Symbol>scgv_l</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>27</Index>
+    <Name>Gain graph visibility Left</Name>
+    <Symbol>grgv_l</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>32</Index>
+    <Name>Input graph visibility Right</Name>
+    <Symbol>igv_r</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>33</Index>
+    <Name>Output graph visibility Right</Name>
+    <Symbol>ogv_r</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>34</Index>
+    <Name>Sidechain graph visibility Right</Name>
+    <Symbol>scgv_r</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>35</Index>
+    <Name>Gain graph visibility Right</Name>
+    <Symbol>grgv_r</Symbol>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>40</Index>
+    <Name>Knee smooth</Name>
+    <Symbol>smooth</Symbol>
+    <Value>-5</Value>
+   </Parameter>
+
+   <CustomData>
+    <Type>http://lv2plug.in/ns/ext/atom#String</Type>
+    <Key>http://lsp-plug.in/plugins/lv2/limiter_stereo/ports#link</Key>
+    <Value></Value>
+   </CustomData>
+
+   <CustomData>
+    <Type>http://lv2plug.in/ns/ext/atom#Object</Type>
+    <Key>http://lsp-plug.in/plugins/lv2/limiter_stereo/preset_state</Key>
+    <Value>AAAAAFUAAABWAAAAAAAAAAEAAAARAAAAAAAAAAAAAABXAAAAAAAAAAQAAAAHAAAAAAAAAAAAAABYAAAAAAAAAAQAAAAHAAAAAAAAAAAAAAA=</Value>
+   </CustomData>
+  </Data>
+ </Plugin>
+
+ <!-- Noise Suppressor for Voice (Stereo) -->
+ <Plugin>
+  <Info>
+   <Type>LADSPA</Type>
+   <Name>Noise Suppressor for Voice (Stereo)</Name>
+   <Binary>/run/current-system/sw/lib/ladspa/librnnoise_ladspa.so</Binary>
+   <Label>noise_suppressor_stereo</Label>
+   <UniqueID>9354877</UniqueID>
+  </Info>
+
+  <Data>
+   <Active>Yes</Active>
+   <ControlChannel>1</ControlChannel>
+   <Options>0x0</Options>
+
+   <Parameter>
+    <Index>0</Index>
+    <Name>VAD Threshold</Name>
+    <Value>50</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>1</Index>
+    <Name>VAD Grace Period</Name>
+    <Value>500</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>2</Index>
+    <Name>Retroactive VAD Grace</Name>
+    <Value>100</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>3</Index>
+    <Name>Placeholder</Name>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>4</Index>
+    <Name>Placeholder</Name>
+    <Value>0</Value>
+   </Parameter>
+  </Data>
+ </Plugin>
+
+ <!-- Audio Gain (Stereo) -->
+ <Plugin>
+  <Info>
+   <Type>INTERNAL</Type>
+   <Name>Audio Gain (Stereo)</Name>
+   <Label>audiogain_s</Label>
+  </Info>
+
+  <Data>
+   <Active>Yes</Active>
+   <Volume>1.27</Volume>
+   <ControlChannel>1</ControlChannel>
+   <Options>0x0</Options>
+
+   <Parameter>
+    <Index>0</Index>
+    <Name>Gain</Name>
+    <Value>4</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>1</Index>
+    <Name>Apply Left</Name>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>2</Index>
+    <Name>Apply Right</Name>
+    <Value>1</Value>
+   </Parameter>
+
+   <CustomData>
+    <Type>http://kxstudio.sf.net/ns/carla/property</Type>
+    <Key>CarlaSkinIsCompacted</Key>
+    <Value>false</Value>
+   </CustomData>
+  </Data>
+ </Plugin>
+
+ <!-- Audio Gain (Stereo) -->
+ <Plugin>
+  <Info>
+   <Type>INTERNAL</Type>
+   <Name>Out Monitor</Name>
+   <Label>audiogain_s</Label>
+  </Info>
+
+  <Data>
+   <Active>Yes</Active>
+   <ControlChannel>1</ControlChannel>
+   <Options>0x0</Options>
+
+   <Parameter>
+    <Index>0</Index>
+    <Name>Gain</Name>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>1</Index>
+    <Name>Apply Left</Name>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>2</Index>
+    <Name>Apply Right</Name>
+    <Value>1</Value>
+   </Parameter>
+  </Data>
+ </Plugin>
+
+ <!-- Audio Gain (Stereo) -->
+ <Plugin>
+  <Info>
+   <Type>INTERNAL</Type>
+   <Name>Out Headphones</Name>
+   <Label>audiogain_s</Label>
+  </Info>
+
+  <Data>
+   <Active>Yes</Active>
+   <DryWet>0</DryWet>
+   <ControlChannel>1</ControlChannel>
+   <Options>0x0</Options>
+
+   <Parameter>
+    <Index>0</Index>
+    <Name>Gain</Name>
+    <Value>0</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>1</Index>
+    <Name>Apply Left</Name>
+    <Value>1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>2</Index>
+    <Name>Apply Right</Name>
+    <Value>1</Value>
+   </Parameter>
+  </Data>
+ </Plugin>
+
+ <ExternalPatchbay>
+  <Connection>
+   <Source>Null Comms Source:capture_FL</Source>
+   <Target>Chromium input:input_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Null Comms Source:capture_FR</Source>
+   <Target>Chromium input:input_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>HyperX QuadCast Analog Stereo:capture_FL</Source>
+   <Target>Noise Suppressor for Voice (Stereo):Input (L)</Target>
+  </Connection>
+  <Connection>
+   <Source>HyperX QuadCast Analog Stereo:capture_FR</Source>
+   <Target>Noise Suppressor for Voice (Stereo):Input (R)</Target>
+  </Connection>
+  <Connection>
+   <Source>mpv:output_FL</Source>
+   <Target>Null Music Sink:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>mpv:output_FR</Source>
+   <Target>Null Music Sink:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>LSP Sidechain Compressor Stereo:Output L</Source>
+   <Target>Null General Sink:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>LSP Sidechain Compressor Stereo:Output R</Source>
+   <Target>Null General Sink:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>LSP Limiter Stereo:Output L</Source>
+   <Target>Out Monitor:input_1</Target>
+  </Connection>
+  <Connection>
+   <Source>LSP Limiter Stereo:Output L</Source>
+   <Target>Out Headphones:input_1</Target>
+  </Connection>
+  <Connection>
+   <Source>LSP Limiter Stereo:Output R</Source>
+   <Target>Out Monitor:input_2</Target>
+  </Connection>
+  <Connection>
+   <Source>LSP Limiter Stereo:Output R</Source>
+   <Target>Out Headphones:input_2</Target>
+  </Connection>
+  <Connection>
+   <Source>Noise Suppressor for Voice (Stereo):Output (L)</Source>
+   <Target>Audio Gain (Stereo):input_1</Target>
+  </Connection>
+  <Connection>
+   <Source>Noise Suppressor for Voice (Stereo):Output (R)</Source>
+   <Target>Audio Gain (Stereo):input_2</Target>
+  </Connection>
+  <Connection>
+   <Source>Audio Gain (Stereo):output_1</Source>
+   <Target>Null Comms Source:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Audio Gain (Stereo):output_2</Source>
+   <Target>Null Comms Source:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Out Monitor:output_1</Source>
+   <Target>Navi 31 HDMI/DP Audio Digital Stereo (HDMI 2):playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Out Monitor:output_2</Source>
+   <Target>Navi 31 HDMI/DP Audio Digital Stereo (HDMI 2):playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Out Headphones:output_1</Source>
+   <Target>HyperX QuadCast Analog Stereo:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Out Headphones:output_2</Source>
+   <Target>HyperX QuadCast Analog Stereo:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-236:output_FL</Source>
+   <Target>Null Comms Sink:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-236:output_FR</Source>
+   <Target>Null Comms Sink:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium:output_FL</Source>
+   <Target>Null Comms Sink:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium:output_FR</Source>
+   <Target>Null Comms Sink:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Null General Sink:monitor_FL</Source>
+   <Target>cava:input_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Null General Sink:monitor_FL</Source>
+   <Target>LSP Limiter Stereo:Input L</Target>
+  </Connection>
+  <Connection>
+   <Source>Null General Sink:monitor_FR</Source>
+   <Target>cava:input_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Null General Sink:monitor_FR</Source>
+   <Target>LSP Limiter Stereo:Input R</Target>
+  </Connection>
+  <Connection>
+   <Source>Null Music Sink:monitor_FL</Source>
+   <Target>LSP Sidechain Compressor Stereo:Input L</Target>
+  </Connection>
+  <Connection>
+   <Source>Null Music Sink:monitor_FR</Source>
+   <Target>LSP Sidechain Compressor Stereo:Input R</Target>
+  </Connection>
+  <Connection>
+   <Source>Null Comms Sink:monitor_FL</Source>
+   <Target>Null General Sink:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Null Comms Sink:monitor_FL</Source>
+   <Target>LSP Sidechain Compressor Stereo:Sidechain input Left</Target>
+  </Connection>
+  <Connection>
+   <Source>Null Comms Sink:monitor_FR</Source>
+   <Target>Null General Sink:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Null Comms Sink:monitor_FR</Source>
+   <Target>LSP Sidechain Compressor Stereo:Sidechain input Right</Target>
+  </Connection>
+  <Positions>
+   <Position x1="1387" y1="974">
+    <Name>Carla</Name>
+   </Position>
+   <Position x1="1741" y1="1523">
+    <Name>Null Comms Source</Name>
+   </Position>
+   <Position x1="909" y1="1523" x2="2046" y2="1127">
+    <Name>HyperX QuadCast Analog Stereo</Name>
+   </Position>
+   <Position x1="1016" y1="1629" x2="2117" y2="1354">
+    <Name>BRIO 300 Mono</Name>
+   </Position>
+   <Position x1="2200" y1="1531">
+    <Name>Null Experimental Source</Name>
+   </Position>
+   <Position x1="683" y1="1133">
+    <Name>mpv</Name>
+   </Position>
+   <Position x1="577" y1="1222">
+    <Name>Chromium-236</Name>
+   </Position>
+   <Position x1="596" y1="1293">
+    <Name>Chromium</Name>
+   </Position>
+   <Position x1="1399" y1="1128">
+    <Name>Null General Sink</Name>
+   </Position>
+   <Position x1="818" y1="1451" x2="2044" y2="1218">
+    <Name>Navi 31 HDMI/DP Audio Digital Stereo (HDMI 2)</Name>
+   </Position>
+   <Position x1="886" y1="1129">
+    <Name>Null Music Sink</Name>
+   </Position>
+   <Position x1="790" y1="1257">
+    <Name>Null Comms Sink</Name>
+   </Position>
+   <Position x1="2198" y1="1425">
+    <Name>Null Experimental Sink</Name>
+   </Position>
+   <Position x1="1613" y1="1220">
+    <Name>cava</Name>
+   </Position>
+   <Position x1="1705" y1="780" x2="2102" y2="779">
+    <Name>Midi-Bridge</Name>
+   </Position>
+   <Position x1="1705" y1="854" x2="2101" y2="854">
+    <Name>BLE MIDI 1</Name>
+   </Position>
+   <Position x1="1114" y1="1128" pluginId="0">
+    <Name>LSP Sidechain Compressor Stereo</Name>
+   </Position>
+   <Position x1="1607" y1="1128" pluginId="1">
+    <Name>LSP Limiter Stereo</Name>
+   </Position>
+   <Position x1="1301" y1="1523" pluginId="2">
+    <Name>Noise Suppressor for Voice (Stereo)</Name>
+   </Position>
+   <Position x1="1570" y1="1523" pluginId="3">
+    <Name>Audio Gain (Stereo)</Name>
+   </Position>
+   <Position x1="1868" y1="1127" pluginId="5">
+    <Name>Out Headphones</Name>
+   </Position>
+  </Positions>
+ </ExternalPatchbay>
+</CARLA-PROJECT>
