@@ -15,7 +15,7 @@
             label = [
                 # Weekday
                 {
-                    monitor = "DP-1";
+                    monitor = "HDMI-A-2";
                     text = "cmd[update:1000] echo -e \"$(date +\"%A\")\"";
                     color = "rgba(216, 222, 233, 0.70)";
                     font_size = 180;
@@ -27,7 +27,7 @@
 
                 # Date
                 {
-                    monitor = "DP-1";
+                    monitor = "HDMI-A-2";
                     text = "cmd[update:1000] echo -e \"$(date +\"%B %d, %Y\")\"";
                     color = "rgba(216, 222, 233, 0.70)";
                     font_size = 80;
@@ -39,7 +39,7 @@
 
                 # Time
                 {
-                    monitor = "DP-1";
+                    monitor = "HDMI-A-2";
                     text = "cmd[update:1] echo -e \"- $(date +\"%X\") -\"";
                     color = "rgba(216, 222, 233, 0.70)";
                     font_size = 40;
@@ -51,7 +51,7 @@
 
                 # User
                 {
-                    monitor = "DP-1";
+                    monitor = "HDMI-A-2";
                     text = " $USER";
                     color = "rgba(216, 222, 233, 0.80)";
                     outline_thickness = 2;
@@ -67,7 +67,7 @@
 
                 # Power
                 {
-                    monitor = "DP-1";
+                    monitor = "HDMI-A-2";
                     text = "󰐥  󰜉  󰤄";
                     color = "rgba(255, 255, 255, 0.6)";
                     font_size = 100;
@@ -80,7 +80,7 @@
             image = [
                 # Profile Picture
                 {
-                    monitor = "DP-1";
+                    monitor = "HDMI-A-2";
                     path = toString ./pfp.png;
                     border_size = 2;
                     border_color = "rgba(255, 255, 255, .65)";
@@ -92,7 +92,7 @@
             shape = [
                 # User Box
                 {
-                    monitor = "DP-1";
+                    monitor = "HDMI-A-2";
                     size = "600, 120";
                     color = "rgba(255, 255, 255, .1)";
                     rounding = -1;
@@ -105,7 +105,7 @@
             input-field = [
                 # Password
                 {
-                    monitor = "DP-1";
+                    monitor = "HDMI-A-2";
                     size = "600, 120";
                     outline_thickness = 2;
                     dots_size = 0.2;
