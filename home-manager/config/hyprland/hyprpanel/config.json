@@ -61,6 +61,23 @@
   "bar.layouts": {
     "0": {
       "left": [
+        "clock",
+        "volume",
+        "hypridle",
+        "hyprsunset"
+      ],
+      "middle": [
+        "cava"
+      ],
+      "right": [
+        "windowtitle",
+        "workspaces",
+        "notifications",
+        "dashboard"
+      ]
+    },
+    "1": {
+      "left": [
         "dashboard",
         "notifications",
         "workspaces",
@@ -75,23 +92,6 @@
         "bluetooth",
         "volume",
         "clock"
-      ]
-    },
-    "1": {
-      "left": [
-        "clock",
-        "volume",
-        "hypridle",
-        "hyprsunset"
-      ],
-      "middle": [
-        "cava"
-      ],
-      "right": [
-        "windowtitle",
-        "workspaces",
-        "notifications",
-        "dashboard"
       ]
     },
     "2": {
