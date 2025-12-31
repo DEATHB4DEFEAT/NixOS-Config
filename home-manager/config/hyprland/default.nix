@@ -91,6 +91,7 @@
 
             misc = {
                 force_default_wallpaper = 0;
+                # disable_hyprland_logo = true; # No wallpaper
                 vfr = true;
                 initial_workspace_tracking = 2;
             };

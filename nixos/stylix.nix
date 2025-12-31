@@ -12,7 +12,7 @@
         };
 
         base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-macchiato.yaml";
-        image = ../resources/images/wallpapers/wall0.png;
+        # image = ../resources/images/wallpapers/wall0.png; # Hides Hyprland default wallpaper
         # polarity = "dark";
 
         fonts = {
