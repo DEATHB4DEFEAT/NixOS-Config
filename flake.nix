@@ -2,6 +2,7 @@
     description = "Death's system flake";
 
     inputs = {
+        determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
         nix-index-database = {
@@ -52,6 +53,8 @@
                 specialArgs = { inherit inputs; };
                 modules = [
                     ./nixos/configuration.nix
+
+                    inputs.determinate.nixosModules.default
 
                     inputs.nix-index-database.nixosModules.nix-index
                     {

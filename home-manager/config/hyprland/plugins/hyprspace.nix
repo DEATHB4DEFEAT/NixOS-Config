@@ -7,7 +7,7 @@
 {
     wayland.windowManager.hyprland = {
         plugins = [
-            inputs.Hyprspace.packages.${pkgs.system}.Hyprspace
+            inputs.Hyprspace.packages.${pkgs.stdenv.hostPlatform.system}.Hyprspace
         ];
         settings = let
             inherit (import ../variables.nix)

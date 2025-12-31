@@ -7,7 +7,7 @@
 
 {
     home.packages = [
-        inputs.hyprpanel.packages.${pkgs.system}.default
+        inputs.hyprpanel.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 
     wayland.windowManager.hyprland.settings.exec-once = [

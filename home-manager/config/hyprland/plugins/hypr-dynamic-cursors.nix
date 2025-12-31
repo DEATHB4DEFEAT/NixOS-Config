@@ -7,7 +7,7 @@
 {
     wayland.windowManager.hyprland = {
         plugins = [
-            inputs.hypr-dynamic-cursors.packages.${pkgs.system}.hypr-dynamic-cursors
+            inputs.hypr-dynamic-cursors.packages.${pkgs.stdenv.hostPlatform.system}.hypr-dynamic-cursors
         ];
         settings = {
             "plugin:dynamic-cursors" = {
