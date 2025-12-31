@@ -92,6 +92,7 @@
             misc = {
                 force_default_wallpaper = 0;
                 vfr = true;
+                initial_workspace_tracking = 2;
             };
 
             workspace = [

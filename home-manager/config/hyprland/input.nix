@@ -57,6 +57,10 @@
                 "SHIFT, Print, exec, grimblast --freeze save area - | satty --output-filename /tmp/screenshot.png --disable-notifications --initial-tool brush --copy-command wl-copy --save-after-copy --early-exit --filename -; curl -F \"somefile=@/tmp/screenshot.png\" https://img.simplemodbot.tk/upload"
                 "ALT SHIFT, Print, exec, grimblast --freeze save area - | satty --output-filename /tmp/screenshot.png --disable-notifications --initial-tool brush --copy-command wl-copy --save-after-copy --early-exit --filename -; curl -F \"somefile=@/tmp/screenshot.png\" https://img.simplemodbot.tk/upload | wl-copy"
 
+                # Zoom
+                "SUPER, mouse_down, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '.float * 1.25')"
+                "SUPER, mouse_up, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '(.float / 1.25) | if . < 1 then 1 else . end')"
+
                 # Volume
                 # ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
                 ", XF86AudioMute, exec, wpctl set-mute $(pw-dump | jq '.[] | select(.info.props.\"node.nick\" == \"HyperX QuadCast\") | select(.info.props.\"media.class\" == \"Audio/Sink\").id') toggle"
