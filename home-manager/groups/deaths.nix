@@ -25,6 +25,8 @@
 
         ../config/hyprland/.
 
+        ../config/niri/.
+
         ../config/system/git.nix
         ../config/system/gpg.nix
         ../config/system/stylix.nix

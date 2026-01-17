@@ -505,7 +505,7 @@
     <Index>12</Index>
     <Name>Threshold</Name>
     <Symbol>th</Symbol>
-    <Value>0.169296875596046</Value>
+    <Value>0.290402203798294</Value>
    </Parameter>
 
    <Parameter>
@@ -779,6 +779,12 @@
     <Name>Apply Right</Name>
     <Value>1</Value>
    </Parameter>
+
+   <CustomData>
+    <Type>http://kxstudio.sf.net/ns/carla/property</Type>
+    <Key>CarlaSkinIsCompacted</Key>
+    <Value>true</Value>
+   </CustomData>
   </Data>
  </Plugin>
 
@@ -813,18 +819,16 @@
     <Name>Apply Right</Name>
     <Value>1</Value>
    </Parameter>
+
+   <CustomData>
+    <Type>http://kxstudio.sf.net/ns/carla/property</Type>
+    <Key>CarlaSkinIsCompacted</Key>
+    <Value>true</Value>
+   </CustomData>
   </Data>
  </Plugin>
 
  <ExternalPatchbay>
-  <Connection>
-   <Source>Null Comms Source:capture_FL</Source>
-   <Target>Chromium input:input_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Null Comms Source:capture_FR</Source>
-   <Target>Chromium input:input_FR</Target>
-  </Connection>
   <Connection>
    <Source>HyperX QuadCast Analog Stereo:capture_FL</Source>
    <Target>Noise Suppressor for Voice (Stereo):Input (L)</Target>
@@ -898,12 +902,12 @@
    <Target>HyperX QuadCast Analog Stereo:playback_FR</Target>
   </Connection>
   <Connection>
-   <Source>Chromium-236:output_FL</Source>
-   <Target>Null Comms Sink:playback_FL</Target>
+   <Source>Chromium-231:output_FL</Source>
+   <Target>Null General Sink:playback_FL</Target>
   </Connection>
   <Connection>
-   <Source>Chromium-236:output_FR</Source>
-   <Target>Null Comms Sink:playback_FR</Target>
+   <Source>Chromium-231:output_FR</Source>
+   <Target>Null General Sink:playback_FR</Target>
   </Connection>
   <Connection>
    <Source>Chromium:output_FL</Source>
@@ -915,15 +919,7 @@
   </Connection>
   <Connection>
    <Source>Null General Sink:monitor_FL</Source>
-   <Target>cava:input_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Null General Sink:monitor_FL</Source>
    <Target>LSP Limiter Stereo:Input L</Target>
-  </Connection>
-  <Connection>
-   <Source>Null General Sink:monitor_FR</Source>
-   <Target>cava:input_FR</Target>
   </Connection>
   <Connection>
    <Source>Null General Sink:monitor_FR</Source>
@@ -969,15 +965,6 @@
    <Position x1="2200" y1="1531">
     <Name>Null Experimental Source</Name>
    </Position>
-   <Position x1="683" y1="1133">
-    <Name>mpv</Name>
-   </Position>
-   <Position x1="577" y1="1222">
-    <Name>Chromium-236</Name>
-   </Position>
-   <Position x1="596" y1="1293">
-    <Name>Chromium</Name>
-   </Position>
    <Position x1="1399" y1="1128">
     <Name>Null General Sink</Name>
    </Position>
@@ -992,9 +979,6 @@
    </Position>
    <Position x1="2198" y1="1425">
     <Name>Null Experimental Sink</Name>
-   </Position>
-   <Position x1="1613" y1="1220">
-    <Name>cava</Name>
    </Position>
    <Position x1="1705" y1="780" x2="2102" y2="779">
     <Name>Midi-Bridge</Name>

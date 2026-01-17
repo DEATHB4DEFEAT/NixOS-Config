@@ -189,6 +189,7 @@
         # dbeaver-bin
         chromium
         yt-dlg
+        yt-dlp
         syncplay
         wl-kbptr
         droidcam
@@ -226,6 +227,7 @@
         pavucontrol
         deadlock-mod-manager
         vintagestory
+        xwayland-satellite
 
         kdePackages.ark
         kdePackages.dolphin
@@ -310,6 +312,36 @@
                         motd = "New Origins";
                         allow-flight = true;
                         online-mode = false;
+                    };
+                };
+
+                versatile = let
+                    modpack = pkgs.fetchModrinthModpack {
+                        mrpackFile = ./Versatile.mrpack;
+                    };
+                    mcVersion = modpack.manifest.versions.minecraft;
+                    fabricVersion = modpack.manifest.versions.fabric;
+                    serverVersion = lib.replaceStrings [ "." ] [ "_" ] "fabric-${mcVersion}";
+                in {
+                    enable = true;
+                    autoStart = false;
+                    openFirewall = true;
+                    # package = pkgs.fabricServers.${serverVersion}.override { loaderVersion = fabricVersion; };
+                    package = pkgs.fabricServers.fabric-1_19_2;
+                    jvmOpts = "-Xms6144M -Xmx8192M";
+                    serverProperties = {
+                        server-port = 25567;
+                        difficulty = "hard";
+                        gamemode = "survival";
+                        max-players = 8;
+                        view-distance = 24;
+                        simulation-distance = 16;
+                        motd = "Versatile";
+                        allow-flight = true;
+                        online-mode = false;
+                    };
+                    symlinks = {
+                        mods = "${modpack}/mods";
                     };
                 };
 
@@ -548,6 +580,9 @@
         package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
         portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     };
+    programs.niri = {
+        enable = true;
+    };
     xdg.portal = {
         enable = true;
         extraPortals = with pkgs; [
@@ -649,6 +684,7 @@
                 libxml2
                 libGL
                 openal
+
                 gst_all_1.gstreamer
                 gst_all_1.gst-plugins-base
                 gst_all_1.gst-plugins-good
@@ -656,8 +692,24 @@
                 gst_all_1.gst-plugins-ugly
                 gst_all_1.gst-libav
                 gst_all_1.gst-vaapi
+
                 freetype
                 fluidsynth
+
+                nss
+                nspr
+                atk
+                cups
+                dbus
+                libdrm
+                pango
+                libxcomposite
+                libxdamage
+                libxext
+                libxfixes
+                libgbm
+                expat
+                libxcb
             ]; # ++ config.environment.systemPackages;
         };
 
@@ -755,6 +807,10 @@
                 /home/death/.config/hyprpanel
             symlink /home/death/.setup/home-manager/config/hyprland/rofi \
                 /home/death/.config/rofi
+
+            symlink /home/death/.setup/home-manager/config/niri/niri \
+                /home/death/.config/niri
+
             symlink /home/death/.setup/home-manager/config/apps/config/dolphinrc \
                 /home/death/.config/dolphinrc
             symlink /home/death/.setup/home-manager/config/apps/config/kdeglobals \

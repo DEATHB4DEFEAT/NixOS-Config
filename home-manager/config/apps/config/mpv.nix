@@ -8,6 +8,7 @@
         config = {
             volume = 50;
             audio-device = "pipewire/Null-Music-Sink";
+            target-colorspace-hint = "no";
         };
     };
 }

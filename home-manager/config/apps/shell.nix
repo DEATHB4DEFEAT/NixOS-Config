@@ -16,6 +16,7 @@
                 hs = "cat ~/.bash_history | grep -i";
                 nano = "nano -ZDEFLSil%0T4";
                 c = "clear";
+                ytdl = "yt-dlp --newline -R 25 -i -o /drives/data/media/tmp/%\\(title\\)s.%\\(ext\\)s -x --audio-format mp3 --audio-quality 0 -v --ignore-config --hls-prefer-native --embed-thumbnail --add-metadata --cookies-from-browser firefox";
             };
             bashrcExtra = ''
                 eval "$(zoxide init bash)"
