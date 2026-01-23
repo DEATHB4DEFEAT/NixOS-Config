@@ -726,7 +726,7 @@
    <Parameter>
     <Index>0</Index>
     <Name>Gain</Name>
-    <Value>4</Value>
+    <Value>3</Value>
    </Parameter>
 
    <Parameter>
@@ -830,12 +830,28 @@
 
  <ExternalPatchbay>
   <Connection>
+   <Source>Null Comms Source:capture_FL</Source>
+   <Target>Chromium input:input_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Null Comms Source:capture_FR</Source>
+   <Target>Chromium input:input_FR</Target>
+  </Connection>
+  <Connection>
    <Source>HyperX QuadCast Analog Stereo:capture_FL</Source>
    <Target>Noise Suppressor for Voice (Stereo):Input (L)</Target>
   </Connection>
   <Connection>
    <Source>HyperX QuadCast Analog Stereo:capture_FR</Source>
    <Target>Noise Suppressor for Voice (Stereo):Input (R)</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-123:output_FL</Source>
+   <Target>Null General Sink:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-123:output_FR</Source>
+   <Target>Null General Sink:playback_FR</Target>
   </Connection>
   <Connection>
    <Source>mpv:output_FL</Source>
@@ -902,22 +918,6 @@
    <Target>HyperX QuadCast Analog Stereo:playback_FR</Target>
   </Connection>
   <Connection>
-   <Source>Chromium-231:output_FL</Source>
-   <Target>Null General Sink:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Chromium-231:output_FR</Source>
-   <Target>Null General Sink:playback_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>Chromium:output_FL</Source>
-   <Target>Null Comms Sink:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Chromium:output_FR</Source>
-   <Target>Null Comms Sink:playback_FR</Target>
-  </Connection>
-  <Connection>
    <Source>Null General Sink:monitor_FL</Source>
    <Target>LSP Limiter Stereo:Input L</Target>
   </Connection>
@@ -965,6 +965,9 @@
    <Position x1="2200" y1="1531">
     <Name>Null Experimental Source</Name>
    </Position>
+   <Position x1="657" y1="1125">
+    <Name>mpv</Name>
+   </Position>
    <Position x1="1399" y1="1128">
     <Name>Null General Sink</Name>
    </Position>
@@ -1000,6 +1003,9 @@
    </Position>
    <Position x1="1868" y1="1127" pluginId="5">
     <Name>Out Headphones</Name>
+   </Position>
+   <Position x1="1948" y1="1516">
+    <Name>Chromium input</Name>
    </Position>
   </Positions>
  </ExternalPatchbay>

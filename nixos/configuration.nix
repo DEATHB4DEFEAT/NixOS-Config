@@ -228,6 +228,10 @@
         deadlock-mod-manager
         vintagestory
         xwayland-satellite
+        wineWowPackages.unstableFull
+        winetricks
+        cabextract
+        lutris
 
         kdePackages.ark
         kdePackages.dolphin
