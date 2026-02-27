@@ -8,6 +8,7 @@
     programs = lib.mkDefault {
         steam = {
             enable = true;
+            protontricks.enable = true;
             # package = pkgs.steam-millennium
             package = pkgs.steam
             .override {
@@ -15,6 +16,7 @@
                     libunwind
                     pipewire
                     openal
+                    freetype
                     # For Space Station 14
                     openssl
                     fluidsynth

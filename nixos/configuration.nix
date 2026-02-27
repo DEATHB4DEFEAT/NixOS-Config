@@ -186,6 +186,7 @@
         blockbench
         kdePackages.yakuake
         vesktop
+        equibop
         # dbeaver-bin
         chromium
         yt-dlg
