@@ -78,7 +78,8 @@
                 # "ckb-next -b"
                 # "nice -n -10 easyeffects --gapplication-service"
                 "sleep 10; ${pkgs.carla}/bin/carla $HOME/.setup/home-manager/config/apps/config/carla.carxp"
-                "vesktop"
+                # "vesktop"
+                "equibop"
                 "sleep 5; finamp"
             ] ++ (if plasmashell then [
                 "kstart plasmashell"

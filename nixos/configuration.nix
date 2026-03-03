@@ -129,7 +129,7 @@
     [
         nh
         vscode
-        rider riderScript
+        #! rider riderScript
         firefox
         wl-clipboard
         xsel
@@ -142,7 +142,7 @@
         hyfetch
         fastfetch
         linux-wifi-hotspot
-        xorg.xkbcomp
+        xkbcomp
         mpv
         obsidian
         krita
@@ -661,13 +661,13 @@
                 openssl
                 fluidsynth
                 soundfont-fluid
-                xorg.libSM
+                libsm
                 icu
                 fontconfig
-                xorg.libX11
-                xorg.libICE
-                xorg.libXcursor
-                xorg.libXrandr
+                libx11
+                libice
+                libxcursor
+                libxrandr
                 libxxf86vm
                 xdotool
                 gtk3
