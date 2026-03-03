@@ -35,7 +35,7 @@ start_autoclicker() {
             sudo ydotool click $YDOTOOL_BUTTON_LEFT >>/dev/null
         done
     ) &
-    AUTOCLICKER_PID=$! 
+    AUTOCLICKER_PID=$!
     echo "Autoclicker PID: $AUTOCLICKER_PID"
 }
 
@@ -45,7 +45,7 @@ stop_autoclicker() {
     AUTOCLICKER_ACTIVE=false
     if [ -n "$AUTOCLICKER_PID" ] && kill -0 "$AUTOCLICKER_PID" 2>/dev/null; then
         kill "$AUTOCLICKER_PID"
-        wait "$AUTOCLICKER_PID" 2>/dev/null 
+        wait "$AUTOCLICKER_PID" 2>/dev/null
         echo "Autoclicker process killed."
     fi
     AUTOCLICKER_PID=""
@@ -68,7 +68,7 @@ sudo libinput debug-events | while read -r line; do
                 if $AUTOCLICKER_ACTIVE; then
                     stop_autoclicker
                 else
-                    start_autoclicker 
+                    start_autoclicker
                 fi
                 LAST_LEFT_PRESS_TIME=0
                 LAST_RIGHT_PRESS_TIME=0
@@ -79,7 +79,7 @@ sudo libinput debug-events | while read -r line; do
                 if $AUTOCLICKER_ACTIVE; then
                     stop_autoclicker
                 else
-                    start_autoclicker 
+                    start_autoclicker
                 fi
                 LAST_LEFT_PRESS_TIME=0
                 LAST_RIGHT_PRESS_TIME=0

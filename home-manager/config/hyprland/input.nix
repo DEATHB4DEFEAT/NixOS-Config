@@ -40,8 +40,8 @@
                 # Volume
                 # ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
                 # ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"
-                ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 $(pw-dump | jq '.[] | select(.info.props.\"node.nick\" == \"HyperX QuadCast\") | select(.info.props.\"media.class\" == \"Audio/Sink\").id') 5%+"
-                ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.5 $(pw-dump | jq '.[] | select(.info.props.\"node.nick\" == \"HyperX QuadCast\") | select(.info.props.\"media.class\" == \"Audio/Sink\").id') 5%-"
+                ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 $(pw-dump | jq '.[] | select(.info.props.\"node.nick\" == \"HyperX QuadCast\") | select(.info.props.\"media.class\" == \"Audio/Sink\").id') 5%+; hyprctl notify \"1 2500 rgb(00ff00) fontsize:50 $(wpctl get-volume $(pw-dump | jq '.[] | select(.info.props.\"node.nick\" == \"HyperX QuadCast\") | select(.info.props.\"media.class\" == \"Audio/Sink\").id'))\""
+                ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.5 $(pw-dump | jq '.[] | select(.info.props.\"node.nick\" == \"HyperX QuadCast\") | select(.info.props.\"media.class\" == \"Audio/Sink\").id') 5%-; hyprctl notify \"1 2500 rgb(ff0000) fontsize:50 $(wpctl get-volume $(pw-dump | jq '.[] | select(.info.props.\"node.nick\" == \"HyperX QuadCast\") | select(.info.props.\"media.class\" == \"Audio/Sink\").id'))\""
             ];
 
             bind = [
