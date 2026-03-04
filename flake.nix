@@ -16,7 +16,6 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
-        ags.url = "github:aylur/ags/v1";
         # millennium.url = "git+https://github.com/SteamClientHomebrew/Millennium";
         dolphin-overlay.url = "github:rumboon/dolphin-overlay";
         stylix = {
@@ -38,11 +37,10 @@
         # Hyprspace = { url = "github:KZDKM/Hyprspace"; inputs.hyprland.follows = "hyprland"; };
         split-monitor-workspaces = { url = "github:Duckonaut/split-monitor-workspaces"; inputs.hyprland.follows = "hyprland"; };
 
-
-        nix-minecraft = {
-            url = "github:Infinidoge/nix-minecraft";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
+        # nix-minecraft = {
+        #     url = "github:Infinidoge/nix-minecraft";
+        #     inputs.nixpkgs.follows = "nixpkgs";
+        # };
     };
 
 
@@ -80,7 +78,7 @@
 
                     inputs.stylix.nixosModules.stylix
 
-                    inputs.nix-minecraft.nixosModules.minecraft-servers { nixpkgs.overlays = [ inputs.nix-minecraft.overlay ]; }
+                    # inputs.nix-minecraft.nixosModules.minecraft-servers { nixpkgs.overlays = [ inputs.nix-minecraft.overlay ]; }
                 ];
             };
         };

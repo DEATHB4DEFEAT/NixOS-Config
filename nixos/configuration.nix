@@ -90,11 +90,14 @@
                 "ydotool"
                 "input"
                 "audio"
+                "tty"
             ];
             home = "/home/death";
         };
     };
 
+
+    documentation.enable = false;
 
     nixpkgs = {
         config = {
@@ -268,7 +271,7 @@
 
     # hardware.ckb-next.enable = true;
 
-
+    /*
     services.minecraft-servers = {
         enable = true;
         eula = true;
@@ -415,7 +418,7 @@
                 # };
             };
     };
-
+    */
 
     # Enable the OpenSSH daemon.
     services.openssh.enable = true;

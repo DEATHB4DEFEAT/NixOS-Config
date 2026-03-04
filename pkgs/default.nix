@@ -17,8 +17,8 @@ let
     call = file: pkgs.callPackage file {};
 in
 {
-    forgeServers = pkgs.callPackage ./forgeServers/. {};
-    fetchModrinthModpack = pkgs.callPackage ./fetchModrinthModpack.nix {};
+    # forgeServers = pkgs.callPackage ./forgeServers/. {};
+    # fetchModrinthModpack = pkgs.callPackage ./fetchModrinthModpack.nix {};
 
     death = lib.mapAttrs (name: call) packageFiles;
 }
