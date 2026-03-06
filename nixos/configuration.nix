@@ -183,10 +183,10 @@
         # qmk
         # via
         nix-prefetch-github
-        godot
+        # godot
         # trenchbroom
         death.robust-lsp
-        blockbench
+        # blockbench
         kdePackages.yakuake
         vesktop
         equibop

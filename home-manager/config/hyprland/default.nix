@@ -77,18 +77,30 @@
                 "kwalletd6"
                 # "ckb-next -b"
                 # "nice -n -10 easyeffects --gapplication-service"
-                "sleep 10; ${pkgs.carla}/bin/carla $HOME/.setup/home-manager/config/apps/config/carla.carxp"
-                # "vesktop"
-                "equibop"
-                "sleep 5; finamp"
+                "[workspace 4 silent] sleep 10; ${pkgs.carla}/bin/carla $HOME/.setup/home-manager/config/apps/config/carla.carxp"
+                # "[workspace 1 silent] vesktop"
+                "[workspace 1 silent] equibop"
+                "[workspace special:magic silent] sleep 5; finamp"
             ] ++ (if plasmashell then [
                 "kstart plasmashell"
             ] else []);
+
+
+            general = {
+                # layout = "dwindle";
+                layout = "scrolling";
+            };
 
             dwindle = {
                 pseudotile = true;
                 preserve_split = true;
             };
+
+            scrolling = {
+                column_width = 0.7;
+                # focus_fit_method = 0; # 0 = center, 1 = fit
+            };
+
 
             misc = {
                 force_default_wallpaper = 0;
@@ -120,7 +132,12 @@
                 #? Disable window flicker when autocomplete or tooltips appear
                 "no_focus on, match:class ^(jetbrains-.*)$, match:title ^(win.*)$, match:float 1"
 
-                # "opacity 0.8 0.65, match:class ^(foot)$"
+                # # Open certain apps in the right workspace
+                # "workspace 1 silent, match:class ^(discord)$"
+                # "workspace 1 silent, match:class ^(vesktop)$"
+                # "workspace 1 silent, match:class ^(equibop)$"
+                # "workspace 4 silent, match:class ^(carla)$"
+                # "workspace special:magic silent, match:class ^(finamp)$"
             ];
         };
     };

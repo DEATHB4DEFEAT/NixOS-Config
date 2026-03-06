@@ -36,13 +36,10 @@
                 }
             ];
 
-            binde = [
-                # Volume
-                # ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
-                # ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"
-                ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 $(pw-dump | jq '.[] | select(.info.props.\"node.nick\" == \"HyperX QuadCast\") | select(.info.props.\"media.class\" == \"Audio/Sink\").id') 5%+; hyprctl notify \"1 2500 rgb(00ff00) fontsize:50 $(wpctl get-volume $(pw-dump | jq '.[] | select(.info.props.\"node.nick\" == \"HyperX QuadCast\") | select(.info.props.\"media.class\" == \"Audio/Sink\").id'))\""
-                ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.5 $(pw-dump | jq '.[] | select(.info.props.\"node.nick\" == \"HyperX QuadCast\") | select(.info.props.\"media.class\" == \"Audio/Sink\").id') 5%-; hyprctl notify \"1 2500 rgb(ff0000) fontsize:50 $(wpctl get-volume $(pw-dump | jq '.[] | select(.info.props.\"node.nick\" == \"HyperX QuadCast\") | select(.info.props.\"media.class\" == \"Audio/Sink\").id'))\""
-            ];
+
+            binds = {
+                scroll_event_delay = 0;
+            };
 
             bind = [
                 # "SUPER, B, exec, ${browser}"
@@ -58,8 +55,8 @@
                 "ALT SHIFT, Print, exec, grimblast --freeze save area - | satty --output-filename /tmp/screenshot.png --disable-notifications --initial-tool brush --copy-command wl-copy --save-after-copy --early-exit --filename -; curl -F \"somefile=@/tmp/screenshot.png\" https://img.simplemodbot.tk/upload | wl-copy"
 
                 # Zoom
-                "SUPER, mouse_down, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '.float * 1.25')"
-                "SUPER, mouse_up, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '(.float / 1.25) | if . < 1 then 1 else . end')"
+                "SUPER SHIFT, mouse_down, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '.float * 1.25')"
+                "SUPER SHIFT, mouse_up, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '(.float / 1.25) | if . < 1 then 1 else . end')"
 
                 # Volume
                 # ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
@@ -75,7 +72,6 @@
 
                 # System
                 "SUPER, L, exec, hyprlock"
-                "SUPER SHIFT, L, exec, hyprctl dispatch exit"
                 "SUPER, R, exec, hyprctl reload"
                 "SUPER, F, togglefloating"
                 ", F11, fullscreen"
@@ -84,7 +80,10 @@
                 "SUPER CTRL, 1, focusmonitor, 0"
                 "SUPER CTRL, 2, focusmonitor, 1"
                 "SUPER CTRL, 3, focusmonitor, 2"
-                "SUPER, Z, exec, $HOME/.setup/home-manager/config/hyprland/scripts/switch-layout.sh"
+
+                # Scroll
+                "SUPER, mouse_down, layoutmsg, move -col"
+                "SUPER, mouse_up, layoutmsg, move +col"
 
                 # Workspaces
                 "SUPER, W, togglespecialworkspace, magic"
@@ -112,9 +111,26 @@
                 "SUPER, Space, exec, krunner"
             ] else []);
 
+            # Repeat on hold
+            binde = [
+                # Volume
+                # ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
+                # ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-"
+                ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 $(pw-dump | jq '.[] | select(.info.props.\"node.nick\" == \"HyperX QuadCast\") | select(.info.props.\"media.class\" == \"Audio/Sink\").id') 5%+; hyprctl notify \"1 2500 rgb(00ff00) fontsize:50 $(wpctl get-volume $(pw-dump | jq '.[] | select(.info.props.\"node.nick\" == \"HyperX QuadCast\") | select(.info.props.\"media.class\" == \"Audio/Sink\").id'))\""
+                ", XF86AudioLowerVolume, exec, wpctl set-volume -l 1.5 $(pw-dump | jq '.[] | select(.info.props.\"node.nick\" == \"HyperX QuadCast\") | select(.info.props.\"media.class\" == \"Audio/Sink\").id') 5%-; hyprctl notify \"1 2500 rgb(ff0000) fontsize:50 $(wpctl get-volume $(pw-dump | jq '.[] | select(.info.props.\"node.nick\" == \"HyperX QuadCast\") | select(.info.props.\"media.class\" == \"Audio/Sink\").id'))\""
+            ];
+
+            # Mouse movement
             bindm = [
                 "SUPER, mouse:272, movewindow"
                 "SUPER, mouse:273, resizewindow"
+            ];
+
+            # Usable while locked
+            bindl = [
+                # System
+                "SUPER SHIFT, L, exec, hyprctl dispatch exit"
+                "SUPER, Z, exec, $HOME/.setup/home-manager/config/hyprland/scripts/switch-layout.sh"
             ];
         };
     };
