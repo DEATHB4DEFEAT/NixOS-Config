@@ -195,7 +195,7 @@
         equibop
         # dbeaver-bin
         chromium
-        yt-dlg
+        # yt-dlg
         yt-dlp
         syncplay
         wl-kbptr

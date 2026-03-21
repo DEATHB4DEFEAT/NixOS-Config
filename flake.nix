@@ -24,11 +24,12 @@
         };
 
         hyprland = {
-            # type = "git";
-            # url = "https://github.com/hyprwm/Hyprland";
-            url = "github:hyprwm/Hyprland";
+            type = "git";
+            url = "https://github.com/hyprwm/Hyprland";
+            # url = "github:hyprwm/Hyprland";
             # rev = "9958d297641b5c84dcff93f9039d80a5ad37ab00"; # v0.49.0
             # rev = "4e242d086e20b32951fdc0ebcbfb4d41b5be8dcc"; # v0.50.1
+            rev = "59f9f2688ac508a0584d1462151195a6c4992f99"; # v0.54.2
             # submodules = true;
             inputs.nixpkgs.follows = "nixpkgs";
         };
