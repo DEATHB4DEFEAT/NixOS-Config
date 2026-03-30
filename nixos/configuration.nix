@@ -52,7 +52,13 @@
     networking = {
         hostName = "DTLinix";
         hosts = {
-            "10.0.0.85" = [ "jellyfin.simplemodbot.tk" "immich.simplemodbot.tk" ];
+            "10.0.0.85" = [
+                "img.simplemodbot.tk"
+                "immich.simplemodbot.tk"
+                "jellyfin.simplemodbot.tk"
+                "live.simplemodbot.tk"
+                "mc.simplemodbot.tk"
+            ];
         };
         nameservers = [ "1.1.1.1" "1.0.0.1" "2606:4700:4700::1111" "2606:4700:4700::1001" ];
         networkmanager = {
