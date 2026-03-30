@@ -11,6 +11,7 @@
             lsp-plugins
             rnnoise-plugin
             deepfilternet
+            fluida-lv2
         ];
 
         variables =
