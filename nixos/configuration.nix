@@ -245,6 +245,7 @@
         winetricks
         cabextract
         lutris
+        gale
 
         kdePackages.ark
         kdePackages.dolphin
