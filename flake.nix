@@ -29,14 +29,16 @@
             # url = "github:hyprwm/Hyprland";
             # rev = "9958d297641b5c84dcff93f9039d80a5ad37ab00"; # v0.49.0
             # rev = "4e242d086e20b32951fdc0ebcbfb4d41b5be8dcc"; # v0.50.1
-            rev = "59f9f2688ac508a0584d1462151195a6c4992f99"; # v0.54.2
+            # rev = "59f9f2688ac508a0584d1462151195a6c4992f99"; # v0.54.2
+            rev = "521ece463c4a9d3d128670688a34756805a4328f"; # v0.54.3
             # submodules = true;
             inputs.nixpkgs.follows = "nixpkgs";
         };
         hypr-dynamic-cursors = { url = "github:VirtCode/hypr-dynamic-cursors"; inputs.hyprland.follows = "hyprland"; };
         hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
         # Hyprspace = { url = "github:KZDKM/Hyprspace"; inputs.hyprland.follows = "hyprland"; };
-        split-monitor-workspaces = { url = "github:Duckonaut/split-monitor-workspaces"; inputs.hyprland.follows = "hyprland"; };
+        # split-monitor-workspaces = { url = "github:Duckonaut/split-monitor-workspaces"; inputs.hyprland.follows = "hyprland"; };
+        split-monitor-workspaces = { url = "github:suicide/split-monitor-workspaces/fix-nix-0.54.3"; inputs.hyprland.follows = "hyprland"; };
 
         # nix-minecraft = {
         #     url = "github:Infinidoge/nix-minecraft";

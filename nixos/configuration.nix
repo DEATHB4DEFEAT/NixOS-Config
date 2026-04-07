@@ -128,8 +128,8 @@
 
     environment.systemPackages = with pkgs;
     let
-        riderScript = pkgs.writeShellScriptBin "rider" "nice -n 10 ${pkgs.steam-run}/bin/steam-run ${pkgs.jetbrains.rider}/bin/rider";
-        rider = pkgs.jetbrains.rider.overrideAttrs (oldAttrs: { meta.priority = 10; });
+        # riderScript = pkgs.writeShellScriptBin "rider" "nice -n 10 ${pkgs.steam-run}/bin/steam-run ${pkgs.jetbrains.rider}/bin/rider";
+        # rider = pkgs.jetbrains.rider.overrideAttrs (oldAttrs: { meta.priority = 10; });
         tetrio = tetrio-desktop.overrideAttrs (oldAttrs: { withTetrioPlus = tetrio-plus; });
         # rustdeskScript = pkgs.writeShellScriptBin "rustdesk" "WAYLAND_DISPLAY=\"\" ${pkgs.rustdesk}/bin/rustdesk";
         # rustdesk = pkgs.rustdesk.overrideAttrs (oldAttrs: { meta.priority = 10; });
@@ -142,6 +142,7 @@
         nh
         vscode
         # rider riderScript
+        jetbrains.rider nodejs_22
         firefox
         wl-clipboard
         xsel
@@ -241,7 +242,7 @@
         deadlock-mod-manager
         vintagestory
         xwayland-satellite
-        wineWowPackages.unstableFull
+        # wineWowPackages.unstableFull
         winetricks
         cabextract
         lutris
