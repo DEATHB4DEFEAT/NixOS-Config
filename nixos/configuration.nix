@@ -144,6 +144,7 @@
         # rider riderScript
         jetbrains.rider nodejs_22
         firefox
+        inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
         wl-clipboard
         xsel
         ntfs3g
