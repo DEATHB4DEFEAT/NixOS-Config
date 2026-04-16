@@ -34,6 +34,7 @@
 
         hyprland-qtutils
         hyprshot
+        hyprshutdown
     ];
 
     wayland.windowManager.hyprland = {
