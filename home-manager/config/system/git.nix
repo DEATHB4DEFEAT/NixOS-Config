@@ -2,9 +2,14 @@
     programs = {
         git = {
             enable = true;
-            userEmail = "zachcaffee@outlook.com";
-            userName = "DEATHB4DEFEAT";
+            # userEmail = "zachcaffee@outlook.com";
+            # userName = "DEATHB4DEFEAT";
+            settings.user = {
+                email = "zachcaffee@outlook.com";
+                name = "DEATHB4DEFEAT";
+            };
             signing = {
+                format = "openpgp";
                 key = "62B0D3993D872EBB";
                 signByDefault = true;
             };

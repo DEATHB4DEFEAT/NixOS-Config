@@ -1,6 +1,7 @@
 {
     pkgs,
     lib,
+    config,
     ...
 }:
 
@@ -12,7 +13,10 @@
             package = pkgs.candy-icons;
         };
         gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
-        gtk4.extraConfig.gtk-application-prefer-dark-theme = true;
+        gtk4 = {
+            extraConfig.gtk-application-prefer-dark-theme = true;
+            theme = config.gtk.theme;
+        };
     };
     dconf.settings = {
         "org/gnome/desktop/interface" = lib.mkForce {
