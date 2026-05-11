@@ -4,6 +4,8 @@
     inputs = {
         determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+        nixpkgs-later.url = "github:nixos/nixpkgs/nixos-unstable";
+        nixpkgs-small.url = "github:nixos/nixpkgs/nixos-unstable-small";
 
         nix-index-database = {
             url = "github:nix-community/nix-index-database";

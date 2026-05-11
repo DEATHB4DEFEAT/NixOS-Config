@@ -678,6 +678,7 @@
 
   <Data>
    <Active>Yes</Active>
+   <DryWet>0</DryWet>
    <ControlChannel>1</ControlChannel>
    <Options>0x0</Options>
 
@@ -1014,8 +1015,16 @@
    <Target>Chromium input:input_FL</Target>
   </Connection>
   <Connection>
+   <Source>Null Comms Source:capture_FL</Source>
+   <Target>java-257:input_FL</Target>
+  </Connection>
+  <Connection>
    <Source>Null Comms Source:capture_FR</Source>
    <Target>Chromium input:input_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Null Comms Source:capture_FR</Source>
+   <Target>java-257:input_FR</Target>
   </Connection>
   <Connection>
    <Source>HyperX QuadCast Analog Stereo:capture_FL</Source>
@@ -1024,6 +1033,14 @@
   <Connection>
    <Source>HyperX QuadCast Analog Stereo:capture_FR</Source>
    <Target>Noise Suppressor for Voice (Stereo):Input (R)</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium:output_FL</Source>
+   <Target>Null General Sink:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium:output_FR</Source>
+   <Target>Null General Sink:playback_FR</Target>
   </Connection>
   <Connection>
    <Source>LSP Sidechain Compressor Stereo:Output L</Source>
@@ -1114,20 +1131,36 @@
    <Target>Null Music Sink:playback_FR</Target>
   </Connection>
   <Connection>
-   <Source>Chromium-223:output_FL</Source>
+   <Source>Zen:output_FL</Source>
    <Target>Null General Sink:playback_FL</Target>
   </Connection>
   <Connection>
-   <Source>Chromium-223:output_FR</Source>
+   <Source>Zen:output_FR</Source>
    <Target>Null General Sink:playback_FR</Target>
   </Connection>
   <Connection>
-   <Source>Chromium-238:output_FL</Source>
+   <Source>java:output_FL</Source>
    <Target>Null General Sink:playback_FL</Target>
   </Connection>
   <Connection>
-   <Source>Chromium-238:output_FR</Source>
+   <Source>java:output_FR</Source>
    <Target>Null General Sink:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>java-245:output_FL</Source>
+   <Target>Null General Sink:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>java-245:output_FR</Source>
+   <Target>Null General Sink:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-250:output_FL</Source>
+   <Target>Null Comms Sink:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-250:output_FR</Source>
+   <Target>Null Comms Sink:playback_FR</Target>
   </Connection>
   <Connection>
    <Source>Null General Sink:monitor_FL</Source>
@@ -1218,12 +1251,6 @@
    </Position>
    <Position x1="1400" y1="1336" pluginId="7">
     <Name>Fluida</Name>
-   </Position>
-   <Position x1="781" y1="1127">
-    <Name>mpv</Name>
-   </Position>
-   <Position x1="1200" y1="1285">
-    <Name>Chromium-223</Name>
    </Position>
   </Positions>
  </ExternalPatchbay>

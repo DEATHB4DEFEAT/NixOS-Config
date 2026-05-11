@@ -56,6 +56,7 @@
                 "img.simplemodbot.tk"
                 "immich.simplemodbot.tk"
                 "jellyfin.simplemodbot.tk"
+                "navidrome.simplemodbot.tk"
                 "live.simplemodbot.tk"
                 "mc.simplemodbot.tk"
             ];
@@ -185,8 +186,8 @@
         # piper-tts
         # tetrio
         # rustdesk #rustdeskScript # https://nixpk.gs/pr-tracker.html?pr=390171
-        inkscape-with-extensions
-        inkscape-extensions.hexmap
+        # inkscape-with-extensions
+        # inkscape-extensions.hexmap
         gimp
         nixd
         termius termiusScript
@@ -199,8 +200,7 @@
         death.robust-lsp
         # blockbench
         kdePackages.yakuake
-        vesktop
-        equibop
+        inputs.nixpkgs-later.legacyPackages.${pkgs.stdenv.hostPlatform.system}.equibop
         # dbeaver-bin
         chromium
         # yt-dlg
@@ -248,6 +248,7 @@
         cabextract
         lutris
         gale
+        rsgain
 
         kdePackages.ark
         kdePackages.dolphin

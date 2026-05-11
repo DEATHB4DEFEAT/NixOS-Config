@@ -164,5 +164,7 @@
   "bar.customModules.storage.paths": [
     "/"
   ],
-  "menus.power.logout": "loginctl kill-session $XDG_SESSION_ID\n"
+  "menus.power.logout": "loginctl kill-session $XDG_SESSION_ID\n",
+  "menus.dashboard.powermenu.reboot": "hyprshutdown -p \"reboot now\"",
+  "menus.dashboard.powermenu.shutdown": "hyprshutdown -p \"shutdown now\""
 }
