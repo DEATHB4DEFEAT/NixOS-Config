@@ -139,6 +139,9 @@
                 # "workspace 1 silent, match:class ^(equibop)$"
                 # "workspace 4 silent, match:class ^(carla)$"
                 # "workspace special:magic silent, match:class ^(finamp)$"
+
+                # Bigscreen
+                "match:tag bigscreen, no_max_size on, border_color rgb(9b59b6)"
             ];
         };
     };

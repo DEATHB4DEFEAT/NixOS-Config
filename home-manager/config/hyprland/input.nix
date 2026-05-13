@@ -75,6 +75,8 @@
                 "SUPER, R, exec, hyprctl reload"
                 "SUPER, F, togglefloating"
                 ", F11, fullscreen"
+                "SUPER SHIFT, F, tagwindow, bigscreen"
+                "SUPER SHIFT, F, exec, hyprctl dispatch fakefullscreen; hyprctl dispatch togglefloating; hyprctl dispatch resizeactive exact 3840 1080; hyprctl dispatch moveactive exact 0 0"
                 "SUPER, Tab, cyclenext"
                 "SUPER, J, exec, wl-kbptr -c $HOME/.setup/home-manager/config/apps/config/wl-kbptr"
                 "SUPER CTRL, 1, focusmonitor, 0"
