@@ -986,7 +986,7 @@
    <CustomData>
     <Type>http://lv2plug.in/ns/ext/atom#Int</Type>
     <Key>https://github.com/brummer10/Fluida.lv2#channel</Key>
-    <Value>AAAAAA==</Value>
+    <Value>DgAAAA==</Value>
    </CustomData>
 
    <CustomData>
@@ -1009,6 +1009,35 @@
   </Data>
  </Plugin>
 
+ <!-- MIDI Transpose -->
+ <Plugin>
+  <Info>
+   <Type>LV2</Type>
+   <Name>MIDI Transpose</Name>
+   <URI>http://kxstudio.sf.net/carla/plugins/miditranspose</URI>
+  </Info>
+
+  <Data>
+   <Active>Yes</Active>
+   <ControlChannel>1</ControlChannel>
+   <Options>0x3f1</Options>
+
+   <Parameter>
+    <Index>1</Index>
+    <Name>Octaves</Name>
+    <Symbol>octaves</Symbol>
+    <Value>-1</Value>
+   </Parameter>
+
+   <Parameter>
+    <Index>2</Index>
+    <Name>Semitones</Name>
+    <Symbol>semitones</Symbol>
+    <Value>0</Value>
+   </Parameter>
+  </Data>
+ </Plugin>
+
  <ExternalPatchbay>
   <Connection>
    <Source>Null Comms Source:capture_FL</Source>
@@ -1016,7 +1045,7 @@
   </Connection>
   <Connection>
    <Source>Null Comms Source:capture_FL</Source>
-   <Target>java-257:input_FL</Target>
+   <Target>OBS:input_FL-994</Target>
   </Connection>
   <Connection>
    <Source>Null Comms Source:capture_FR</Source>
@@ -1024,7 +1053,7 @@
   </Connection>
   <Connection>
    <Source>Null Comms Source:capture_FR</Source>
-   <Target>java-257:input_FR</Target>
+   <Target>OBS:input_FR-995</Target>
   </Connection>
   <Connection>
    <Source>HyperX QuadCast Analog Stereo:capture_FL</Source>
@@ -1033,22 +1062,6 @@
   <Connection>
    <Source>HyperX QuadCast Analog Stereo:capture_FR</Source>
    <Target>Noise Suppressor for Voice (Stereo):Input (R)</Target>
-  </Connection>
-  <Connection>
-   <Source>Chromium:output_FL</Source>
-   <Target>Null General Sink:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Chromium:output_FR</Source>
-   <Target>Null General Sink:playback_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>LSP Sidechain Compressor Stereo:Output L</Source>
-   <Target>Null General Sink:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>LSP Sidechain Compressor Stereo:Output R</Source>
-   <Target>Null General Sink:playback_FR</Target>
   </Connection>
   <Connection>
    <Source>LSP Limiter Stereo:Output L</Source>
@@ -1065,6 +1078,14 @@
   <Connection>
    <Source>LSP Limiter Stereo:Output R</Source>
    <Target>Out Headphones:input_2</Target>
+  </Connection>
+  <Connection>
+   <Source>LSP Sidechain Compressor Stereo:Output L</Source>
+   <Target>Null General Sink:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>LSP Sidechain Compressor Stereo:Output R</Source>
+   <Target>Null General Sink:playback_FR</Target>
   </Connection>
   <Connection>
    <Source>Deaf .(:output_1</Source>
@@ -1123,43 +1144,19 @@
    <Target>Null Comms Source:playback_FR</Target>
   </Connection>
   <Connection>
-   <Source>mpv:output_FL</Source>
-   <Target>Null Music Sink:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>mpv:output_FR</Source>
-   <Target>Null Music Sink:playback_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>Zen:output_FL</Source>
-   <Target>Null General Sink:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Zen:output_FR</Source>
-   <Target>Null General Sink:playback_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>java:output_FL</Source>
-   <Target>Null General Sink:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>java:output_FR</Source>
-   <Target>Null General Sink:playback_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>java-245:output_FL</Source>
-   <Target>Null General Sink:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>java-245:output_FR</Source>
-   <Target>Null General Sink:playback_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>Chromium-250:output_FL</Source>
+   <Source>Chromium-227:output_FL</Source>
    <Target>Null Comms Sink:playback_FL</Target>
   </Connection>
   <Connection>
-   <Source>Chromium-250:output_FR</Source>
+   <Source>Chromium-227:output_FR</Source>
+   <Target>Null Comms Sink:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-249:output_FL</Source>
+   <Target>Null Comms Sink:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Chromium-249:output_FR</Source>
    <Target>Null Comms Sink:playback_FR</Target>
   </Connection>
   <Connection>
@@ -1167,8 +1164,16 @@
    <Target>LSP Limiter Stereo:Input L</Target>
   </Connection>
   <Connection>
+   <Source>Null General Sink:monitor_FL</Source>
+   <Target>OBS:input_FL</Target>
+  </Connection>
+  <Connection>
    <Source>Null General Sink:monitor_FR</Source>
    <Target>LSP Limiter Stereo:Input R</Target>
+  </Connection>
+  <Connection>
+   <Source>Null General Sink:monitor_FR</Source>
+   <Target>OBS:input_FR</Target>
   </Connection>
   <Connection>
    <Source>Null Music Sink:monitor_FL</Source>
@@ -1193,6 +1198,14 @@
   <Connection>
    <Source>Null Comms Sink:monitor_FR</Source>
    <Target>LSP Sidechain Compressor Stereo:Sidechain input Right</Target>
+  </Connection>
+  <Connection>
+   <Source>Midi-Bridge:Portable G MIDI 1 (capture)</Source>
+   <Target>MIDI Transpose:events-in</Target>
+  </Connection>
+  <Connection>
+   <Source>MIDI Transpose:events-out</Source>
+   <Target>Fluida:events-in</Target>
   </Connection>
   <Positions>
    <Position x1="1387" y1="974">
@@ -1225,7 +1238,7 @@
    <Position x1="2198" y1="1425">
     <Name>Null Experimental Sink</Name>
    </Position>
-   <Position x1="1705" y1="780" x2="2102" y2="779">
+   <Position x1="1009" y1="1319" x2="2102" y2="779">
     <Name>Midi-Bridge</Name>
    </Position>
    <Position x1="1705" y1="854" x2="2101" y2="854">
@@ -1251,6 +1264,21 @@
    </Position>
    <Position x1="1400" y1="1336" pluginId="7">
     <Name>Fluida</Name>
+   </Position>
+   <Position x1="1952" y1="1522">
+    <Name>Chromium input</Name>
+   </Position>
+   <Position x1="1983" y1="1348">
+    <Name>OBS</Name>
+   </Position>
+   <Position x1="563" y1="1690">
+    <Name>.xdg-desktop-portal-hyprland-wrapped</Name>
+   </Position>
+   <Position x1="907" y1="1692">
+    <Name>.obs-wrapped</Name>
+   </Position>
+   <Position x1="1237" y1="1336" pluginId="8">
+    <Name>MIDI Transpose</Name>
    </Position>
   </Positions>
  </ExternalPatchbay>

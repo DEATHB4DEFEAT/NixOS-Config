@@ -81,7 +81,8 @@
                 "[workspace 4 silent] sleep 10; ${pkgs.carla}/bin/carla $HOME/.setup/home-manager/config/apps/config/carla.carxp"
                 # "[workspace 1 silent] vesktop"
                 "[workspace 1 silent] equibop"
-                "[workspace special:magic silent] sleep 5; finamp"
+                # "[workspace special:magic silent] sleep 5; finamp"
+                "[workspace special:magic silent] feishin"
             ] ++ (if plasmashell then [
                 "kstart plasmashell"
             ] else []);

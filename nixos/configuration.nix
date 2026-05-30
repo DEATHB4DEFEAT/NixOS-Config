@@ -249,6 +249,7 @@
         lutris
         gale
         rsgain
+        feishin
 
         kdePackages.ark
         kdePackages.dolphin
@@ -705,6 +706,8 @@
                 libxml2
                 libGL
                 openal
+                libxaw
+                libxt
 
                 gst_all_1.gstreamer
                 gst_all_1.gst-plugins-base
