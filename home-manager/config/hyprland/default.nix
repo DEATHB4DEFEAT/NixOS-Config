@@ -137,6 +137,8 @@
 
                 # Bigscreen
                 "match:tag bigscreen, no_max_size on, border_color rgb(9b59b6)"
+
+                "float on, match:title ^(Nyasynth.*)$"
             ];
         };
     };
