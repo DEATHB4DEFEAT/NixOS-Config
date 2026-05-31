@@ -44,6 +44,7 @@
         portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
         xwayland.enable = true;
 
+        configType = "hyprlang";
         settings = let
             inherit (import ./variables.nix)
                 plasmashell
@@ -78,7 +79,7 @@
                 "kwalletd6"
                 # "ckb-next -b"
                 # "nice -n -10 easyeffects --gapplication-service"
-                "[workspace 4 silent] sleep 10; ${pkgs.carla}/bin/carla $HOME/.setup/home-manager/config/apps/config/carla.carxp"
+                "[workspace 4 silent] sleep 10; ${pkgs.pipewire.jack}/bin/pw-jack ${pkgs.carla}/bin/carla $HOME/.setup/home-manager/config/apps/config/carla.carxp"
                 # "[workspace 1 silent] vesktop"
                 "[workspace 1 silent] equibop"
                 # "[workspace special:magic silent] sleep 5; finamp"
@@ -133,13 +134,6 @@
                 "border_size 0, match:class ^(jetbrains-.*)$, match:title ^( )$, match:float 1"
                 #? Disable window flicker when autocomplete or tooltips appear
                 "no_focus on, match:class ^(jetbrains-.*)$, match:title ^(win.*)$, match:float 1"
-
-                # # Open certain apps in the right workspace
-                # "workspace 1 silent, match:class ^(discord)$"
-                # "workspace 1 silent, match:class ^(vesktop)$"
-                # "workspace 1 silent, match:class ^(equibop)$"
-                # "workspace 4 silent, match:class ^(carla)$"
-                # "workspace special:magic silent, match:class ^(finamp)$"
 
                 # Bigscreen
                 "match:tag bigscreen, no_max_size on, border_color rgb(9b59b6)"

@@ -19,7 +19,7 @@
         };
 
         # millennium.url = "git+https://github.com/SteamClientHomebrew/Millennium";
-        dolphin-overlay.url = "github:rumboon/dolphin-overlay";
+        # dolphin-overlay.url = "github:rumboon/dolphin-overlay";
         stylix = {
             url = "github:nix-community/stylix";
             inputs.nixpkgs.follows = "nixpkgs";

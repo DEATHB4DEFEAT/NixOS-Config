@@ -12,6 +12,7 @@
             rnnoise-plugin
             deepfilternet
             fluida-lv2
+            death.nyasynth
         ];
 
         variables =

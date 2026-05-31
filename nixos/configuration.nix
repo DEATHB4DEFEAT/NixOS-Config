@@ -123,7 +123,7 @@
         overlays = [
             (_: pkgs: (import ../pkgs {inherit pkgs lib;}))
             # inputs.millennium.overlays.default
-            inputs.dolphin-overlay.overlays.default
+            # inputs.dolphin-overlay.overlays.default
         ];
     };
 
@@ -174,7 +174,7 @@
         neothesia
         # element-desktop
         aseprite
-        heroic
+        # heroic
         bat
         btop
         fd
@@ -199,7 +199,7 @@
         # trenchbroom
         death.robust-lsp
         # blockbench
-        kdePackages.yakuake
+        # kdePackages.yakuake
         inputs.nixpkgs-later.legacyPackages.${pkgs.stdenv.hostPlatform.system}.equibop
         # dbeaver-bin
         chromium
@@ -210,15 +210,15 @@
         droidcam
         openseeface
         v4l-utils
-        kdePackages.kdenlive
-        uxplay
+        # kdePackages.kdenlive
+        # uxplay
         # steam-rom-manager
         kdePackages.layer-shell-qt
         jq
         # clonehero
         unzip
         wget
-        unityhub unityhubScript
+        # unityhub unityhubScript
         finamp
         candy-icons
         (pkgs.catppuccin-sddm.override {
@@ -230,23 +230,23 @@
         })
         dconf-editor
         r2modman
-        discord-development
+        # discord-development
         # (livecaptions.overrideAttrs (oldAttrs: { rocmSupport = true; })) # Weirdly similar performance, but generally worse after the update?
         livecaptions
         grimblast
         satty
-        remmina
+        # remmina
         killall
         libinput
         puddletag
         pavucontrol
         deadlock-mod-manager
-        vintagestory
-        xwayland-satellite
+        # vintagestory
+        # xwayland-satellite
         # wineWowPackages.unstableFull
         winetricks
         cabextract
-        lutris
+        # lutris
         gale
         rsgain
         feishin
