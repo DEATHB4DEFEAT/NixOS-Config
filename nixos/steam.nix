@@ -45,7 +45,7 @@
         # gamescope -- %command%
         gamescope = {
         	# enable = true;
-        	capSysNice = true;
+        	capSysNice = false;
         	args = [
                 "-W 3840"
                 "-H 2160"
