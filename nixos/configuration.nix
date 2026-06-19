@@ -250,6 +250,7 @@
         gale
         rsgain
         feishin
+        death.fluxer-desktop
 
         kdePackages.ark
         kdePackages.dolphin
