@@ -828,12 +828,14 @@
                 }
             }
 
+            # symlink /home/death/.setup/home-manager/config/hyprland \
+                /home/death/.config/hypr
             symlink /home/death/.setup/home-manager/config/hyprland/hyprpanel \
                 /home/death/.config/hyprpanel
             symlink /home/death/.setup/home-manager/config/hyprland/rofi \
                 /home/death/.config/rofi
 
-            symlink /home/death/.setup/home-manager/config/niri/niri \
+            # symlink /home/death/.setup/home-manager/config/niri/niri \
                 /home/death/.config/niri
 
             symlink /home/death/.setup/home-manager/config/apps/config/dolphinrc \

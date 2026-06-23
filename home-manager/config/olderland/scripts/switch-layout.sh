@@ -1,0 +1,1 @@
+hyprctl switchxkblayout all next -q; hyprctl notify "1 2500 rgb(ffffff) fontsize:50 Keyboard layout changed to $(hyprctl -j devices | jq '.keyboards' | jq '.[] | select (.main == true)' | awk -F '"' '{if ($2=="active_keymap") print $4}')"

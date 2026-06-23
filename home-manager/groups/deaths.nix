@@ -23,9 +23,11 @@
         ../config/apps/shell.nix
         ../config/apps/typecaptions.nix
 
-        ../config/hyprland/.
+        # ../config/hyprland/.
+        # ../config/lualand/.
+        ../config/olderland/.
 
-        ../config/niri/.
+        # ../config/niri/.
 
         ../config/system/git.nix
         ../config/system/gpg.nix
