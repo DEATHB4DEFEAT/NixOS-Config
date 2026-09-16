@@ -13,7 +13,7 @@
             enable = true;
             shellAliases = {
                 reconf = "git add .; nh os switch . -- --impure; hyprctl switchxkblayout all 1";
-                hs = "cat ~/.bash_history | grep -i";
+                hs = "rg -nS $HISTFILE -e ";
                 nano = "nano -ZDEFLSil%0T4";
                 c = "clear";
                 ytdl = "yt-dlp --newline -R 25 -i -o /drives/data/media/tmp/%\\(title\\)s.%\\(ext\\)s -x --audio-format best --audio-quality 0 -v --ignore-config --hls-prefer-native --embed-thumbnail --add-metadata --cookies-from-browser firefox";
