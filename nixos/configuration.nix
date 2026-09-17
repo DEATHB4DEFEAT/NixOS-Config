@@ -143,8 +143,9 @@
         nh
         vscode
         # rider riderScript
-        jetbrains.rider nodejs_22
-        firefox
+        jetbrains.rider
+        nodejs_22
+        # firefox
         inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
         wl-clipboard
         xsel
@@ -250,7 +251,7 @@
         gale
         rsgain
         feishin
-        death.fluxer-desktop
+        # death.fluxer-desktop
 
         kdePackages.ark
         kdePackages.dolphin
@@ -520,7 +521,7 @@
                 enable = true;
                 wayland = {
                     enable = true;
-                    compositorCommand = "${pkgs.hyprland}/bin/hyprland -c ${pkgs.writeTextFile { name = "sddm-hyprland"; destination = "/sddm-hyprland.conf"; text = builtins.readFile ./sddm-hyprland.conf; } }/sddm-hyprland.conf";
+                    compositorCommand = "${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/bin/hyprland -c ${pkgs.writeTextFile { name = "sddm-hyprland"; destination = "/sddm-hyprland.conf"; text = builtins.readFile ./sddm-hyprland.conf; } }/sddm-hyprland.conf";
                 };
                 theme = "catppuccin-macchiato";
                 settings = {
@@ -569,10 +570,6 @@
             via
         ];
 
-        journald = {
-            extraConfig = "SystemMaxUse=100M";
-        };
-
         gvfs.enable = true;
 
         qbittorrent = {
@@ -592,6 +589,8 @@
         };
 
         libinput.enable = true;
+
+        dbus.enable = lib.mkDefault true;
     };
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
         elisa
@@ -602,9 +601,6 @@
         withUWSM  = true;
         package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
         portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-    };
-    programs.niri = {
-        enable = true;
     };
     xdg.portal = {
         enable = true;
@@ -716,7 +712,6 @@
                 gst_all_1.gst-plugins-bad
                 gst_all_1.gst-plugins-ugly
                 gst_all_1.gst-libav
-                gst_all_1.gst-vaapi
 
                 freetype
                 fluidsynth
