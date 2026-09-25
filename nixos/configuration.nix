@@ -591,6 +591,8 @@
         libinput.enable = true;
 
         dbus.enable = lib.mkDefault true;
+
+        flatpak.enable = true;
     };
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
         elisa
