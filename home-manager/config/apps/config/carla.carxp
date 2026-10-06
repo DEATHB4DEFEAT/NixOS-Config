@@ -1132,14 +1132,6 @@ dHJvbGxlcj48L1ZTVDNQbHVnaW5TdGF0ZT4A
 
  <ExternalPatchbay>
   <Connection>
-   <Source>Null Comms Source:capture_FL</Source>
-   <Target>Chromium input:input_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Null Comms Source:capture_FR</Source>
-   <Target>Chromium input:input_FR</Target>
-  </Connection>
-  <Connection>
    <Source>HyperX QuadCast Analog Stereo:capture_FL</Source>
    <Target>Noise Suppressor for Voice (Stereo):Input (L)</Target>
   </Connection>
@@ -1153,6 +1145,14 @@ dHJvbGxlcj48L1ZTVDNQbHVnaW5TdGF0ZT4A
   </Connection>
   <Connection>
    <Source>LSP Sidechain Compressor Stereo:Output R</Source>
+   <Target>Null General Sink:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Zen:output_FL</Source>
+   <Target>Null General Sink:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Zen:output_FR</Source>
    <Target>Null General Sink:playback_FR</Target>
   </Connection>
   <Connection>
@@ -1189,11 +1189,11 @@ dHJvbGxlcj48L1ZTVDNQbHVnaW5TdGF0ZT4A
   </Connection>
   <Connection>
    <Source>Out Monitor:output_1</Source>
-   <Target>Navi 31 HDMI/DP Audio Digital Stereo (HDMI 2):playback_FL</Target>
+   <Target>Navi 31 HDMI/DP Audio Digital Stereo (HDMI 2) [Sceptre L27]:playback_FL</Target>
   </Connection>
   <Connection>
    <Source>Out Monitor:output_2</Source>
-   <Target>Navi 31 HDMI/DP Audio Digital Stereo (HDMI 2):playback_FR</Target>
+   <Target>Navi 31 HDMI/DP Audio Digital Stereo (HDMI 2) [Sceptre L27]:playback_FR</Target>
   </Connection>
   <Connection>
    <Source>Noise Suppressor for Voice (Stereo):Output (L)</Source>
@@ -1244,22 +1244,6 @@ dHJvbGxlcj48L1ZTVDNQbHVnaW5TdGF0ZT4A
    <Target>Null Comms Source:playback_FR</Target>
   </Connection>
   <Connection>
-   <Source>Chromium:output_FL</Source>
-   <Target>Null Comms Sink:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Chromium:output_FR</Source>
-   <Target>Null Comms Sink:playback_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>Chromium-376:output_FL</Source>
-   <Target>Null Comms Sink:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Chromium-376:output_FR</Source>
-   <Target>Null Comms Sink:playback_FR</Target>
-  </Connection>
-  <Connection>
    <Source>Null General Sink:monitor_FL</Source>
    <Target>LSP Limiter Stereo:Input L</Target>
   </Connection>
@@ -1290,10 +1274,6 @@ dHJvbGxlcj48L1ZTVDNQbHVnaW5TdGF0ZT4A
   <Connection>
    <Source>Null Comms Sink:monitor_FR</Source>
    <Target>LSP Sidechain Compressor Stereo:Sidechain input Right</Target>
-  </Connection>
-  <Connection>
-   <Source>Midi-Bridge:Portable G: MIDI 1 (capture)</Source>
-   <Target>MIDI Transpose:events-in</Target>
   </Connection>
   <Connection>
    <Source>MIDI Transpose:events-out</Source>
@@ -1330,8 +1310,8 @@ dHJvbGxlcj48L1ZTVDNQbHVnaW5TdGF0ZT4A
    <Position x1="1399" y1="1128">
     <Name>Null General Sink</Name>
    </Position>
-   <Position x1="818" y1="1451" x2="2044" y2="1218">
-    <Name>Navi 31 HDMI/DP Audio Digital Stereo (HDMI 2)</Name>
+   <Position x1="1550" y1="1792" x2="2044" y2="1223">
+    <Name>Navi 31 HDMI/DP Audio Digital Stereo (HDMI 2) [Sceptre L27]</Name>
    </Position>
    <Position x1="886" y1="1129">
     <Name>Null Music Sink</Name>
@@ -1378,14 +1358,11 @@ dHJvbGxlcj48L1ZTVDNQbHVnaW5TdGF0ZT4A
    <Position x1="1223" y1="1291" pluginId="10">
     <Name>MIDI File</Name>
    </Position>
-   <Position x1="1956" y1="1526">
-    <Name>Chromium input</Name>
+   <Position x1="1655" y1="1328">
+    <Name>cava</Name>
    </Position>
-   <Position x1="612" y1="1327">
-    <Name>Chromium-376</Name>
-   </Position>
-   <Position x1="654" y1="1257">
-    <Name>Chromium</Name>
+   <Position x1="1002" y1="944">
+    <Name>Zen</Name>
    </Position>
   </Positions>
  </ExternalPatchbay>

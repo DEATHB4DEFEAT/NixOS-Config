@@ -13,6 +13,8 @@
             deepfilternet
             fluida-lv2
             death.nyasynth
+            uhhyou-plugins
+            uhhyou-plugins-juce
         ];
 
         variables =
