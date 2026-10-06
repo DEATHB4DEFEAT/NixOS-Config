@@ -47,6 +47,10 @@
         #     url = "github:Infinidoge/nix-minecraft";
         #     inputs.nixpkgs.follows = "nixpkgs";
         # };
+        bedrock-on-linux = {
+            url = "github:Wyze3306/BedrockOnLinux";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
 
         zen-browser = {
             url = "github:youwen5/zen-browser-flake";

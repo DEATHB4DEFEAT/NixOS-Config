@@ -252,6 +252,7 @@
         rsgain
         feishin
         # death.fluxer-desktop
+        inputs.bedrock-on-linux.packages.x86_64-linux.default
 
         kdePackages.ark
         kdePackages.dolphin
@@ -732,6 +733,9 @@
                 libgbm
                 expat
                 libxcb
+                libxinerama
+                libxrender
+                libxi
             ]; # ++ config.environment.systemPackages;
         };
 
