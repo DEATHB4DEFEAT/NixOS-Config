@@ -16,6 +16,7 @@
             };
 
             "debug:full_cm_proto" = true;
+            "debug:disable_logs" = false;
         };
     };
 }

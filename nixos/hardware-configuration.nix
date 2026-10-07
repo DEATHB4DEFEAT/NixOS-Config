@@ -82,14 +82,17 @@
         "/drives/C" = {
             device = "/dev/disk/by-uuid/2CC2BC65C2BC3544";
             fsType = "ntfs";
+            noCheck = true;
         };
         "/drives/D" = {
             device = "/dev/disk/by-uuid/06AEE5082B74F336";
             fsType = "ntfs";
+            noCheck = true;
         };
         # "/drives/E" = {
         #     device = "/dev/disk/by-uuid/5644295C6F90F411";
         #     fsType = "ntfs";
+        #     noCheck = true;
         # };
 
         "/drives/death-share" = {
