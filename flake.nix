@@ -5,7 +5,7 @@
         determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
         hyprpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-        nixpkgs-later.url = "github:nixos/nixpkgs/nixos-unstable";
+        nixpkgs-pin.url = "github:nixos/nixpkgs/nixos-unstable";
         nixpkgs-small.url = "github:nixos/nixpkgs/nixos-unstable-small";
 
         nix-index-database = {
@@ -49,7 +49,7 @@
         # };
         bedrock-on-linux = {
             url = "github:Wyze3306/BedrockOnLinux";
-            inputs.nixpkgs.follows = "nixpkgs";
+            inputs.nixpkgs.follows = "nixpkgs-pin";
         };
 
         zen-browser = {

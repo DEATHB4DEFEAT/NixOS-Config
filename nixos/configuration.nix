@@ -2,6 +2,7 @@
     pkgs,
     inputs,
     lib,
+    config,
     ...
 }:
 
@@ -121,6 +122,16 @@
         };
 
         overlays = [
+            (_: prev: {
+                pin = import inputs.nixpkgs-pin {
+                    inherit (prev.stdenv) system;
+                    config = config.nixpkgs.config;
+                };
+                later = import inputs.nixpkgs-small {
+                    inherit (prev.stdenv) system;
+                    config = config.nixpkgs.config;
+                };
+            })
             (_: pkgs: (import ../pkgs {inherit pkgs lib;}))
             # inputs.millennium.overlays.default
             # inputs.dolphin-overlay.overlays.default
@@ -174,7 +185,7 @@
         linthesia
         neothesia
         # element-desktop
-        aseprite
+        pin.aseprite
         # heroic
         bat
         btop
@@ -201,7 +212,7 @@
         death.robust-lsp
         # blockbench
         # kdePackages.yakuake
-        inputs.nixpkgs-later.legacyPackages.${pkgs.stdenv.hostPlatform.system}.equibop
+        pin.equibop
         # dbeaver-bin
         chromium
         # yt-dlg
