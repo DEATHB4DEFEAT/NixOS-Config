@@ -1,16 +1,10 @@
 __require("helpers")
 
 local configs = {
-    "hyprlock/default",
-    "hyprpanel/default",
-    -- "plugins/hypr-dynamic-cursors",
-    -- "plugins/hyprspace",
-    "plugins/split-monitor-workspaces",
-    "rofi/default",
     "decoration",
     "display",
-    -- "gromit",
-    -- "hypridle",
+    "plugins/hypr-dynamic-cursors",
+    "plugins/split-monitor-workspaces",
     "input",
 }
 
@@ -54,10 +48,9 @@ hl.on("hyprland.start", function()
     EXEC_ALL{
         "hyprctl switchxkblayout all 1",
         "hyprlock",
-        "${pkgs.kdePackages.kwallet-pam}/libexec/pam_kwallet_init",
         "kwalletd6",
         -- "ckb-next -b",
-        { "sleep 10; ${pkgs.pipewire.jack}/bin/pw-jack ${pkgs.carla}/bin/carla $HOME/.setup/home-manager/config/apps/config/carla.carxp", { workspace = "4 silent" } },
+        { "sleep 10; pw-jack carla $HOME/.setup/home-manager/config/apps/config/carla.carxp", { workspace = "4 silent" } },
         -- { "vesktop", { workspace = "1 silent" } },
         { "equibop", { workspace = "1 silent" } },
         -- { "sleep 5; finamp", { workspace = "special:magic silent" } },

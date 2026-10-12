@@ -25,18 +25,11 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
-        # hyprland = {
-        #     type = "git";
-        #     url = "https://github.com/hyprwm/Hyprland";
-        #     # url = "github:hyprwm/Hyprland";
-        #     # rev = "521ece463c4a9d3d128670688a34756805a4328f"; # v0.54.3
-        #     # submodules = true;
-        #     inputs.nixpkgs.follows = "nixpkgs";
-        # };
-        hypr-dynamic-cursors = { url = "github:VirtCode/hypr-dynamic-cursors"; };
+        hyprland.url = "github:hyprwm/Hyprland";
+        hypr-dynamic-cursors = { url = "github:VirtCode/hypr-dynamic-cursors"; inputs.hyprland.follows = "hyprland"; };
         hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
         # Hyprspace = { url = "github:KZDKM/Hyprspace"; };
-        split-monitor-workspaces = { url = "github:Duckonaut/split-monitor-workspaces"; };
+        split-monitor-workspaces = { url = "github:zjeffer/split-monitor-workspaces"; inputs.hyprland.follows = "hyprland"; };
 
         # nix-minecraft = {
         #     url = "github:Infinidoge/nix-minecraft";

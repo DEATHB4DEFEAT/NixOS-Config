@@ -114,9 +114,10 @@
             allowUnfree = true;
             enableParallelBuilding = true;
             permittedInsecurePackages = [
-                "freeimage-unstable-2021-11-01"
-                "freeimage-3.18.0-unstable-2024-04-18"
-                "qtwebengine-5.15.19"
+                # "freeimage-unstable-2021-11-01"
+                # "freeimage-3.18.0-unstable-2024-04-18"
+                # "qtwebengine-5.15.19"
+                "electron-40.10.5"
             ];
         };
 
@@ -569,10 +570,6 @@
             via
         ];
 
-        journald = {
-            extraConfig = "SystemMaxUse=100M";
-        };
-
         gvfs.enable = true;
 
         qbittorrent = {
@@ -716,7 +713,7 @@
                 gst_all_1.gst-plugins-bad
                 gst_all_1.gst-plugins-ugly
                 gst_all_1.gst-libav
-                gst_all_1.gst-vaapi
+                gst-plugins-bad
 
                 freetype
                 fluidsynth
