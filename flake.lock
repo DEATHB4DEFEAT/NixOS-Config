@@ -121,7 +121,7 @@
     "bedrock-on-linux": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs"
+          "nixpkgs-pin"
         ]
       },
       "locked": {
@@ -878,7 +878,7 @@
         "type": "github"
       }
     },
-    "nixpkgs-later": {
+    "nixpkgs-pin": {
       "locked": {
         "lastModified": 1791734076,
         "narHash": "sha256-i5qk1kLiit98rRbh1AXmWBNT9QXC/y4l5Wk/u5EdpDQ=",
@@ -1062,7 +1062,7 @@
         "hyprpkgs": "hyprpkgs",
         "nix-index-database": "nix-index-database",
         "nixpkgs": "nixpkgs_6",
-        "nixpkgs-later": "nixpkgs-later",
+        "nixpkgs-pin": "nixpkgs-pin",
         "nixpkgs-small": "nixpkgs-small",
         "stylix": "stylix",
         "zen-browser": "zen-browser"

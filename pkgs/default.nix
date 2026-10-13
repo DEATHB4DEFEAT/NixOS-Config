@@ -14,7 +14,7 @@ let
                 (name: _: baseDirectory + "/${shard}/${name}/package.nix")
                 (builtins.readDir (baseDirectory + "/${shard}"));
     packageFiles = lib.mergeAttrsList (lib.mapAttrsToList namesForShard (builtins.readDir baseDirectory));
-    call = file: pkgs.callPackage file {};
+    call = file: pkgs.pin.callPackage file {};
 in
 {
     # forgeServers = pkgs.callPackage ./forgeServers/. {};
