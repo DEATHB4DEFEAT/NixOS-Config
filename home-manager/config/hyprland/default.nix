@@ -1,4 +1,7 @@
-{ pkgs, inputs, ... }:
+{
+    pkgs,
+    ...
+}:
 
 {
     imports = [
@@ -22,17 +25,18 @@
         hyprshot
         hyprshutdown
         rofi
+        pipewire.jack
     ];
 
     wayland.windowManager.hyprland = {
         enable = true;
-        package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-        portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+        package = null;
+        portalPackage = null;
         systemd.enable = false;
         xwayland.enable = true;
         configType = "lua";
         extraConfig = builtins.readFile ./hyprland.lua;
     };
 
-    stylix.targets.hyprland.enable = false;
+    # stylix.targets.hyprland.enable = false;
 }
