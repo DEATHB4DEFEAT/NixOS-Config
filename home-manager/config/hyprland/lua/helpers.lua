@@ -18,14 +18,12 @@ function WINDOW_RULES(rules)
     end
 end
 
----@param binds 
+---@param binds [string, HL.Dispatcher, table][]
 function BIND_ALL(binds)
     for _, bind in ipairs(binds) do
         hl.bind(bind[1], bind[2], bind)
     end
 end
 
--- package.path = package.path..";./?.lua;./?/init.lua"
--- smw = require("plugins.split-monitor-workspaces")
-
+---@diagnostic disable-next-line: lowercase-global
 hs = require("lua/hyprsplit")

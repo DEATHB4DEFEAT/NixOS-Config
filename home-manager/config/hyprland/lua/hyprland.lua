@@ -40,9 +40,11 @@ local envs = {
     XCURSOR_SIZE = "24",
 }
 
-for env, var in pairs(envs) do
-    hl.env(env, var)
-end
+hl.on("hyprland.start", function()
+    for env, var in pairs(envs) do
+        hl.env(env, var)
+    end
+end)
 
 
 hl.on("hyprland.start", function()
