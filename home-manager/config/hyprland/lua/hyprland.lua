@@ -132,4 +132,9 @@ WINDOW_RULES{
         match = { title = "^(Nyasynth)$", },
         float = true,
     },
+
+    {
+        match = { class = "^(hyprland-share-picker)$", },
+        float = true,
+    },
 }

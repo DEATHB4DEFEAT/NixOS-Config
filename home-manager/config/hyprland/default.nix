@@ -38,5 +38,9 @@
         extraConfig = builtins.readFile ./hyprland.lua;
     };
 
-    # stylix.targets.hyprland.enable = false;
+    xdg.configFile."xdg-desktop-portal/Hyprland-portals.conf".text = ''
+        [preferred]
+        default = hyprland;gtk
+        org.freedesktop.impl.portal.FileChooser = kde
+    '';
 }

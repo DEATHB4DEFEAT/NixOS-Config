@@ -63,8 +63,8 @@ local binds = {
     { "SUPER + mouse_up", hl.dsp.layout("move -col") },
 
     --? Repeating
-    { "XF86AudioRaiseVolume", hl.dsp.exec_cmd[[wpctl set-volume -l 1.5 $(pw-dump | jq '.[] | select(.info.props."node.nick" == "HyperX QuadCast") | select(.info.props."media.class" == "Audio/Sink").id') 5%+; hyprctl notify "1 2500 rgb(00ff00) fontsize:50 $(wpctl get-volume $(pw-dump | jq '.[] | select(.info.props."node.nick" == "HyperX QuadCast") | select(.info.props."media.class" == "Audio/Sink").id'))]], repeating = true },
-    { "XF86AudioLowerVolume", hl.dsp.exec_cmd[[wpctl set-volume -l 1.5 $(pw-dump | jq '.[] | select(.info.props."node.nick" == "HyperX QuadCast") | select(.info.props."media.class" == "Audio/Sink").id') 5%-; hyprctl notify "1 2500 rgb(ff0000) fontsize:50 $(wpctl get-volume $(pw-dump | jq '.[] | select(.info.props."node.nick" == "HyperX QuadCast") | select(.info.props."media.class" == "Audio/Sink").id'))]], repeating = true },
+    { "XF86AudioRaiseVolume", hl.dsp.exec_cmd[[wpctl set-volume -l 1.5 $(pw-dump | jq '.[] | select(.info.props."node.nick" == "HyperX QuadCast") | select(.info.props."media.class" == "Audio/Sink").id') 5%+; hyprctl notify "1 2500 rgb(00ff00) fontsize:50 $(wpctl get-volume $(pw-dump | jq '.[] | select(.info.props."node.nick" == "HyperX QuadCast") | select(.info.props."media.class" == "Audio/Sink").id'))"]], repeating = true },
+    { "XF86AudioLowerVolume", hl.dsp.exec_cmd[[wpctl set-volume -l 1.5 $(pw-dump | jq '.[] | select(.info.props."node.nick" == "HyperX QuadCast") | select(.info.props."media.class" == "Audio/Sink").id') 5%-; hyprctl notify "1 2500 rgb(ff0000) fontsize:50 $(wpctl get-volume $(pw-dump | jq '.[] | select(.info.props."node.nick" == "HyperX QuadCast") | select(.info.props."media.class" == "Audio/Sink").id'))"]], repeating = true },
 
     --? Mouse
     { "SUPER + mouse:272", hl.dsp.window.drag(), mouse = true },
