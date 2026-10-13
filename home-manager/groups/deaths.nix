@@ -24,8 +24,6 @@
         ../config/apps/typecaptions.nix
 
         ../config/hyprland/.
-        # ../config/lualand/.
-        # ../config/olderland/.
 
         # ../config/niri/.
 

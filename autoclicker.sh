@@ -1,10 +1,3 @@
-
-
-########################
-# I missed the auto clicker of my razer, so this is an attempt to create one manually
-# Dependencies: ydotool, libinput, `sudo usermod -aG input $USER`
-########################
-
 YDOTOOL_BUTTON_LEFT=0xc0
 
 AUTOCLICKER_ACTIVE=false

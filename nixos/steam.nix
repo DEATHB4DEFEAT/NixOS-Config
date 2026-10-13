@@ -26,6 +26,7 @@
             ;
             extraCompatPackages = with pkgs; [
                 proton-ge-bin
+                death.ge-proton-gdk
             ];
             gamescopeSession = {
                 # enable = true;

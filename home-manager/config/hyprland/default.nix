@@ -31,5 +31,8 @@
         systemd.enable = false;
         xwayland.enable = true;
         configType = "lua";
+        extraConfig = builtins.readFile ./hyprland.lua;
     };
+
+    stylix.targets.hyprland.enable = false;
 }

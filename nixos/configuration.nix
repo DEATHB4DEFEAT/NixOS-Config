@@ -144,8 +144,9 @@
         nh
         vscode
         # rider riderScript
-        jetbrains.rider nodejs_22
-        firefox
+        jetbrains.rider
+        nodejs_22
+        # firefox
         inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
         wl-clipboard
         xsel
@@ -251,7 +252,8 @@
         gale
         rsgain
         feishin
-        death.fluxer-desktop
+        # death.fluxer-desktop
+        inputs.bedrock-on-linux.packages.x86_64-linux.default
 
         kdePackages.ark
         kdePackages.dolphin
@@ -521,7 +523,7 @@
                 enable = true;
                 wayland = {
                     enable = true;
-                    compositorCommand = "${pkgs.hyprland}/bin/hyprland -c ${pkgs.writeTextFile { name = "sddm-hyprland"; destination = "/sddm-hyprland.conf"; text = builtins.readFile ./sddm-hyprland.conf; } }/sddm-hyprland.conf";
+                    compositorCommand = "${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/bin/hyprland -c ${pkgs.writeTextFile { name = "sddm-hyprland"; destination = "/sddm-hyprland.conf"; text = builtins.readFile ./sddm-hyprland.conf; } }/sddm-hyprland.conf";
                 };
                 theme = "catppuccin-macchiato";
                 settings = {
@@ -589,6 +591,10 @@
         };
 
         libinput.enable = true;
+
+        dbus.enable = lib.mkDefault true;
+
+        flatpak.enable = true;
     };
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
         elisa
@@ -600,9 +606,6 @@
         # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
         # portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     };
-    # programs.niri = {
-    #     enable = true;
-    # };
     xdg.portal = {
         enable = true;
         extraPortals = with pkgs; [
@@ -731,6 +734,9 @@
                 libgbm
                 expat
                 libxcb
+                libxinerama
+                libxrender
+                libxi
             ]; # ++ config.environment.systemPackages;
         };
 
@@ -824,15 +830,15 @@
                 }
             }
 
-            # symlink /home/death/.setup/home-manager/config/hyprland \
-                /home/death/.config/hypr
+            symlink /home/death/.setup/home-manager/config/hyprland/lua \
+                /home/death/.config/hypr/lua
             symlink /home/death/.setup/home-manager/config/hyprland/hyprpanel \
                 /home/death/.config/hyprpanel
             symlink /home/death/.setup/home-manager/config/hyprland/rofi \
                 /home/death/.config/rofi
 
             # symlink /home/death/.setup/home-manager/config/niri/niri \
-                /home/death/.config/niri
+            #    /home/death/.config/niri
 
             symlink /home/death/.setup/home-manager/config/apps/config/dolphinrc \
                 /home/death/.config/dolphinrc

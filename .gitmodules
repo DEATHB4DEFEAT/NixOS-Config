@@ -1,0 +1,3 @@
+[submodule "home-manager/config/hyprland/lua/hyprsplit"]
+	path = home-manager/config/hyprland/lua/hyprsplit
+	url = https://github.com/shezdy/hyprsplit

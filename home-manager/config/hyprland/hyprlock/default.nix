@@ -116,7 +116,7 @@
                     font_color = "rgb(200, 200, 200)";
                     fade_on_empty = false;
                     font_family = "Jetbrains Mono ExtraBold";
-                    placeholder_text = "<i><span foreground=\"#ffffff99\">Enter Password</span></i>";
+                    placeholder_text = "<i><span foreground=\"##ffffff99\">Enter Password</span></i>";
                     hide_input = false;
                     position = "0, -420";
                     halign = "center";

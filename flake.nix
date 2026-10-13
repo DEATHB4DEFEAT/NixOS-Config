@@ -3,6 +3,7 @@
 
     inputs = {
         determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
+        hyprpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
         nixpkgs-later.url = "github:nixos/nixpkgs/nixos-unstable";
         nixpkgs-small.url = "github:nixos/nixpkgs/nixos-unstable-small";
@@ -28,13 +29,17 @@
         hyprland.url = "github:hyprwm/Hyprland";
         hypr-dynamic-cursors = { url = "github:VirtCode/hypr-dynamic-cursors"; inputs.hyprland.follows = "hyprland"; };
         hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
-        # Hyprspace = { url = "github:KZDKM/Hyprspace"; };
-        split-monitor-workspaces = { url = "github:zjeffer/split-monitor-workspaces"; inputs.hyprland.follows = "hyprland"; };
+        # Hyprspace = { url = "github:KZDKM/Hyprspace"; inputs.hyprland.follows = "hyprland"; };
+        # split-monitor-workspaces = { url = "github:zjeffer/split-monitor-workspaces"; inputs.hyprland.follows = "hyprland"; };
 
         # nix-minecraft = {
         #     url = "github:Infinidoge/nix-minecraft";
         #     inputs.nixpkgs.follows = "nixpkgs";
         # };
+        bedrock-on-linux = {
+            url = "github:Wyze3306/BedrockOnLinux";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
 
         zen-browser = {
             url = "github:youwen5/zen-browser-flake";
