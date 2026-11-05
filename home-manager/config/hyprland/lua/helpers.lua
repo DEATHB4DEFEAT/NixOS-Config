@@ -1,3 +1,12 @@
+---@param text string
+function PRINT(text)
+    hl.notification.create{
+        text = ": "..text,
+        timeout = 10000,
+        color = "#FF0000",
+    }
+end
+
 ---@param cmds (string | [string, table<string, string|number|boolean>])[]
 function EXEC_ALL(cmds)
     for _, cmd in ipairs(cmds) do
@@ -18,6 +27,20 @@ function WINDOW_RULES(rules)
     end
 end
 
+---@param curves [ string, { type: string, points: table<[ number, number ], [number, number]> } ][]
+function CURVE_ALL(curves)
+    for _, curve in ipairs(curves) do
+        hl.curve(curve[1], curve[2])
+    end
+end
+
+---@param animations ({ enabled: boolean, leaf: string, speed: number, bezier: string, style?: string } | { enabled: boolean, leaf: string, speed: number, spring: string, style?: string })[]
+function ANIMATION_ALL(animations)
+    for _, animation in ipairs(animations) do
+        hl.animation(animation)
+    end
+end
+
 ---@param binds [string, HL.Dispatcher, table][]
 function BIND_ALL(binds)
     for _, bind in ipairs(binds) do
@@ -25,5 +48,5 @@ function BIND_ALL(binds)
     end
 end
 
----@diagnostic disable-next-line: lowercase-global
-hs = require("lua/hyprsplit")
+local ok, module = pcall(require, "lua/hyprsplit")
+hs = ok and module or nil ---@diagnostic disable-line: lowercase-global

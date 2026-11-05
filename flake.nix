@@ -29,8 +29,7 @@
         hyprland.url = "github:hyprwm/Hyprland";
         hypr-dynamic-cursors = { url = "github:VirtCode/hypr-dynamic-cursors"; inputs.hyprland.follows = "hyprland"; };
         hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
-        # Hyprspace = { url = "github:KZDKM/Hyprspace"; inputs.hyprland.follows = "hyprland"; };
-        # split-monitor-workspaces = { url = "github:zjeffer/split-monitor-workspaces"; inputs.hyprland.follows = "hyprland"; };
+        hyprland-scroll-overview = { url = "github:yayuuu/hyprland-scroll-overview"; inputs.hyprland.follows = "hyprland"; };
 
         # nix-minecraft = {
         #     url = "github:Infinidoge/nix-minecraft";

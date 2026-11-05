@@ -265,6 +265,8 @@
         feishin
         # death.fluxer-desktop
         inputs.bedrock-on-linux.packages.x86_64-linux.default
+        bs-manager
+        remmina
 
         kdePackages.ark
         kdePackages.dolphin

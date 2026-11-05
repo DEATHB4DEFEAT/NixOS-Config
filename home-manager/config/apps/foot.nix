@@ -21,8 +21,9 @@
                 hide-when-typing = "yes";
             };
 
-            colors = {
+            colors-light = {
                 alpha = lib.mkForce 0.0;
+                blur = "yes";
                 # background = "1a1a1a";
                 # selection-background = "000000";
                 # selection-foreground = "ffffff";

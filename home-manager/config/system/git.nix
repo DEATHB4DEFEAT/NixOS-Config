@@ -4,19 +4,19 @@
             enable = true;
             # userEmail = "zachcaffee@outlook.com";
             # userName = "DEATHB4DEFEAT";
-            settings.user = {
-                email = "zachcaffee@outlook.com";
-                name = "DEATHB4DEFEAT";
+            settings = {
+                init.defaultBranch = "master";
+                pull.rebase = false;
+                http.postBuffer = 524288000;
+                user = {
+                    email = "zachcaffee@outlook.com";
+                    name = "DEATHB4DEFEAT";
+                };
             };
             signing = {
                 format = "openpgp";
                 key = "62B0D3993D872EBB";
                 signByDefault = true;
-            };
-            extraConfig = {
-                init.defaultBranch = "master";
-                pull.rebase = false;
-                http.postBuffer = 524288000;
             };
         };
 

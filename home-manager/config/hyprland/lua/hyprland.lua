@@ -1,8 +1,9 @@
 __require("lua/helpers")
 
 local configs = {
-    "plugins/hypr-dynamic-cursors",
-    "plugins/split-monitor-workspaces",
+    "plugins/dynamic-cursors",
+    "plugins/hyprsplit",
+    "plugins/scrolloverview",
     "decoration",
     "display",
     "input",

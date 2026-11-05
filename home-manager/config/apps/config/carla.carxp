@@ -678,26 +678,25 @@
 
   <Data>
    <Active>Yes</Active>
-   <DryWet>0</DryWet>
    <ControlChannel>1</ControlChannel>
    <Options>0x0</Options>
 
    <Parameter>
     <Index>0</Index>
     <Name>Gain</Name>
-    <Value>2.03300333023071</Value>
+    <Value>2.55999994277954</Value>
    </Parameter>
 
    <Parameter>
     <Index>1</Index>
     <Name>Apply Left</Name>
-    <Value>1</Value>
+    <Value>0</Value>
    </Parameter>
 
    <Parameter>
     <Index>2</Index>
     <Name>Apply Right</Name>
-    <Value>0</Value>
+    <Value>1</Value>
    </Parameter>
 
    <CustomData>
@@ -1201,11 +1200,11 @@ dHJvbGxlcj48L1ZTVDNQbHVnaW5TdGF0ZT4A
  <ExternalPatchbay>
   <Connection>
    <Source>Null Comms Source:capture_FL</Source>
-   <Target>equibop:input_FL</Target>
+   <Target>equibop-267:input_FL</Target>
   </Connection>
   <Connection>
    <Source>Null Comms Source:capture_FR</Source>
-   <Target>equibop:input_FR</Target>
+   <Target>equibop-267:input_FR</Target>
   </Connection>
   <Connection>
    <Source>HyperX QuadCast Analog Stereo:capture_FL</Source>
@@ -1222,6 +1221,14 @@ dHJvbGxlcj48L1ZTVDNQbHVnaW5TdGF0ZT4A
   <Connection>
    <Source>LSP Sidechain Compressor Stereo:Output R</Source>
    <Target>Null General Sink:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>equibop:output_FL</Source>
+   <Target>Null Comms Sink:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>equibop:output_FR</Source>
+   <Target>Null Comms Sink:playback_FR</Target>
   </Connection>
   <Connection>
    <Source>LSP Limiter Stereo:Output L</Source>
@@ -1248,14 +1255,6 @@ dHJvbGxlcj48L1ZTVDNQbHVnaW5TdGF0ZT4A
    <Target>HyperX QuadCast Analog Stereo:playback_FR</Target>
   </Connection>
   <Connection>
-   <Source>Out Speakers:output_1</Source>
-   <Target>Navi 31 HDMI/DP Audio Digital Stereo (HDMI 2) [Sceptre L27]:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Out Speakers:output_2</Source>
-   <Target>Navi 31 HDMI/DP Audio Digital Stereo (HDMI 2) [Sceptre L27]:playback_FR</Target>
-  </Connection>
-  <Connection>
    <Source>Out Headphones:output_1</Source>
    <Target>Deaf .(:input_1</Target>
   </Connection>
@@ -1264,28 +1263,12 @@ dHJvbGxlcj48L1ZTVDNQbHVnaW5TdGF0ZT4A
    <Target>Deaf .(:input_2</Target>
   </Connection>
   <Connection>
-   <Source>Audio Gain (Stereo):output_1</Source>
-   <Target>Null Comms Source:playback_FL</Target>
+   <Source>Out Speakers:output_1</Source>
+   <Target>Navi 31 HDMI/DP Audio Digital Stereo (HDMI 2) [Sceptre L27]:playback_FL</Target>
   </Connection>
   <Connection>
-   <Source>Audio Gain (Stereo):output_2</Source>
-   <Target>Null Comms Source:playback_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>Fluida:Out</Source>
-   <Target>Null Comms Source:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>Fluida:Out</Source>
-   <Target>LSP Return Stereo:Input L</Target>
-  </Connection>
-  <Connection>
-   <Source>Fluida:Out1</Source>
-   <Target>Null Comms Source:playback_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>Fluida:Out1</Source>
-   <Target>LSP Return Stereo:Input R</Target>
+   <Source>Out Speakers:output_2</Source>
+   <Target>Navi 31 HDMI/DP Audio Digital Stereo (HDMI 2) [Sceptre L27]:playback_FR</Target>
   </Connection>
   <Connection>
    <Source>Noise Suppressor for Voice (Stereo):Output (L)</Source>
@@ -1296,6 +1279,14 @@ dHJvbGxlcj48L1ZTVDNQbHVnaW5TdGF0ZT4A
    <Target>Audio Gain (Stereo):input_2</Target>
   </Connection>
   <Connection>
+   <Source>Audio Gain (Stereo):output_1</Source>
+   <Target>Null Comms Source:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Audio Gain (Stereo):output_2</Source>
+   <Target>Null Comms Source:playback_FR</Target>
+  </Connection>
+  <Connection>
    <Source>Nyasynth:output_1</Source>
    <Target>Null Comms Source:playback_FL</Target>
   </Connection>
@@ -1309,6 +1300,22 @@ dHJvbGxlcj48L1ZTVDNQbHVnaW5TdGF0ZT4A
   </Connection>
   <Connection>
    <Source>Nyasynth:output_2</Source>
+   <Target>LSP Return Stereo:Input R</Target>
+  </Connection>
+  <Connection>
+   <Source>Fluida:Out</Source>
+   <Target>Null Comms Source:playback_FL</Target>
+  </Connection>
+  <Connection>
+   <Source>Fluida:Out</Source>
+   <Target>LSP Return Stereo:Input L</Target>
+  </Connection>
+  <Connection>
+   <Source>Fluida:Out1</Source>
+   <Target>Null Comms Source:playback_FR</Target>
+  </Connection>
+  <Connection>
+   <Source>Fluida:Out1</Source>
    <Target>LSP Return Stereo:Input R</Target>
   </Connection>
   <Connection>
@@ -1320,44 +1327,12 @@ dHJvbGxlcj48L1ZTVDNQbHVnaW5TdGF0ZT4A
    <Target>LSP Limiter Stereo:Input R</Target>
   </Connection>
   <Connection>
-   <Source>equibop-265:output_FL</Source>
-   <Target>Null Comms Sink:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>equibop-265:output_FR</Source>
-   <Target>Null Comms Sink:playback_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>equibop-271:output_FL</Source>
-   <Target>Null Comms Sink:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>equibop-271:output_FR</Source>
-   <Target>Null Comms Sink:playback_FR</Target>
-  </Connection>
-  <Connection>
-   <Source>equibop-288:output_FL</Source>
-   <Target>Null General Sink:playback_FL</Target>
-  </Connection>
-  <Connection>
-   <Source>equibop-288:output_FR</Source>
-   <Target>Null General Sink:playback_FR</Target>
-  </Connection>
-  <Connection>
    <Source>Null General Sink:monitor_FL</Source>
    <Target>LSP Return Stereo:Input L</Target>
   </Connection>
   <Connection>
-   <Source>Null General Sink:monitor_FL</Source>
-   <Target>vencord-screen-share:input_FL</Target>
-  </Connection>
-  <Connection>
    <Source>Null General Sink:monitor_FR</Source>
    <Target>LSP Return Stereo:Input R</Target>
-  </Connection>
-  <Connection>
-   <Source>Null General Sink:monitor_FR</Source>
-   <Target>vencord-screen-share:input_FR</Target>
   </Connection>
   <Connection>
    <Source>Null Music Sink:monitor_FL</Source>
@@ -1384,20 +1359,12 @@ dHJvbGxlcj48L1ZTVDNQbHVnaW5TdGF0ZT4A
    <Target>LSP Return Stereo:Input R</Target>
   </Connection>
   <Connection>
-   <Source>vencord-screen-share:capture_FL</Source>
-   <Target>equibop:input_FL-1888</Target>
+   <Source>Midi-Bridge:Portable G: MIDI 1 (capture)</Source>
+   <Target>MIDI Transpose:events-in</Target>
   </Connection>
   <Connection>
-   <Source>vencord-screen-share:capture_FR</Source>
-   <Target>equibop:input_FR-1889</Target>
-  </Connection>
-  <Connection>
-   <Source>MIDI File:events-out</Source>
-   <Target>Nyasynth:events-in</Target>
-  </Connection>
-  <Connection>
-   <Source>MIDI File:events-out</Source>
-   <Target>Fluida:events-in</Target>
+   <Source>Midi-Bridge:Portable G: MIDI 1 (capture)</Source>
+   <Target>MIDI File:events-in</Target>
   </Connection>
   <Connection>
    <Source>MIDI Transpose:events-out</Source>
@@ -1406,6 +1373,14 @@ dHJvbGxlcj48L1ZTVDNQbHVnaW5TdGF0ZT4A
   <Connection>
    <Source>MIDI Transpose:events-out</Source>
    <Target>Nyasynth:events-in</Target>
+  </Connection>
+  <Connection>
+   <Source>MIDI File:events-out</Source>
+   <Target>Nyasynth:events-in</Target>
+  </Connection>
+  <Connection>
+   <Source>MIDI File:events-out</Source>
+   <Target>Fluida:events-in</Target>
   </Connection>
   <Positions>
    <Position x1="1387" y1="974">
@@ -1423,12 +1398,6 @@ dHJvbGxlcj48L1ZTVDNQbHVnaW5TdGF0ZT4A
    <Position x1="2200" y1="1531">
     <Name>Null Experimental Source</Name>
    </Position>
-   <Position x1="629" y1="1207">
-    <Name>equibop-265</Name>
-   </Position>
-   <Position x1="633" y1="1314">
-    <Name>equibop-271</Name>
-   </Position>
    <Position x1="1399" y1="1128">
     <Name>Null General Sink</Name>
    </Position>
@@ -1443,9 +1412,6 @@ dHJvbGxlcj48L1ZTVDNQbHVnaW5TdGF0ZT4A
    </Position>
    <Position x1="2198" y1="1425">
     <Name>Null Experimental Sink</Name>
-   </Position>
-   <Position x1="1946" y1="1520">
-    <Name>equibop</Name>
    </Position>
    <Position x1="997" y1="1346" x2="2225" y2="818">
     <Name>Midi-Bridge</Name>
@@ -1483,20 +1449,17 @@ dHJvbGxlcj48L1ZTVDNQbHVnaW5TdGF0ZT4A
    <Position x1="1400" y1="1364" pluginId="9">
     <Name>Fluida</Name>
    </Position>
-   <Position x1="1223" y1="1291" pluginId="10">
+   <Position x1="1227" y1="1290" pluginId="10">
     <Name>MIDI File</Name>
    </Position>
    <Position x1="1635" y1="1194" pluginId="11">
     <Name>LSP Return Stereo</Name>
    </Position>
-   <Position x1="1633" y1="1103">
-    <Name>vencord-screen-share</Name>
+   <Position x1="1941" y1="1513">
+    <Name>equibop-267</Name>
    </Position>
-   <Position x1="1114" y1="1040">
-    <Name>equibop-276</Name>
-   </Position>
-   <Position x1="1236" y1="1035">
-    <Name>equibop-288</Name>
+   <Position x1="683" y1="1205">
+    <Name>equibop</Name>
    </Position>
   </Positions>
  </ExternalPatchbay>

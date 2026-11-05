@@ -1,5 +1,6 @@
 {
     pkgs,
+    inputs,
     ...
 }:
 
@@ -7,8 +8,6 @@
     imports = [
         ./hyprlock
         ./hyprpanel
-        ./plugins/hypr-dynamic-cursors.nix
-        ./plugins/split-monitor-workspaces.nix
     ];
 
     home.packages = with pkgs; [
@@ -21,7 +20,6 @@
             accent = "mauve";
             variant = "mocha";
         })
-        hyprland-qtutils
         hyprshot
         hyprshutdown
         rofi
@@ -34,6 +32,11 @@
         portalPackage = null;
         systemd.enable = false;
         xwayland.enable = true;
+
+        plugins = [
+            inputs.hypr-dynamic-cursors.packages.${pkgs.stdenv.hostPlatform.system}.hypr-dynamic-cursors
+            # inputs.hyprland-scroll-overview.packages.${pkgs.stdenv.hostPlatform.system}.scrolloverview
+        ];
         configType = "lua";
         extraConfig = builtins.readFile ./hyprland.lua;
     };
