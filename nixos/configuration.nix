@@ -47,7 +47,18 @@
         kernelPackages = pkgs.linuxPackages_zen;
     };
 
-    security.rtkit.enable = true;
+    security = {
+        rtkit.enable = true;
+        sudo = {
+            extraConfig = ''
+                Defaults timestamp_timeout=30
+                Defaults passwd_timeout=0
+                Defaults insults
+                Defaults passprompt="sudo password for %p: "
+                Defaults pwfeedback
+            '';
+        };
+    };
 
 
     networking = {

@@ -3,7 +3,6 @@
 
     inputs = {
         determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
-        hyprpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
         nixpkgs-pin.url = "github:nixos/nixpkgs/nixos-unstable";
         nixpkgs-small.url = "github:nixos/nixpkgs/nixos-unstable-small";
