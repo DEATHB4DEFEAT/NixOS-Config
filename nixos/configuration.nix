@@ -102,6 +102,7 @@
                 "input"
                 "audio"
                 "tty"
+                "kvm"
             ];
             home = "/home/death";
         };
@@ -469,8 +470,8 @@
         };
         openFirewall = true;
     };
-    virtualisation.libvirtd.enable = true;
-    programs.virt-manager.enable = true;
+    virtualisation.libvirtd.enable = false;
+    programs.virt-manager.enable = false;
 
     # This value determines the NixOS release from which the default
     # settings for stateful data, like file locations and database versions
