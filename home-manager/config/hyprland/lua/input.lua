@@ -71,7 +71,7 @@ local binds = {
     { "SUPER + mouse:273", hl.dsp.window.resize(), mouse = true },
 
     --? Locked
-    { "SUPER + SHIFT + L", hl.dsp.exit(), locked = true },
+    { "SUPER + SHIFT + L", hl.dsp.exec_cmd"hyprshutdown -p \"hyprctl dispatch hl.dsp.exit()\"", locked = true },
     { "SUPER + Z", hl.dsp.exec_cmd"$HOME/.setup/home-manager/config/hyprland/scripts/switch-layout.sh", locked = true },
 }
 

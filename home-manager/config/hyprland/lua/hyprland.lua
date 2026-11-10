@@ -27,7 +27,7 @@ local envs = {
 
     XDG_SESSION_TYPE = "wayland",
     XDG_MENU_PREFIX = "plasma-",
-    XDG_DATA_DIRS = "$XDG_DATA_DIRS:/usr/share:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share",
+    XDG_DATA_DIRS = os.getenv'XDG_DATA_DIRS'..":/usr/share:/var/lib/flatpak/exports/share:"..os.getenv'HOME'.."/.local/share/flatpak/exports/share",
     ELECTRON_OZONE_PLATFORM_HINT = "auto",
 
     QT_QPA_PLATFORM = "wayland",
@@ -35,7 +35,7 @@ local envs = {
     -- QT_STYLE_OVERRIDE = "kvantum",
     QT_WAYLAND_DISABLE_WINDOWDECORATION = 1,
 
-    PATH = os.getenv'PATH'..":$HOME/.setup/home-manager/config/hyprland/scripts:$HOME/.setup/home-manager/config/hyprland/rofi/scripts",
+    PATH = os.getenv'PATH'..":"..os.getenv'HOME'.."/.setup/home-manager/config/hyprland/scripts:"..os.getenv'HOME'.."/.setup/home-manager/config/hyprland/rofi/scripts",
 
     XCURSOR_THEME = "catppuccin-macchiato-mauve-cursors",
     XCURSOR_SIZE = "24",
