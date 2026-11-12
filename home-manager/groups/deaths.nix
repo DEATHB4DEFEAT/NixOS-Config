@@ -33,6 +33,7 @@
         ../config/apps/foot.nix
         ../config/apps/shell.nix
         ../config/apps/typecaptions.nix
+        ../config/apps/zen.nix
 
         ../config/hyprland/.
 
