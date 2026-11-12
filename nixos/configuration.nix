@@ -64,13 +64,13 @@
     networking = {
         hostName = "DTLinix";
         hosts = {
-            "10.0.0.85" = [
-                "img.simplemodbot.tk"
-                "immich.simplemodbot.tk"
-                "jellyfin.simplemodbot.tk"
-                "navidrome.simplemodbot.tk"
-                "live.simplemodbot.tk"
-                "mc.simplemodbot.tk"
+            "10.0.0.251" = [
+                "img.deathis.win"
+                "immich.deathis.win"
+                "jellyfin.deathis.win"
+                "navidrome.deathis.win"
+                "live.deathis.win"
+                "mc.deathis.win"
             ];
         };
         nameservers = [ "1.1.1.1" "1.0.0.1" "2606:4700:4700::1111" "2606:4700:4700::1001" ];
@@ -170,7 +170,6 @@
         jetbrains.rider
         nodejs_22
         # firefox
-        inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
         wl-clipboard
         xsel
         ntfs3g

@@ -9,7 +9,6 @@
 
         targets = {
             grub.enable = false;
-            zen-browser.enable = false;
         };
 
         base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-macchiato.yaml";

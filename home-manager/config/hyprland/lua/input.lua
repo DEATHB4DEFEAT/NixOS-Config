@@ -28,10 +28,10 @@ local binds = {
     -- { "SUPER + SPACE", hl.dsp.exec_cmd'launcher_t6' },
     { "SUPER + SPACE", hl.dsp.exec_cmd'rofi -show drun -theme $HOME/.setup/home-manager/config/hyprland/rofi/rounded-purple.rasi' },
 
-    { "Print", hl.dsp.exec_cmd[[grimblast --freeze save area - > /tmp/screenshot.png; wl-copy < /tmp/screenshot.png; curl -F "somefile=@/tmp/screenshot.png" https://img.simplemodbot.tk/upload]] },
-    { "ALT + Print", hl.dsp.exec_cmd[[grimblast --freeze save area - > /tmp/screenshot.png; curl -F "somefile=@/tmp/screenshot.png" https://img.simplemodbot.tk/upload | wl-copy]] },
-    { "SHIFT + Print", hl.dsp.exec_cmd[[grimblast --freeze save area - | satty --output-filename /tmp/screenshot.png --disable-notifications --initial-tool brush --copy-command wl-copy --save-after-copy --early-exit --filename -; curl -F "somefile=@/tmp/screenshot.png" https://img.simplemodbot.tk/upload]] },
-    { "ALT + SHIFT + Print", hl.dsp.exec_cmd[[grimblast --freeze save area - | satty --output-filename /tmp/screenshot.png --disable-notifications --initial-tool brush --copy-command wl-copy --save-after-copy --early-exit --filename -; curl -F "somefile=@/tmp/screenshot.png" https://img.simplemodbot.tk/upload | wl-copy]] },
+    { "Print", hl.dsp.exec_cmd[[grimblast --freeze save area - > /tmp/screenshot.png; wl-copy < /tmp/screenshot.png; curl -F "somefile=@/tmp/screenshot.png" https://img.deathis.win/upload]] },
+    { "ALT + Print", hl.dsp.exec_cmd[[grimblast --freeze save area - > /tmp/screenshot.png; curl -F "somefile=@/tmp/screenshot.png" https://img.deathis.win/upload | wl-copy]] },
+    { "SHIFT + Print", hl.dsp.exec_cmd[[grimblast --freeze save area - | satty --output-filename /tmp/screenshot.png --disable-notifications --initial-tool brush --copy-command wl-copy --save-after-copy --early-exit --filename -; curl -F "somefile=@/tmp/screenshot.png" https://img.deathis.win/upload]] },
+    { "ALT + SHIFT + Print", hl.dsp.exec_cmd[[grimblast --freeze save area - | satty --output-filename /tmp/screenshot.png --disable-notifications --initial-tool brush --copy-command wl-copy --save-after-copy --early-exit --filename -; curl -F "somefile=@/tmp/screenshot.png" https://img.deathis.win/upload | wl-copy]] },
 
     { "SUPER + SHIFT + mouse_down", hl.dsp.exec_cmd"hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '.float * 1.25')" },
     { "SUPER + SHIFT + mouse_up", hl.dsp.exec_cmd"hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor -j | jq '(.float / 1.25) | if . < 1 then 1 else . end')" },
