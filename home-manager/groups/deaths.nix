@@ -30,6 +30,7 @@
 
         ../config/apps/config/mpv.nix
 
+        ../config/apps/dolphin.nix
         ../config/apps/foot.nix
         ../config/apps/shell.nix
         ../config/apps/typecaptions.nix
