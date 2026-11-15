@@ -54,11 +54,12 @@ hl.on("hyprland.start", function()
         "hyprlock",
         "kwalletd6",
         -- "ckb-next -b",
+        --? Wait so default windows can connect in audio config
         { "sleep 10; pw-jack carla $HOME/.setup/home-manager/config/apps/config/carla.carxp", { workspace = "4 silent" } },
-        -- { "vesktop", { workspace = "1 silent" } },
         { "equibop", { workspace = "1 silent" } },
         -- { "sleep 5; finamp", { workspace = "special:magic silent" } },
-        { "feishin", { workspace = "special:magic silent" } },
+        -- { "feishin", { workspace = "special:magic silent" } },
+        { "wayvnc 0.0.0.0 -agrR" }, -- [a]ll monitors [g]pu [r]render cursor [R]esizing off
     }
 end)
 

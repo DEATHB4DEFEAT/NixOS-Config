@@ -466,8 +466,8 @@
     services.openssh.enable = true;
 
     # Open ports in the firewall.
-    networking.firewall.allowedTCPPorts = [ 25565 24454 7100 7000 7001 ];
-    networking.firewall.allowedUDPPorts = [ 25565 24454 7011 6001 6000 ];
+    networking.firewall.allowedTCPPorts = [ 25565 24454 7100 7000 7001 5900 ];
+    networking.firewall.allowedUDPPorts = [ 25565 24454 7011 6001 6000 5900 ];
     # Or disable the firewall altogether.
     # networking.firewall.enable = false;
 
@@ -782,6 +782,8 @@
         dconf.enable = true;
 
         ydotool.enable = true;
+
+        wayvnc.enable = true;
     };
 
 
