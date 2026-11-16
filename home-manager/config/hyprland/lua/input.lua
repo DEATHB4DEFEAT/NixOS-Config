@@ -27,6 +27,7 @@ local binds = {
     { "SUPER + Q", hl.dsp.window.close() },
     -- { "SUPER + SPACE", hl.dsp.exec_cmd'launcher_t6' },
     { "SUPER + SPACE", hl.dsp.exec_cmd'rofi -show drun -theme $HOME/.setup/home-manager/config/hyprland/rofi/rounded-purple.rasi' },
+    { "SUPER + V", hl.dsp.exec_cmd'cliphist list | rofi -dmenu -p "Clipboard" -theme $HOME/.setup/home-manager/config/hyprland/rofi/rounded-purple.rasi | cliphist decode | wl-copy' },
 
     { "Print", hl.dsp.exec_cmd[[grimblast --freeze save area - > /tmp/screenshot.png; wl-copy < /tmp/screenshot.png; curl -F "somefile=@/tmp/screenshot.png" https://img.deathis.win/upload]] },
     { "ALT + Print", hl.dsp.exec_cmd[[grimblast --freeze save area - > /tmp/screenshot.png; curl -F "somefile=@/tmp/screenshot.png" https://img.deathis.win/upload | wl-copy]] },

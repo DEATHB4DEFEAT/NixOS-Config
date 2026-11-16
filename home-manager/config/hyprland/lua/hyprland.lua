@@ -59,7 +59,10 @@ hl.on("hyprland.start", function()
         { "equibop", { workspace = "1 silent" } },
         -- { "sleep 5; finamp", { workspace = "special:magic silent" } },
         -- { "feishin", { workspace = "special:magic silent" } },
-        { "wayvnc 0.0.0.0 -agrR" }, -- [a]ll monitors [g]pu [r]render cursor [R]esizing off
+        --? [a]ll monitors [g]pu [r]render cursor [R]esizing off
+        { "wayvnc 0.0.0.0 -agrR" },
+        { "wl-clip-persist --clipboard regular" },
+        { "wl-paste --watch cliphist store" },
     }
 end)
 

@@ -171,6 +171,8 @@
         nodejs_22
         # firefox
         wl-clipboard
+        wl-clip-persist
+        cliphist
         xsel
         ntfs3g
         ntfsprogs
