@@ -44,6 +44,8 @@
             inputs.nixpkgs.follows = "nixpkgs";
             inputs.home-manager.follows = "home-manager";
         };
+
+        frame-shell.url = "github:konsti219/frame-shell";
     };
 
 

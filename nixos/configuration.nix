@@ -13,6 +13,7 @@
         ./audio.nix
         ./bluetooth.nix
         # ./ethernet-out.nix
+        ./frame-shell.nix
         ./hardware-configuration.nix
         ./stylix.nix
 
