@@ -267,7 +267,7 @@
         libinput
         puddletag
         pavucontrol
-        deadlock-mod-manager
+        pin.deadlock-mod-manager
         # vintagestory
         # xwayland-satellite
         # wineWowPackages.unstableFull
