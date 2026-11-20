@@ -25,6 +25,7 @@ local binds = {
     { "SUPER + RETURN", hl.dsp.exec_cmd'foot' },
     { "SUPER + E", hl.dsp.exec_cmd'dolphin' },
     { "SUPER + Q", hl.dsp.window.close() },
+    { "SUPER + SHIFT + Q", hl.dsp.exec_cmd'hyprctl kill' },
     -- { "SUPER + SPACE", hl.dsp.exec_cmd'launcher_t6' },
     { "SUPER + SPACE", hl.dsp.exec_cmd'rofi -show drun -theme $HOME/.setup/home-manager/config/hyprland/rofi/rounded-purple.rasi' },
     { "SUPER + V", hl.dsp.exec_cmd'cliphist list | rofi -dmenu -p "Clipboard" -theme $HOME/.setup/home-manager/config/hyprland/rofi/rounded-purple.rasi | cliphist decode | wl-copy' },
